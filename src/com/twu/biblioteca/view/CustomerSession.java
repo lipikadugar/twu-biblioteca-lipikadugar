@@ -5,40 +5,26 @@ import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
 import static com.twu.biblioteca.view.Messages.MENU_FOR_USER;
 
-public class CustomerSession implements Operations {
+public class CustomerSession implements Session {
     private View view;
     private Library bookSection;
     private Library movieSection;
-    private BibliotecaApp app;
     private User user;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public CustomerSession(View view, Library bookSection, Library movieSection, BibliotecaApp app, User user) {
+    public CustomerSession(View view, Library bookSection, Library movieSection, User user) {
 
         this.view = view;
         this.bookSection = bookSection;
         this.movieSection = movieSection;
-        this.app = app;
         this.user = user;
-    }
-
-    private void executeCommands(boolean execute) {
-        while (execute) {
-            view.print(MENU_FOR_USER);
-            String option = view.input();
-            try {
-                Operations operate = getClassObject(option);
-                operate.execute();
-            } catch (NullPointerException e) {
-                view.print(ERROR_MESSAGE);
-            }
-        }
     }
 
     public Operations getClassObject(String key) {
@@ -50,12 +36,23 @@ public class CustomerSession implements Operations {
         input.put("5", new CheckOut("5", bookSection, movieSection, view, user));
         input.put("6", new CheckIn("6", bookSection, bookSection, view, user));
         input.put("7", new UserInformation(user, view));
-        input.put("8", new Logout(app));
         return input.get(key);
     }
 
     @Override
-    public void execute() {
-        executeCommands(true);
+    public void executeCommands(boolean execute) {
+        while (execute) {
+            view.print(MENU_FOR_USER);
+            String option = view.input();
+            try {
+                Operations operate = getClassObject(option);
+                if (Objects.equals(option, "8"))
+                    execute = false;
+                else
+                    operate.execute();
+            } catch (NullPointerException e) {
+                view.print(ERROR_MESSAGE);
+            }
+        }
     }
 }

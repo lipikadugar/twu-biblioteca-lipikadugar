@@ -62,9 +62,8 @@ public class ListCheckedOutItemTest {
 
     @Test
     public void shouldListCheckedOutBookList() {
-        Library library = new Library(books, movies);
-        View view = new View("4", library, movieSection, in);
-        ListCheckedOutItem item = new ListCheckedOutItem("7", library, movieSection, view);
+        View view = new View("4", bookSection, movieSection, in);
+        ListCheckedOutItem item = new ListCheckedOutItem("7", bookSection, movieSection, view);
 
         item.execute();
 

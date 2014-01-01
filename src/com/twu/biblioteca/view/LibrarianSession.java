@@ -5,39 +5,25 @@ import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
 import static com.twu.biblioteca.view.Messages.MENU_FOR_LIBRARIAN;
 
-public class LibrarianSession implements Operations {
+public class LibrarianSession implements Session {
     private View view;
     private Library bookSection;
     private Library movieSection;
-    private BibliotecaApp app;
     private User user;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public LibrarianSession(View view, Library bookSection, Library movieSection, BibliotecaApp app, User user) {
+    public LibrarianSession(View view, Library bookSection, Library movieSection, User user) {
         this.view = view;
         this.bookSection = bookSection;
         this.movieSection = movieSection;
-        this.app = app;
         this.user = user;
-    }
-
-    private void executeCommands(boolean execute) {
-        while (execute) {
-            view.print(MENU_FOR_LIBRARIAN);
-            String option = view.input();
-            try {
-                Operations operate = getClassObject(option);
-                operate.execute();
-            } catch (NullPointerException e) {
-                view.print(ERROR_MESSAGE);
-            }
-        }
     }
 
     public Operations getClassObject(String key) {
@@ -51,12 +37,23 @@ public class LibrarianSession implements Operations {
         input.put("7", new ListCheckedOutItem("7", bookSection, movieSection, view));
         input.put("8", new CheckIn("8", bookSection, movieSection, view, user));
         input.put("9", new UserInformation(user, view));
-        input.put("10", new Logout(app));
         return input.get(key);
     }
 
     @Override
-    public void execute() {
-        executeCommands(true);
+    public void executeCommands(boolean execute) {
+        while (execute) {
+            view.print(MENU_FOR_LIBRARIAN);
+            String option = view.input();
+            try {
+                Operations operate = getClassObject(option);
+                if (Objects.equals(option, "10"))
+                    execute = false;
+                else
+                    operate.execute();
+            } catch (NullPointerException e) {
+                view.print(ERROR_MESSAGE);
+            }
+        }
     }
 }

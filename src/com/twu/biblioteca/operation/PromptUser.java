@@ -36,12 +36,18 @@ public class PromptUser implements Operations {
         view.print(PASSWORD);
         String password = view.input();
         User user = newUser.authenticate(userID, password);
-        if (user != null) {
-            if (Objects.equals(choice, "3"))
-                new LibrarianSession(view, bookSection, movieSection, app, user).execute();
-            else
-                new CustomerSession(view, bookSection, movieSection, app, user).execute();
-        } else
+        if (user == null)
             view.print(INVALID_USER);
+        else {
+            Session session = buildSession(user);
+            session.executeCommands(true);
+        }
+    }
+
+    private Session buildSession(User user) {
+        if (Objects.equals(choice, "3"))
+            return new LibrarianSession(view, bookSection, movieSection, user);
+        else
+            return new CustomerSession(view, bookSection, movieSection, user);
     }
 }

@@ -32,16 +32,8 @@ public class CustomerSessionTest {
     @Test
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
         CheckOut checkout = new CheckOut("2", bookSection, movieSection, view, user);
-        CustomerSession session = new CustomerSession(view, bookSection, movieSection, app, user);
+        CustomerSession session = new CustomerSession(view, bookSection, movieSection, user);
 
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
-    }
-
-    @Test
-    public void shouldGiveObjectForLogoutClassIfOptionIsLogout() {
-        CustomerSession session = new CustomerSession(view, bookSection, movieSection, app, user);
-        Logout logout = new Logout(app);
-
-        assertEquals(logout.getClass(), session.getClassObject("8").getClass());
     }
 }

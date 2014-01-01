@@ -35,7 +35,7 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
         view = Mockito.mock(View.class);
         CheckOut checkout = new CheckOut("2", bookSection, movieSection, view, user);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
 
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
@@ -43,7 +43,7 @@ public class LibrarianSessionTest {
     @Test
     public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
         View view = new View("1", bookSection, movieSection, in);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
         assertEquals(view.getClass(), session.getClassObject("1").getClass());
     }
 
@@ -51,24 +51,14 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckInClassIfOptionIsCheckIn() {
         View view = Mockito.mock(View.class);
         CheckIn checkIn = new CheckIn("3", bookSection, bookSection, view, user);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
         assertEquals(checkIn.getClass(), session.getClassObject("3").getClass());
-    }
-
-    @Test
-    public void shouldGiveObjectForQuitClassIfOptionIsQuit() {
-        View view = Mockito.mock(View.class);
-        User user = Mockito.mock(User.class);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
-        Logout logout = new Logout(app);
-
-        assertEquals(logout.getClass(), session.getClassObject("10").getClass());
     }
 
     @Test
     public void shouldGiveObjectForListBookClassIfOptionIsListCheckedOutBooks() {
         View view = Mockito.mock(View.class);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection,app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
         ListCheckedOutItem list = new ListCheckedOutItem("4", bookSection, movieSection, view);
 
         assertEquals(list.getClass(), session.getClassObject("4").getClass());
@@ -77,7 +67,7 @@ public class LibrarianSessionTest {
     @Test
     public void shouldGiveObjectForViewClassIfOptionIsListMovieDetails() {
         View view = new View("5", bookSection, movieSection, in);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
 
         assertEquals(view.getClass(), session.getClassObject("5").getClass());
     }
@@ -86,7 +76,7 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOutMovies() {
         View view = Mockito.mock(View.class);
         CheckOut checkout = new CheckOut("6", bookSection, movieSection, view, user);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
 
         assertEquals(checkout.getClass(), session.getClassObject("6").getClass());
     }
@@ -94,7 +84,7 @@ public class LibrarianSessionTest {
     @Test
     public void shouldGiveObjectForCheckedOutItemClassIfOptionIsListCheckedOutMovie() {
         View view = Mockito.mock(View.class);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
         ListCheckedOutItem list = new ListCheckedOutItem("7", bookSection, movieSection, view);
 
         assertEquals(list.getClass(), session.getClassObject("7").getClass());
@@ -104,7 +94,7 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckInClassIfOptionIsCheckInMovie() {
         View view = Mockito.mock(View.class);
         CheckIn checkIn = new CheckIn("8", bookSection, bookSection, view, user);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
 
         assertEquals(checkIn.getClass(), session.getClassObject("8").getClass());
     }
@@ -113,7 +103,7 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForUserInformationClassIfOptionIsMyProfile() {
         View view = Mockito.mock(View.class);
         UserInformation userInfo = new UserInformation(user, view);
-        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, app, user);
+        LibrarianSession session = new LibrarianSession(view, bookSection, movieSection, user);
 
         assertEquals(userInfo.getClass(), session.getClassObject("9").getClass());
     }
