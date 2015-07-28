@@ -24,7 +24,7 @@
              excludes="**/Test.class"/>
     </target>
 
-    <target name="run" depends="compile">
+    <target name="run" depends="createJar">
         <java classname="com.twu.biblioteca.BibliotecaApp">
             <classpath>
                 <pathelement location="lib/app.jar"/>
