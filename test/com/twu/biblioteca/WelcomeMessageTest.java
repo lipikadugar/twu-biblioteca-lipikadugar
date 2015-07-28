@@ -29,6 +29,6 @@ public class WelcomeMessageTest {
 
         message.show();
 
-        assertEquals("Welcome to the Bibliotica..!!\n", outContent.toString());
+        assertEquals("\t!!..Welcome to the Bibliotica..!!\n", outContent.toString());
     }
 }
