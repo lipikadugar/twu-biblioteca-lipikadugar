@@ -1,8 +1,11 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class BibliotecaApp {
 
     public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
         WelcomeMessage message = new WelcomeMessage();
         message.show();
 
@@ -11,9 +14,27 @@ public class BibliotecaApp {
         BookList list = new BookList(bookDetails);
         View view = new View();
 
-        System.out.println("\n==List of Books==");
-        view.display(list);
-        System.out.println("\n==Details of Books==");
-        view.displayDetails(list);
+        while(true) {
+            System.out.println("========================================");
+            System.out.println("\t\tMenu");
+            System.out.println("\t1. List Books");
+            System.out.println("\t2. Book Details");
+            System.out.println("\t3. Quit");
+            System.out.println("Choose a option: ");
+            int option = in.nextInt();
+            System.out.println("========================================");
+
+            switch (option) {
+                case 1: view.display(list);
+                    break;
+                case 2: view.displayDetails(list);
+                    break;
+                case 3: System.exit(0);
+                    break;
+                default:
+                    System.out.println("Select a valid option");
+            }
+        }
+
     }
 }

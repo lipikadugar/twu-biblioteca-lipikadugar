@@ -9,9 +9,8 @@ public class View {
 
         bookList = (ArrayList<String [][]>) list.getDetails();
         for (String[][] details : bookList) {
-            System.out.println(details[0][0]);
-            System.out.println(details[1][0]);
-            System.out.println(details[2][0]);
+            for (int j = 0; j < details[0].length; j++)
+                System.out.println("\t" + (j+1) + ". " + details[j][0]);
         }
     }
 
