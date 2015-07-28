@@ -12,7 +12,7 @@ public class BookList {
         bookList.addAll(book);
     }
 
-    public List<String> showBooks() {
+    public List<String> getBooks() {
         return bookList;
     }
 }

@@ -14,7 +14,7 @@ public class BookListTest {
         ArrayList<String> books = new ArrayList<>(Arrays.asList("Java"));
         BookList list = new BookList(books);
 
-        assertEquals(Arrays.asList("Java"), list.showBooks());
+        assertEquals(Arrays.asList("Java"), list.getBooks());
     }
 
     @Test
@@ -22,6 +22,6 @@ public class BookListTest {
         ArrayList<String> books = new ArrayList<>(Arrays.asList("Java", "C++", "Data Structures"));
         BookList list = new BookList(books);
 
-        assertEquals(Arrays.asList("Java", "C++", "Data Structures"), list.showBooks());
+        assertEquals(Arrays.asList("Java", "C++", "Data Structures"), list.getBooks());
     }
 }

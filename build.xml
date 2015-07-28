@@ -13,7 +13,8 @@
             <classpath location="lib/junit-4.11.jar" path="antBuild"/>
             <test name="com.twu.biblioteca.ExampleTest" haltonfailure="true" haltonerror="true"/>
             <test name="com.twu.biblioteca.WelcomeMessageTest" haltonfailure="true" haltonerror="true"/>
-            <test name="com.twu.biblioteca.WelcomeMessageTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.twu.biblioteca.BookListTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.twu.biblioteca.ViewTest" haltonfailure="true" haltonerror="true"/>
         </junit>
     </target>
 

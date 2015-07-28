@@ -6,10 +6,12 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.Assert.assertEquals;
 
-public class WelcomeMessageTest {
+public class ViewTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
@@ -23,12 +25,17 @@ public class WelcomeMessageTest {
     public void cleanUpStreams() {
         System.setOut(defaultOutStream);
     }
+
     @Test
-    public void shouldDisplayWelcomeMessage() {
-        WelcomeMessage message = new WelcomeMessage();
+    public void displayTheBooksFromArrayList() {
+        ArrayList<String> books = new ArrayList<>(Arrays.asList("Java", "C++", "Data Structures"));
+        BookList list = new BookList(books);
+        View view = new View();
+        books.add("Java");
+        books.add("C++");
 
-        message.show();
+        view.display(list);
 
-        assertEquals("Welcome to the Bibliotica..!!\n", outContent.toString());
+        assertEquals("Java\nC++\nData Structures\n", outContent.toString());
     }
 }
