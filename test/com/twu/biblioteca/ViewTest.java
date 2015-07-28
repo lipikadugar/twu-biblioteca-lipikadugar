@@ -33,7 +33,7 @@ public class ViewTest {
 
         view.display(list);
 
-        assertEquals("Java\nC++\nData Structures\n", outContent.toString());
+        assertEquals("\t1. Java\n\t2. C++\n\t3. Data Structures\n", outContent.toString());
     }
 
     @Test
