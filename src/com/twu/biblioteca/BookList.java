@@ -6,10 +6,10 @@ import java.util.List;
 public class BookList {
     ArrayList<String> bookList;
 
-    public BookList(String book) {
+    public BookList(ArrayList<String> book) {
 
         bookList = new ArrayList<>();
-        bookList.add(book);
+        bookList.addAll(book);
     }
 
     public List<String> showBooks() {
