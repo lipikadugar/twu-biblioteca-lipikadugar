@@ -22,6 +22,11 @@ public class BiblioticaApp {
                     System.out.println(library.checkout(name));
                     break;
                 case 3:
+                    System.out.println("Enter the name of the book to return: ");
+                    name = scan.nextLine();
+                    library.returnBook(name);
+                    break;
+                case 4:
                     System.exit(0);
                     break;
                 default:

@@ -42,4 +42,16 @@ public class Library {
             message = "That book is not available.";
         return message;
     }
+
+    public void returnBook(String bookName) {
+        for (int index = 0; index < books.size(); index++) {
+            HashMap book = books.get(index);
+            String name = ((String) book.get("bookName")).toLowerCase();
+            if (Objects.equals(name, bookName.toLowerCase()) && book.get("availability") == "unavailable") {
+                book.put("availability", "available");
+                break;
+            }
+        }
+        list();
+    }
 }
