@@ -20,4 +20,18 @@ public class Library {
         }
         return name;
     }
+
+    public boolean checkout(String bookName) {
+        for (int index = 0; index < books.size() ; index++)
+        {
+
+            HashMap book = books.get(index);
+            if (book.get("bookName") == bookName) {
+                book.remove("bookName");
+                System.out.println("Successful Checkout");
+                return true;
+            }
+        }
+        return false;
+    }
 }
