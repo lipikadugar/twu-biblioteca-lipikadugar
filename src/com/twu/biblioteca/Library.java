@@ -26,21 +26,16 @@ public class Library {
     }
 
     public String checkout(String bookName) {
-        int index;
-        String message = null;
-        for (index = 0; index < books.size() ; index++)
+        for (int index = 0; index < books.size() ; index++)
         {
             HashMap book = books.get(index);
             String name = ((String) book.get("bookName")).toLowerCase();
             if (Objects.equals(name, bookName.toLowerCase()) && book.get("availability") == "available") {
                 book.put("availability", "unavailable");
-                message = "Thank you! Enjoy the book";
-                break;
+                return "Thank you! Enjoy the book";
             }
         }
-        if(index == books.size())
-            message = "That book is not available.";
-        return message;
+        return "That book is not available.";
     }
 
     public String returnBook(String bookName) {
@@ -52,6 +47,6 @@ public class Library {
                 return "Thank you for returning the book.";
             }
         }
-        return null;
+        return "That is not a valid book to return.";
     }
 }
