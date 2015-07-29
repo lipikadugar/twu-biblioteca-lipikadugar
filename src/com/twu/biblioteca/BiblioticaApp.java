@@ -24,7 +24,7 @@ public class BiblioticaApp {
                 case 3:
                     System.out.println("Enter the name of the book to return: ");
                     name = scan.nextLine();
-                    library.returnBook(name);
+                    System.out.println(library.returnBook(name));
                     break;
                 case 4:
                     System.exit(0);

@@ -137,4 +137,29 @@ public class LibraryTest {
         assertEquals("Java | Oreilly | 1998\n" +
                 "The Da Vinci Code | Dan Brown | 2001\n", library.list());
     }
+
+    @Test
+    public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
+        ArrayList<HashMap> books = new ArrayList<>();
+        HashMap book1 = new HashMap();
+        HashMap book2 = new HashMap();
+
+        book1.put("bookId", 1);
+        book1.put("bookName", "Java");
+        book1.put("author", "Oreilly");
+        book1.put("yearPublished", 1998);
+        book1.put("availability", "available");
+        books.add(book1);
+
+        book2.put("bookId", 2);
+        book2.put("bookName", "The Da Vinci Code");
+        book2.put("author", "Dan Brown");
+        book2.put("yearPublished", 2001);
+        book2.put("availability", "unavailable");
+        books.add(book2);
+
+        Library library = new Library(books);
+
+        assertEquals("Thank you for returning the book.", library.returnBook("The Da Vinci Code"));
+    }
 }
