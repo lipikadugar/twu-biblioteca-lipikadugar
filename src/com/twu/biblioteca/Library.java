@@ -25,17 +25,21 @@ public class Library {
         return bookDetails;
     }
 
-    public void checkout(String bookName) {
-
-        for (int index = 0; index < books.size() ; index++)
+    public String checkout(String bookName) {
+        int index;
+        String message = null;
+        for (index = 0; index < books.size() ; index++)
         {
             HashMap book = books.get(index);
             String name = ((String) book.get("bookName")).toLowerCase();
             if (Objects.equals(name, bookName.toLowerCase()) && book.get("availability") == "available") {
                 book.put("availability", "unavailable");
-                System.out.println("Thank you! Enjoy the book");
+                message = "Thank you! Enjoy the book";
                 break;
             }
         }
+        if(index == books.size())
+            message = "That book is not available.";
+        return message;
     }
 }

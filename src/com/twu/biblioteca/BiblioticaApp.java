@@ -19,7 +19,7 @@ public class BiblioticaApp {
                 case 2:
                     System.out.println("Enter the name of the book to checkout: ");
                     name = scan.nextLine();
-                    library.checkout(name);
+                    System.out.println(library.checkout(name));
                     break;
                 case 3:
                     System.exit(0);
