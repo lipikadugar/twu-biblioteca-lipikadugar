@@ -1,21 +1,27 @@
 package com.twu.biblioteca;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class BiblioticaApp {
 
-    public void start(ArrayList<HashMap> list, View view, Scanner in) {
+    public void start(View view, Library library) {
         view.welcomeMessage();
         while (true) {
             view.displayMenu();
+            String name;
+            Scanner in = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);
             int option = in.nextInt();
             switch (option) {
                 case 1:
-                    view.displayDetails(list);
+                    view.displayDetails(library);
                     break;
                 case 2:
+                    System.out.println("Enter the name of the book to checkout: ");
+                    name = scan.nextLine();
+                    library.checkout(name);
+                    break;
+                case 3:
                     System.exit(0);
                     break;
                 default:

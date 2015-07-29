@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     @Test
-    public void shouldListAllTheBookNamesStoredInLibrary() {
+    public void shouldListTheBookDetailsStoredInLibrary() {
         ArrayList<HashMap> books = new ArrayList<>();
         HashMap book1 = new HashMap();
         HashMap book2 = new HashMap();
@@ -19,17 +19,20 @@ public class LibraryTest {
         book1.put("bookName", "Java");
         book1.put("author", "Oreilly");
         book1.put("yearPublished", 1998);
+        book1.put("availability", "available");
         books.add(book1);
 
         book2.put("bookId", 2);
         book2.put("bookName", "The Da Vinci Code");
         book2.put("author", "Dan Brown");
         book2.put("yearPublished", 2001);
+        book2.put("availability", "available");
         books.add(book2);
 
         Library library = new Library(books);
 
-        assertEquals("Java | The Da Vinci Code", library.list());
+        assertEquals("Java | Oreilly | 1998\n" +
+                "The Da Vinci Code | Dan Brown | 2001\n", library.list());
     }
 
     @Test
@@ -42,16 +45,19 @@ public class LibraryTest {
         book1.put("bookName", "Java");
         book1.put("author", "Oreilly");
         book1.put("yearPublished", 1998);
+        book1.put("availability", "available");
         books.add(book1);
 
         book2.put("bookId", 2);
         book2.put("bookName", "The Da Vinci Code");
         book2.put("author", "Dan Brown");
         book2.put("yearPublished", 2001);
+        book2.put("availability", "available");
         books.add(book2);
 
         Library library = new Library(books);
+        library.checkout("Java");
 
-        assertEquals(true, library.checkout("Java"));
+        assertEquals("The Da Vinci Code | Dan Brown | 2001\n", library.list());
     }
 }

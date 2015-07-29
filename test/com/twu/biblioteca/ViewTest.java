@@ -44,7 +44,8 @@ public class ViewTest {
         assertEquals("=========================================\n" +
                 "\t\tMenu\n" +
                 "\t1. List Book Details\n" +
-                "\t2. Quit\n" +
+                "\t2. Checkout\n" +
+                "\t3. Quit\n" +
                 "=========================================\n" +
                 "Choose a option: \n", outContent.toString());
     }
@@ -68,11 +69,10 @@ public class ViewTest {
         book2.put("yearPublished", 2001);
         books.add(book2);
 
+        Library library = new Library(books);
         View view = new View();
+        String book = library.list();
 
-        view.displayDetails(books);
-
-        assertEquals("Java | Oreilly | 1998\n" +
-                "The Da Vinci Code | Dan Brown | 2001\n", outContent.toString());
+        assertEquals(book, view.displayDetails(library));
     }
 }

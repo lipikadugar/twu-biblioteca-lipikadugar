@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 public class Library {
     private ArrayList<HashMap> books;
@@ -11,27 +12,29 @@ public class Library {
     }
 
     public String list() {
-        String name = (String) books.get(0).get("bookName");
-        for (int index = 1; index < books.size() ; index++)
-        {
+        String bookDetails = "";
+        for (int index = 0; index < books.size(); index++) {
             HashMap book = books.get(index);
-            book.get("bookName");
-            name += " | " + book.get("bookName");
-        }
-        return name;
-    }
-
-    public boolean checkout(String bookName) {
-        for (int index = 0; index < books.size() ; index++)
-        {
-
-            HashMap book = books.get(index);
-            if (book.get("bookName") == bookName) {
-                book.remove("bookName");
-                System.out.println("Successful Checkout");
-                return true;
+            if (book.get("availability") == "available") {
+                String bookName = (String) book.get("bookName");
+                String author = (String) book.get("author");
+                Integer yearPublished = (Integer) book.get("yearPublished");
+                bookDetails += bookName + " | " + author + " | " + yearPublished + "\n";
             }
         }
-        return false;
+        return bookDetails;
+    }
+
+    public void checkout(String bookName) {
+
+        for (int index = 0; index < books.size() ; index++)
+        {
+            HashMap book = books.get(index);
+            String name = ((String) book.get("bookName")).toLowerCase();
+            if (Objects.equals(name, bookName.toLowerCase())) {
+                book.put("availability", "unavailable");
+                break;
+            }
+        }
     }
 }
