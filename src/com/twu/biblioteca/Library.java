@@ -31,8 +31,9 @@ public class Library {
         {
             HashMap book = books.get(index);
             String name = ((String) book.get("bookName")).toLowerCase();
-            if (Objects.equals(name, bookName.toLowerCase())) {
+            if (Objects.equals(name, bookName.toLowerCase()) && book.get("availability") == "available") {
                 book.put("availability", "unavailable");
+                System.out.println("Thank you! Enjoy the book");
                 break;
             }
         }
