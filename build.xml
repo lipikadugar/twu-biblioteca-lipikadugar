@@ -4,6 +4,7 @@
         <javac srcdir="src;test" includeantruntime="true" destdir="antBuild">
             <classpath location="lib/hamcrest-core-1.3.jar"/>
             <classpath location="lib/junit-4.11.jar"/>
+            <classpath location="lib/mockito-core-1.10.19.jar"/>
         </javac>
     </target>
 
@@ -11,9 +12,7 @@
         <junit haltonerror="true" haltonfailure="true" printsummary="true">
             <classpath location="lib/hamcrest-core-1.3.jar" path="antBuild"/>
             <classpath location="lib/junit-4.11.jar" path="antBuild"/>
-            <test name="com.twu.biblioteca.ExampleTest" haltonfailure="true" haltonerror="true"/>
-            <test name="com.twu.biblioteca.WelcomeMessageTest" haltonfailure="true" haltonerror="true"/>
-            <test name="com.twu.biblioteca.BookListTest" haltonfailure="true" haltonerror="true"/>
+            <classpath location="lib/mockito-core-1.10.19.jar"/>
             <test name="com.twu.biblioteca.ViewTest" haltonfailure="true" haltonerror="true"/>
         </junit>
     </target>
@@ -25,7 +24,7 @@
     </target>
 
     <target name="run" depends="createJar">
-        <java classname="com.twu.biblioteca.BibliotecaApp">
+        <java classname="com.twu.biblioteca.Main">
             <classpath>
                 <pathelement location="lib/app.jar"/>
                 <pathelement path="${java.class.path}"/>
