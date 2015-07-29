@@ -14,6 +14,7 @@
             <classpath location="lib/junit-4.11.jar" path="antBuild"/>
             <classpath location="lib/mockito-core-1.10.19.jar"/>
             <test name="com.twu.biblioteca.ViewTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.twu.biblioteca.LibraryTest" haltonfailure="true" haltonerror="true"/>
         </junit>
     </target>
 
