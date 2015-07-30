@@ -11,22 +11,22 @@ public class BiblioticaApp {
             String name;
             Scanner in = new Scanner(System.in);
             Scanner scan = new Scanner(System.in);
-            int option = in.nextInt();
+            String option = in.nextLine();
             switch (option) {
-                case 1:
+                case "1":
                     view.displayDetails(library);
                     break;
-                case 2:
+                case "2":
                     System.out.println("Enter the name of the book to checkout: ");
                     name = scan.nextLine();
                     System.out.println(library.checkout(name));
                     break;
-                case 3:
+                case "3":
                     System.out.println("Enter the name of the book to return: ");
                     name = scan.nextLine();
                     System.out.println(library.returnBook(name));
                     break;
-                case 4:
+                case "4":
                     System.exit(0);
                     break;
                 default:

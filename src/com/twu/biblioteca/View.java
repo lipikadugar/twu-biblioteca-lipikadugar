@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class View {
+public class View implements Operations {
 
     public void welcomeMessage() {
         System.out.print("\t!!..Welcome to the Bibliotica..!!\n");
@@ -21,6 +21,11 @@ public class View {
         String books = book.list();
         System.out.println(books);
         return books;
+    }
+
+    @Override
+    public void execute() {
+
     }
 }
 
