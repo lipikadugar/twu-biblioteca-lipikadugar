@@ -22,4 +22,12 @@ public class BookTest {
 
         assertNotEquals(true, book1.equals(book2));
     }
+
+    @Test
+    public void shouldGiveTheEqualityOfBookNameAndTheBookClass() {
+        Book book1 = new Book("Java", "Oreilly", 1992);
+        String book2 = "Java";
+
+        assertEquals(true, book1.equals(book2));
+    }
 }

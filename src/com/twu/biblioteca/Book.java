@@ -14,12 +14,7 @@ public class Book {
 
     @Override
     public boolean equals(Object thatBook) {
-        if (this == thatBook) return true;
-        if (thatBook == null || getClass() != thatBook.getClass()) return false;
-
-        Book book = (Book) thatBook;
-
-        return !(bookName != null ? !bookName.equals(book.bookName) : book.bookName != null);
+        return bookName.equals(thatBook);
     }
 
     @Override
