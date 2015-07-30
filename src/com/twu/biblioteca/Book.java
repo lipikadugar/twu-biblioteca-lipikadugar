@@ -19,10 +19,7 @@ public class Book {
 
         Book book = (Book) thatBook;
 
-        if (yearPublished != book.yearPublished) return false;
-        if (bookName != null ? !bookName.equals(book.bookName) : book.bookName != null) return false;
-        return !(author != null ? !author.equals(book.author) : book.author != null);
-
+        return !(bookName != null ? !bookName.equals(book.bookName) : book.bookName != null);
     }
 
     @Override
