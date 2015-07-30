@@ -9,6 +9,9 @@ public class Parser {
     public Parser() {
         input = new HashMap<>();
         input.put("listBooks", new View());
+        input.put("checkout", new Checkout());
+        input.put("checkin", new CheckIn());
+        input.put("quit", new QuitApp());
     }
 
     public Operations getClassObject(String key) {
