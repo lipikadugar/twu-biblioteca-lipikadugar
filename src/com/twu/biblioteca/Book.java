@@ -4,24 +4,37 @@ public class Book {
     private final String bookName;
     private final String author;
     private final int yearPublished;
+    private boolean status;
 
-    public Book(String bookName, String author, int yearPublished) {
+    public Book(String bookName, String author, int yearPublished, boolean status) {
 
-        this.bookName = bookName;
+        this.bookName = bookName.toUpperCase();
         this.author = author;
         this.yearPublished = yearPublished;
+        this.status = status;
     }
 
-    @Override
-    public boolean equals(Object thatBook) {
-        return bookName.equals(thatBook);
+    public boolean equals(String thatBook) {
+        return bookName.equals(thatBook.toUpperCase());
     }
 
-    @Override
-    public int hashCode() {
-        int result = bookName != null ? bookName.hashCode() : 0;
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + yearPublished;
-        return result;
+    public boolean getStatus() {
+        return status;
+    }
+
+    public String getName() {
+        return bookName.toUpperCase();
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public int getYearPublished() {
+        return yearPublished;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
