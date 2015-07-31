@@ -6,12 +6,9 @@ public class Parser {
 
     private HashMap<String, Operations> input;
 
-    public Parser() {
+    public Parser(Library library) {
         input = new HashMap<>();
-        input.put("listBooks", new View());
-        input.put("checkout", new Checkout());
-        input.put("checkin", new CheckIn());
-        input.put("quit", new QuitApp());
+        input.put("1", new View(library));
     }
 
     public Operations getClassObject(String key) {

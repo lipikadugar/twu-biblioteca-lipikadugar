@@ -10,41 +10,37 @@ public class Library {
     }
 
     public String list() {
-        String bookDetails = "";
-        for (int index = 0; index < books.size(); index++) {
-            Book book = books.get(index);
+        String bookDetails = String.format("%-32s %-32s %-16s\n\n", "Book Name", "Author", "Year Published");
+        for (Book book : books) {
             if (book.getStatus()) {
                 String bookName = book.getName();
                 String author = book.getAuthor();
                 Integer yearPublished = book.getYearPublished();
-                bookDetails += bookName + " | " + author + " | " + yearPublished + "\n";
+                bookDetails += String.format("%-32s %-32s %-16s\n", bookName, author, yearPublished);
             }
         }
         return bookDetails;
     }
 
-    public boolean checkout(String bookName) {
-        for (int index = 0; index < books.size() ; index++)
-        {
-            Book book = books.get(index);
+    public String checkout(String bookName) {
+        for (Book book : books) {
             String name = book.getName();
             if (name.equals(bookName.toUpperCase()) && (book.getStatus())) {
                 book.setStatus(false);
-                return true;
+                return "Thank you! Enjoy the book";
             }
         }
-        return false;
+        return "That book is not available.";
     }
 
-    public boolean returnBook(String bookName) {
-        for (int index = 0; index < books.size(); index++) {
-            Book book = books.get(index);
+    public String returnBook(String bookName) {
+        for (Book book : books) {
             String name = book.getName();
             if (name.equals(bookName.toUpperCase()) && !(book.getStatus())) {
                 book.setStatus(true);
-                return true;
+                return "Thank you for returning the book.";
             }
         }
-       return false;
+       return "That is not a valid book to return.";
     }
 }

@@ -2,6 +2,12 @@ package com.twu.biblioteca;
 
 public class View implements Operations {
 
+    private Library library;
+
+    public View(Library library) {
+        this.library = library;
+    }
+
     public void welcomeMessage() {
         System.out.print("\t!!..Welcome to the Bibliotica..!!\n");
     }
@@ -17,15 +23,10 @@ public class View implements Operations {
         System.out.println("Choose a option: ");
     }
 
-    public String displayDetails(Library book) {
-        String books = book.list();
-        System.out.println(books);
-        return books;
-    }
-
     @Override
     public void execute() {
-
+        System.out.println(library.list());
+        return;
     }
 }
 

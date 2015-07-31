@@ -12,9 +12,11 @@ public class BiblioticaApp {
             Scanner in = new Scanner(System.in);
             Scanner scan = new Scanner(System.in);
             String option = in.nextLine();
+            Parser parse = new Parser(library);
             switch (option) {
                 case "1":
-                    view.displayDetails(library);
+                    Operations operate = parse.getClassObject(option);
+                    operate.execute();
                     break;
                 case "2":
                     System.out.println("Enter the name of the book to checkout: ");

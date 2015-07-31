@@ -16,9 +16,9 @@ public class Main {
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
         books.add(bookDetails);
 
-        View view = new View();
         BiblioticaApp app = new BiblioticaApp();
         Library library = new Library(books);
+        View view = new View(library);
         app.start(view, library);
     }
 }

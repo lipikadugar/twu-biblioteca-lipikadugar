@@ -29,26 +29,33 @@ public class LibraryTest {
 
     @Test
     public void shouldListTheBookDetailsStoredInLibrary() {
-        assertEquals("JAVA | Oreilly | 1998\n" + "THE DA VINCI CODE | Dan Brown | 2005\n" + "THE FAMOUS FIVE | Enid Blyton | 1993\n" + "FIVE POINT SOMEONE | Chetan Bhagat | 2010\n", library.list());
+        assertEquals("Book Name                        Author                           Year Published  \n" +
+                "\n" +
+                "JAVA                             Oreilly                          1998            \n" +
+                "THE DA VINCI CODE                Dan Brown                        2005            \n" +
+                "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
+                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
     }
 
     @Test
     public void shouldBeAbleToCheckoutAnAvailableBook() {
         library.checkout("Java");
 
-        assertEquals("THE DA VINCI CODE | Dan Brown | 2005\n" +
-                "THE FAMOUS FIVE | Enid Blyton | 1993\n" +
-                "FIVE POINT SOMEONE | Chetan Bhagat | 2010\n", library.list());
+        assertEquals("Book Name                        Author                           Year Published  \n" +
+                "\n" +
+                "THE DA VINCI CODE                Dan Brown                        2005            \n" +
+                "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
+                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
     }
 
     @Test
     public void shouldDisplayMessageOnSuccessfulCheckout() {
-        assertEquals(true, library.checkout("Java"));
+        assertEquals("Thank you! Enjoy the book", library.checkout("Java"));
     }
 
     @Test
     public void shouldDisplayMessageWhenBookIsNotAvailable() {
-        assertEquals(false, library.checkout("Data Structures"));
+        assertEquals("That book is not available.", library.checkout("Data Structures"));
     }
 
     @Test
@@ -56,20 +63,25 @@ public class LibraryTest {
         library.checkout("The Da Vinci Code");
         library.returnBook("The Da Vinci Code");
 
-        assertEquals("JAVA | Oreilly | 1998\n" + "THE DA VINCI CODE | Dan Brown | 2005\n" + "THE FAMOUS FIVE | Enid Blyton | 1993\n" + "FIVE POINT SOMEONE | Chetan Bhagat | 2010\n", library.list());
+        assertEquals("Book Name                        Author                           Year Published  \n" +
+                "\n" +
+                "JAVA                             Oreilly                          1998            \n" +
+                "THE DA VINCI CODE                Dan Brown                        2005            \n" +
+                "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
+                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
     }
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
         library.checkout("The Da Vinci Code");
 
-        assertEquals(true, library.returnBook("The Da Vinci Code"));
+        assertEquals("Thank you for returning the book.", library.returnBook("The Da Vinci Code"));
     }
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnFailingToReturn() {
         library.checkout("The Da Vinci Code");
 
-        assertEquals(false, library.returnBook("The Famous Five"));
+        assertEquals("That is not a valid book to return.", library.returnBook("The Famous Five"));
     }
 }
