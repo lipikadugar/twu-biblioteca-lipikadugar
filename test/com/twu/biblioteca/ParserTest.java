@@ -53,7 +53,7 @@ public class ParserTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
-        InvalidOption invalid = new InvalidOption();
+        InvalidOption invalid = new InvalidOption(view);
         assertEquals(invalid.getClass(), parse.getClassObject(null).getClass());
     }
 }

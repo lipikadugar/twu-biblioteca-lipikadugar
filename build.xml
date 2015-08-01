@@ -25,6 +25,7 @@
             <test name="com.twu.biblioteca.BookTest" haltonfailure="true" haltonerror="true"/>
             <test name="com.twu.biblioteca.CheckOutTest" haltonfailure="true" haltonerror="true"/>
             <test name="com.twu.biblioteca.CheckInTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.twu.biblioteca.InvalidOptionTest" haltonfailure="true" haltonerror="true"/>
         </junit>
     </target>
 
