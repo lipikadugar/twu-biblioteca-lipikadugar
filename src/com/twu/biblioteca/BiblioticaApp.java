@@ -25,7 +25,8 @@ public class BiblioticaApp {
                     operate.execute();
                     break;
                 case "4":
-                    System.exit(0);
+                    operate = parse.getClassObject(option);
+                    operate.execute();
                     break;
                 default:
                     System.out.println("Select a valid option");
