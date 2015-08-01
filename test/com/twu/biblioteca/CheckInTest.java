@@ -23,7 +23,7 @@ public class CheckInTest {
     public void setUp() {
         System.setOut(new PrintStream(outContent));
         books = new ArrayList<>();
-        bookDetails = new Book("Java", "Oreilly", 1998, true);
+        bookDetails = new Book("Java", "Oreilly", 1998, false);
         books.add(bookDetails);
         bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, true);
         books.add(bookDetails);
@@ -49,7 +49,7 @@ public class CheckInTest {
         checkIn.execute();
 
         assertEquals("Enter the book name to return: \n" +
-                "Thank you! Enjoy the book.\n", outContent.toString());
+                "Thank you for returning the book.\n", outContent.toString());
     }
 
     @Test

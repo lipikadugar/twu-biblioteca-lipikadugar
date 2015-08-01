@@ -33,14 +33,14 @@ public class Library {
         return false;
     }
 
-    public String returnBook(String bookName) {
+    public boolean returnBook(String bookName) {
         for (Book book : books) {
             String name = book.getName();
             if (name.equals(bookName.toUpperCase()) && !(book.getStatus())) {
                 book.setStatus(true);
-                return "Thank you for returning the book.";
+                return true;
             }
         }
-       return "That is not a valid book to return.";
+       return false;
     }
 }

@@ -13,8 +13,8 @@ public class CheckIn implements Operations {
     public void execute() {
         View.printMessage("Enter the book name to return: ");
         String bookName = view.inputBook();
-        if (library.checkout(bookName)) {
-            System.out.println("Thank you! Enjoy the book.");
+        if (library.returnBook(bookName)) {
+            System.out.println("Thank you for returning the book.");
         }
         else
             System.out.println("That is not a valid book to return.");

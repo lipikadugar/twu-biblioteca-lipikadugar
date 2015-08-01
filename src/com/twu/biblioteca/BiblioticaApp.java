@@ -8,9 +8,7 @@ public class BiblioticaApp {
         view.welcomeMessage();
         while (true) {
             view.displayMenu();
-            String name;
             Scanner in = new Scanner(System.in);
-            Scanner scan = new Scanner(System.in);
             String option = in.nextLine();
             Parser parse = new Parser(library, view);
             switch (option) {
@@ -23,9 +21,8 @@ public class BiblioticaApp {
                     operate.execute();
                     break;
                 case "3":
-                    System.out.println("Enter the name of the book to return: ");
-                    name = scan.nextLine();
-                    System.out.println(library.returnBook(name));
+                    operate = parse.getClassObject(option);
+                    operate.execute();
                     break;
                 case "4":
                     System.exit(0);

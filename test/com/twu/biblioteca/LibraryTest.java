@@ -75,13 +75,13 @@ public class LibraryTest {
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
         library.checkout("The Da Vinci Code");
 
-        assertEquals("Thank you for returning the book.", library.returnBook("The Da Vinci Code"));
+        assertEquals(true, library.returnBook("The Da Vinci Code"));
     }
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnFailingToReturn() {
         library.checkout("The Da Vinci Code");
 
-        assertEquals("That is not a valid book to return.", library.returnBook("The Famous Five"));
+        assertEquals(false, library.returnBook("The Famous Five"));
     }
 }
