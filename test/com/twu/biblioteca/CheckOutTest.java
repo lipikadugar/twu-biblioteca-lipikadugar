@@ -51,4 +51,16 @@ public class CheckOutTest {
 
         assertEquals("Thank you for returning the book.\n", outContent.toString());
     }
+
+    @Test
+    public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturn() {
+        View view = Mockito.mock(View.class);
+
+        when(view.inputBook()).thenReturn("The Shadow God");
+        CheckOut checkOut = new CheckOut(library, view);
+
+        checkOut.execute();
+
+        assertEquals("That book is not available.\n", outContent.toString());
+    }
 }

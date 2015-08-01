@@ -15,5 +15,7 @@ public class CheckOut implements Operations {
         if (library.checkout(bookName)) {
             System.out.println("Thank you for returning the book.");
         }
+        else
+            System.out.println("That book is not available.");
     }
 }
