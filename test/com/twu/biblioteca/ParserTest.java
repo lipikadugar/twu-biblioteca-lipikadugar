@@ -47,4 +47,13 @@ public class ParserTest {
         QuitApp quit = new QuitApp();
         assertEquals(quit.getClass(), parse.getClassObject("4").getClass());
     }
+
+    @Test
+    public void shouldGiveObjectForInvalidOptionClassIfOptionIsNotAvailable() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        Parser parse = new Parser(library, view);
+        InvalidOption invalid = new InvalidOption();
+        assertEquals(invalid.getClass(), parse.getClassObject(null).getClass());
+    }
 }
