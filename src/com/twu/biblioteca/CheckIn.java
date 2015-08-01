@@ -17,6 +17,6 @@ public class CheckIn implements Operations {
             System.out.println("Thank you! Enjoy the book.");
         }
         else
-            System.out.println("null");
+            System.out.println("That is not a valid book to return.");
     }
 }

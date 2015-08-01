@@ -51,4 +51,17 @@ public class CheckInTest {
         assertEquals("Enter the book name to return: \n" +
                 "Thank you! Enjoy the book.\n", outContent.toString());
     }
+
+    @Test
+    public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturn() {
+        View view = Mockito.mock(View.class);
+
+        when(view.inputBook()).thenReturn("The Shadow God");
+        CheckIn checkIn = new CheckIn(library, view);
+
+        checkIn.execute();
+
+        assertEquals("Enter the book name to return: \n" +
+                "That is not a valid book to return.\n", outContent.toString());
+    }
 }
