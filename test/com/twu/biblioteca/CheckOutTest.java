@@ -49,7 +49,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        assertEquals("Thank you for returning the book.\n", outContent.toString());
+        assertEquals("Thank you! Enjoy the book.\n", outContent.toString());
     }
 
     @Test

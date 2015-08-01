@@ -13,7 +13,7 @@ public class CheckOut implements Operations {
     public void execute() {
         String bookName = view.inputBook();
         if (library.checkout(bookName)) {
-            System.out.println("Thank you for returning the book.");
+            System.out.println("Thank you! Enjoy the book.");
         }
         else
             System.out.println("That book is not available.");

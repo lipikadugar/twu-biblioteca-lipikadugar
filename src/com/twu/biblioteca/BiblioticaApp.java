@@ -19,12 +19,8 @@ public class BiblioticaApp {
                     operate.execute();
                     break;
                 case "2":
-                    System.out.println("Enter the name of the book to checkout: ");
-                    name = scan.nextLine();
-                    if (library.checkout(name))
-                        System.out.println("Thank you! Enjoy the book");
-                    else
-                        System.out.println("That book is not available.");
+                    operate = parse.getClassObject(option);
+                    operate.execute();
                     break;
                 case "3":
                     System.out.println("Enter the name of the book to return: ");

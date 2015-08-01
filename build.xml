@@ -23,6 +23,7 @@
             <test name="com.twu.biblioteca.LibraryTest" haltonfailure="true" haltonerror="true"/>
             <test name="com.twu.biblioteca.ParserTest" haltonfailure="true" haltonerror="true"/>
             <test name="com.twu.biblioteca.BookTest" haltonfailure="true" haltonerror="true"/>
+            <test name="com.twu.biblioteca.CheckOutTest" haltonfailure="true" haltonerror="true"/>
         </junit>
     </target>
 
