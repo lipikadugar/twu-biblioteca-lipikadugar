@@ -7,6 +7,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
@@ -17,6 +18,7 @@ public class ViewTest {
     ArrayList<Book> books;
     Book bookDetails;
     Library library;
+    Scanner in;
 
     @Before
     public void setUp() {
@@ -40,7 +42,7 @@ public class ViewTest {
 
     @Test
     public void shouldDisplayWelcomeMessage() {
-        View view = new View(library);
+        View view = new View(library, in);
 
         view.welcomeMessage();
 
@@ -50,7 +52,7 @@ public class ViewTest {
     @Test
     public void shouldDisplayMenuList() {
 
-        View view = new View(library);
+        View view = new View(library, in);
 
         view.displayMenu();
 
@@ -67,7 +69,7 @@ public class ViewTest {
     @Test
     public void shouldDisplayDetailsOfAllTheBook() {
         Library library = new Library(books);
-        View view = new View(library);
+        View view = new View(library, in);
 
         view.execute();
 

@@ -1,11 +1,15 @@
 package com.twu.biblioteca;
 
+import java.util.Scanner;
+
 public class View implements Operations {
 
     private Library library;
+    private Scanner in;
 
-    public View(Library library) {
+    public View(Library library, Scanner in) {
         this.library = library;
+        this.in = in;
     }
 
     public void welcomeMessage() {
@@ -30,7 +34,8 @@ public class View implements Operations {
     }
 
     public String inputBook() {
-        return null;
+        String bookName = in.nextLine();
+        return bookName;
     }
 }
 

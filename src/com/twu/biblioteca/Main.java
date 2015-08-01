@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
 
@@ -16,9 +17,10 @@ public class Main {
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
         books.add(bookDetails);
 
+        Scanner in = new Scanner(System.in);
         BiblioticaApp app = new BiblioticaApp();
         Library library = new Library(books);
-        View view = new View(library);
+        View view = new View(library, in);
         app.start(view, library);
     }
 }

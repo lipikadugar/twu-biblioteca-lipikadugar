@@ -7,17 +7,32 @@ import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.when;
 
 public class CheckOutTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
+    ArrayList<Book> books;
+    Book bookDetails;
+    Library library;
 
     @Before
     public void setUp() {
         System.setOut(new PrintStream(outContent));
+        books = new ArrayList<>();
+        bookDetails = new Book("Java", "Oreilly", 1998, true);
+        books.add(bookDetails);
+        bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, true);
+        books.add(bookDetails);
+        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, true);
+        books.add(bookDetails);
+        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
+        books.add(bookDetails);
+        library = new Library(books);
     }
 
     @After
@@ -27,8 +42,9 @@ public class CheckOutTest {
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
-        Library library = Mockito.mock(Library.class);
-        View view = new View(library);
+        View view = Mockito.mock(View.class);
+
+        when(view.inputBook()).thenReturn("Java");
         CheckOut checkOut = new CheckOut(library, view);
 
         checkOut.execute();

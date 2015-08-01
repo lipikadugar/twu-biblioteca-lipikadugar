@@ -21,7 +21,10 @@ public class BiblioticaApp {
                 case "2":
                     System.out.println("Enter the name of the book to checkout: ");
                     name = scan.nextLine();
-                    System.out.println(library.checkout(name));
+                    if (library.checkout(name))
+                        System.out.println("Thank you! Enjoy the book");
+                    else
+                        System.out.println("That book is not available.");
                     break;
                 case "3":
                     System.out.println("Enter the name of the book to return: ");
