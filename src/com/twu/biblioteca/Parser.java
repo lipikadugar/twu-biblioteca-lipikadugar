@@ -12,6 +12,7 @@ public class Parser {
         input = new HashMap<>();
         input.put("1", new View(library, in));
         input.put("2", new CheckOut(library, view));
+        input.put("3", new CheckIn(library, view));
     }
 
     public Operations getClassObject(String key) {
