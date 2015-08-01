@@ -12,7 +12,7 @@ public class BiblioticaApp {
             Scanner in = new Scanner(System.in);
             Scanner scan = new Scanner(System.in);
             String option = in.nextLine();
-            Parser parse = new Parser(library);
+            Parser parse = new Parser(library, view);
             switch (option) {
                 case "1":
                     Operations operate = parse.getClassObject(option);

@@ -22,15 +22,15 @@ public class Library {
         return bookDetails;
     }
 
-    public String checkout(String bookName) {
+    public boolean checkout(String bookName) {
         for (Book book : books) {
             String name = book.getName();
             if (name.equals(bookName.toUpperCase()) && (book.getStatus())) {
                 book.setStatus(false);
-                return "Thank you! Enjoy the book";
+                return true;
             }
         }
-        return "That book is not available.";
+        return false;
     }
 
     public String returnBook(String bookName) {

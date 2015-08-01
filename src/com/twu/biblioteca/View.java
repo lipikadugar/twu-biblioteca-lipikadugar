@@ -28,5 +28,9 @@ public class View implements Operations {
         System.out.println(library.list());
         return;
     }
+
+    public String inputBook() {
+        return null;
+    }
 }
 

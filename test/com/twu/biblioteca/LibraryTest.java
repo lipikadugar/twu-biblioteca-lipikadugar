@@ -50,12 +50,12 @@ public class LibraryTest {
 
     @Test
     public void shouldDisplayMessageOnSuccessfulCheckout() {
-        assertEquals("Thank you! Enjoy the book", library.checkout("Java"));
+        assertEquals(true, library.checkout("Java"));
     }
 
     @Test
     public void shouldDisplayMessageWhenBookIsNotAvailable() {
-        assertEquals("That book is not available.", library.checkout("Data Structures"));
+        assertEquals(false, library.checkout("Data Structures"));
     }
 
     @Test

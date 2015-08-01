@@ -2,13 +2,18 @@ package com.twu.biblioteca;
 
 public class CheckOut implements Operations {
     private Library library;
+    private View view;
 
-    public CheckOut(Library library) {
+    public CheckOut(Library library, View view) {
         this.library = library;
+        this.view = view;
     }
 
     @Override
     public void execute() {
-        System.out.println("Thank you for returning the book.");
+        String bookName = view.inputBook();
+        if (library.checkout(bookName)) {
+            System.out.println("Thank you for returning the book.");
+        }
     }
 }

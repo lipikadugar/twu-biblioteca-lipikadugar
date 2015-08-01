@@ -28,7 +28,8 @@ public class CheckOutTest {
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
         Library library = Mockito.mock(Library.class);
-        CheckOut checkOut = new CheckOut(library);
+        View view = new View(library);
+        CheckOut checkOut = new CheckOut(library, view);
 
         checkOut.execute();
 
