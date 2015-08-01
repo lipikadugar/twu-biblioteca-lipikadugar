@@ -28,7 +28,7 @@ public class InvalidOptionTest {
     @Test
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturn() {
         View view = Mockito.mock(View.class);
-        InvalidOption invalidOption= new InvalidOption(view);
+        InvalidOption invalidOption = new InvalidOption(view);
 
         invalidOption.execute();
 

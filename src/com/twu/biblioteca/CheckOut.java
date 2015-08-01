@@ -14,9 +14,9 @@ public class CheckOut implements Operations {
         view.printMessage("Enter the book name to checkout: ");
         String bookName = view.inputBook();
         if (library.checkout(bookName)) {
-            System.out.println("Thank you! Enjoy the book.");
+            view.printMessage("Thank you! Enjoy the book.");
         }
         else
-            System.out.println("That book is not available.");
+            view.printMessage("That book is not available.");
     }
 }

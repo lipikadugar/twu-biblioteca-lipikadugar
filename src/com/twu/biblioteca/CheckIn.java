@@ -1,8 +1,8 @@
 package com.twu.biblioteca;
 
 public class CheckIn implements Operations {
-    private final Library library;
-    private final View view;
+    private Library library;
+    private View view;
 
     public CheckIn(Library library, View view) {
         this.library = library;
@@ -11,12 +11,12 @@ public class CheckIn implements Operations {
 
     @Override
     public void execute() {
-        View.printMessage("Enter the book name to return: ");
+        view.printMessage("Enter the book name to return: ");
         String bookName = view.inputBook();
         if (library.returnBook(bookName)) {
-            System.out.println("Thank you for returning the book.");
+            view.printMessage("Thank you for returning the book.");
         }
         else
-            System.out.println("That is not a valid book to return.");
+            view.printMessage("That is not a valid book to return.");
     }
 }

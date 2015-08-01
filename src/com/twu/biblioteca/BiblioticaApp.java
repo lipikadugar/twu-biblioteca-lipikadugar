@@ -11,25 +11,14 @@ public class BiblioticaApp {
             Scanner in = new Scanner(System.in);
             String option = in.nextLine();
             Parser parse = new Parser(library, view);
-            switch (option) {
-                case "1":
-                    Operations operate = parse.getClassObject(option);
-                    operate.execute();
-                    break;
-                case "2":
-                    operate = parse.getClassObject(option);
-                    operate.execute();
-                    break;
-                case "3":
-                    operate = parse.getClassObject(option);
-                    operate.execute();
-                    break;
-                case "4":
-                    operate = parse.getClassObject(option);
-                    operate.execute();
-                    break;
-                default:
-                    System.out.println("Select a valid option");
+            try {
+                Operations operate = parse.getClassObject(option);
+                operate.execute();
+            }
+            catch (NullPointerException e)
+            {
+                InvalidOption invalid = new InvalidOption(view);
+                invalid.execute();
             }
         }
     }

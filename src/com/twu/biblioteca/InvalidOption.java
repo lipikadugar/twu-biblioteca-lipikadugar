@@ -1,6 +1,6 @@
 package com.twu.biblioteca;
 
-public class InvalidOption implements Operations {
+public class InvalidOption {
 
     private View view;
 
@@ -8,7 +8,6 @@ public class InvalidOption implements Operations {
         this.view = view;
     }
 
-    @Override
     public void execute() {
         view.printMessage("Select a valid option!");
     }
