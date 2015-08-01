@@ -38,4 +38,13 @@ public class ParserTest {
         Parser parse = new Parser(library, view);
         assertEquals(checkIn.getClass(), parse.getClassObject("3").getClass());
     }
+
+    @Test
+    public void shouldGiveObjectForQuitClassIfOptionIsQuit() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        Parser parse = new Parser(library, view);
+        QuitApp quit = new QuitApp();
+        assertEquals(quit.getClass(), parse.getClassObject("4").getClass());
+    }
 }
