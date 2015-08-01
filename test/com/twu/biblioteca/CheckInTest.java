@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-public class CheckOutTest {
-
+public class CheckInTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
     ArrayList<Book> books;
@@ -45,24 +44,11 @@ public class CheckOutTest {
         View view = Mockito.mock(View.class);
 
         when(view.inputBook()).thenReturn("Java");
-        CheckOut checkOut = new CheckOut(library, view);
+        CheckIn checkIn = new CheckIn(library, view);
 
-        checkOut.execute();
+        checkIn.execute();
 
-        assertEquals("Enter the book name to checkout: \n" +
+        assertEquals("Enter the book name to return: \n" +
                 "Thank you! Enjoy the book.\n", outContent.toString());
-    }
-
-    @Test
-    public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturn() {
-        View view = Mockito.mock(View.class);
-
-        when(view.inputBook()).thenReturn("The Shadow God");
-        CheckOut checkOut = new CheckOut(library, view);
-
-        checkOut.execute();
-
-        assertEquals("Enter the book name to checkout: \n" +
-                "That book is not available.\n", outContent.toString());
     }
 }

@@ -11,6 +11,7 @@ public class CheckOut implements Operations {
 
     @Override
     public void execute() {
+        view.printMessage("Enter the book name to checkout: ");
         String bookName = view.inputBook();
         if (library.checkout(bookName)) {
             System.out.println("Thank you! Enjoy the book.");

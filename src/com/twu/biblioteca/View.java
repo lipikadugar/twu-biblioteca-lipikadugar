@@ -34,9 +34,12 @@ public class View implements Operations {
     }
 
     public String inputBook() {
-        System.out.println("Enter the book name to checkout: ");
         String bookName = in.nextLine();
         return bookName;
+    }
+
+    public static void printMessage(String message) {
+        System.out.println(message);
     }
 }
 
