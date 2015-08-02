@@ -27,8 +27,8 @@ public class CheckOut implements Operations {
                 view.print("That book is not available.");
         } else {
             view.print("Enter the movie name to checkout: ");
-            String bookName = view.inputBook();
-            if (library.checkout(bookName.toUpperCase())) {
+            String movieName = view.inputBook();
+            if (library.checkoutMovie(movieName.toUpperCase())) {
                 view.print("Thank you! Enjoy the movie.");
             } else
                 view.print("That movie is not available.");

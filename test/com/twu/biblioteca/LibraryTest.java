@@ -119,4 +119,13 @@ public class LibraryTest {
     public void shouldReturnFalseOnUnSuccessfulCheckoutMovie() {
         assertEquals(false, library.checkoutMovie("Spy".toUpperCase()));
     }
+
+    @Test
+    public void shouldBeAbleToCheckoutAnAvailableMovie() {
+        library.checkoutMovie("Men In Black".toUpperCase());
+
+        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
+                    "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
+                    "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", library.listMovies());
+    }
 }
