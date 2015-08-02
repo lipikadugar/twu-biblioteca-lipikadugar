@@ -69,4 +69,19 @@ public class CheckOutTest {
         verify(view).print("Enter the movie name to checkout: ");
         verify(view).print("Thank you! Enjoy the movie.");
     }
+
+    @Test
+    public void shouldBeAbleToDisplayAMessageOnUnSuccessfulCheckOutOfMovie() {
+        View view = Mockito.mock(View.class);
+        Library library = Mockito.mock(Library.class);
+        when(view.inputBook()).thenReturn("Spy");
+        when(library.checkout("Spy".toUpperCase())).thenReturn(false);
+        CheckOut checkOut = new CheckOut("6", library, view);
+
+        checkOut.execute();
+
+        verify(view).print("Enter the movie name to checkout: ");
+        verify(view).print("That movie is not available.");
+    }
+
 }
