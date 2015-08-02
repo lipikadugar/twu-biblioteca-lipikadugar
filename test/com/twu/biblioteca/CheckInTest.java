@@ -1,5 +1,8 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.CheckIn;
+import com.twu.biblioteca.view.View;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
+
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.Operations;
 
 import java.util.Scanner;
 

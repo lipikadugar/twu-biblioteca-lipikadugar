@@ -1,4 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
+
+import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.Parser;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,7 +25,7 @@ public class Main {
         Library library = new Library(books);
         View view = new View(library, in);
         Parser parser = new Parser(library, view);
-        BiblioticaApp app = new BiblioticaApp(view, in, parser);
+        BibliotecaApp app = new BibliotecaApp(view, in, parser);
         app.start();
     }
 }

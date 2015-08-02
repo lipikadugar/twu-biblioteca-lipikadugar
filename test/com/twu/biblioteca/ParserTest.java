@@ -1,5 +1,11 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.CheckIn;
+import com.twu.biblioteca.operation.CheckOut;
+import com.twu.biblioteca.operation.Parser;
+import com.twu.biblioteca.operation.QuitApp;
+import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;
 
