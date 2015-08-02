@@ -137,4 +137,11 @@ public class LibraryTest {
         assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n", library.checkedOutMovieList());
     }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulReturnOfMovie() {
+        library.checkoutMovie("Chak De India".toUpperCase());
+
+        assertEquals(true, library.returnMovie("Chak De India".toUpperCase()));
+    }
 }

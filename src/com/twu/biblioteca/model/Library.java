@@ -94,4 +94,8 @@ public class Library {
         }
         return movieDetails;
     }
+
+    public boolean returnMovie(String movieName) {
+        return true;
+    }
 }
