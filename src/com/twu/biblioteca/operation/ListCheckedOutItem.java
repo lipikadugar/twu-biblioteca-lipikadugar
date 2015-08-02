@@ -4,11 +4,12 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.view.View;
 
 public class ListCheckedOutItem implements Operations{
+    private String option;
     private Library library;
     private View view;
 
-    public ListCheckedOutItem(Library library, View view) {
-
+    public ListCheckedOutItem(String option, Library library, View view) {
+        this.option = option;
         this.library = library;
         this.view = view;
     }

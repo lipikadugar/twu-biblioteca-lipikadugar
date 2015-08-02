@@ -83,5 +83,4 @@ public class CheckOutTest {
         verify(view).print("Enter the movie name to checkout: ");
         verify(view).print("That movie is not available.");
     }
-
 }

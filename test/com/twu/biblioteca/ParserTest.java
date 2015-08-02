@@ -48,7 +48,7 @@ public class ParserTest {
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
         QuitApp quit = new QuitApp();
-        assertEquals(quit.getClass(), parse.getClassObject("7").getClass());
+        assertEquals(quit.getClass(), parse.getClassObject("8").getClass());
     }
 
     @Test
@@ -56,7 +56,7 @@ public class ParserTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
-        ListCheckedOutItem list = new ListCheckedOutItem(library, view);
+        ListCheckedOutItem list = new ListCheckedOutItem("4", library, view);
         assertEquals(list.getClass(), parse.getClassObject("4").getClass());
     }
 
@@ -77,5 +77,14 @@ public class ParserTest {
 
         Parser parse = new Parser(library, view);
         assertEquals(checkout.getClass(), parse.getClassObject("6").getClass());
+    }
+
+    @Test
+    public void shouldGiveObjectForCheckedOutItemClassIfOptionIsListCheckedOutMovie() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        Parser parse = new Parser(library, view);
+        ListCheckedOutItem list = new ListCheckedOutItem("7", library, view);
+        assertEquals(list.getClass(), parse.getClassObject("7").getClass());
     }
 }

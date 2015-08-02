@@ -59,7 +59,7 @@ public class ListBookTest {
     @Test
     public void shouldListTheAllBooksInTheLibrary() {
         View view = Mockito.mock(View.class);
-        ListCheckedOutItem list = new ListCheckedOutItem(library, view);
+        ListCheckedOutItem list = new ListCheckedOutItem("4", library, view);
 
         list.execute();
 
