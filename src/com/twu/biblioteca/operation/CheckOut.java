@@ -20,14 +20,14 @@ public class CheckOut implements Operations {
     public void execute() {
         if (Objects.equals(option, "2")) {
             view.print("Enter the book name to checkout: ");
-            String bookName = view.inputBook();
+            String bookName = view.input();
             if (library.checkout(bookName.toUpperCase())) {
                 view.print("Thank you! Enjoy the book.");
             } else
                 view.print("That book is not available.");
         } else {
             view.print("Enter the movie name to checkout: ");
-            String movieName = view.inputBook();
+            String movieName = view.input();
             if (library.checkoutMovie(movieName.toUpperCase())) {
                 view.print("Thank you! Enjoy the movie.");
             } else

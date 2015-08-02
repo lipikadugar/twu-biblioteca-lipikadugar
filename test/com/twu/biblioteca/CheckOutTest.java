@@ -15,7 +15,7 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnSuccessfulCheckOut() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
-        when(view.inputBook()).thenReturn("Java");
+        when(view.input()).thenReturn("Java");
         when(library.checkout("Java".toUpperCase())).thenReturn(true);
         CheckOut checkOut = new CheckOut("2", library, view);
 
@@ -29,7 +29,7 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulCheckOut() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
-        when(view.inputBook()).thenReturn("The Shadow God");
+        when(view.input()).thenReturn("The Shadow God");
         when(library.checkout("The Shadow God".toUpperCase())).thenReturn(false);
         CheckOut checkOut = new CheckOut("2", library, view);
 
@@ -43,7 +43,7 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnSuccessfulCheckOutOfMovie() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
-        when(view.inputBook()).thenReturn("Men In Black");
+        when(view.input()).thenReturn("Men In Black");
         when(library.checkout("Men In Black".toUpperCase())).thenReturn(true);
         CheckOut checkOut = new CheckOut("6", library, view);
 
@@ -57,7 +57,7 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulCheckOutOfMovie() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
-        when(view.inputBook()).thenReturn("Spy");
+        when(view.input()).thenReturn("Spy");
         when(library.checkout("Spy".toUpperCase())).thenReturn(false);
         CheckOut checkOut = new CheckOut("6", library, view);
 

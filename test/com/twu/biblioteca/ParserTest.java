@@ -36,7 +36,7 @@ public class ParserTest {
     public void shouldGiveObjectForCheckInClassIfOptionIsCheckIn() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        CheckIn checkIn = new CheckIn(library, view);
+        CheckIn checkIn = new CheckIn("3", library, view);
 
         Parser parse = new Parser(library, view);
         assertEquals(checkIn.getClass(), parse.getClassObject("3").getClass());

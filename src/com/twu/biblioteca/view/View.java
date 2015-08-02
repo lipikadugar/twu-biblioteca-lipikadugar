@@ -57,7 +57,7 @@ public class View implements Operations {
         return header;
     }
 
-    public String inputBook() {
+    public String input() {
         String bookName = in.nextLine();
         return bookName;
     }
