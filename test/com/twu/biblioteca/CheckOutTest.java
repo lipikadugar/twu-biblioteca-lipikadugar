@@ -3,30 +3,13 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.view.View;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class CheckOutTest {
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    PrintStream defaultOutStream = System.out;
-
-    @Before
-    public void setUp() {
-        System.setOut(new PrintStream(outContent));
-    }
-
-    @After
-    public void cleanUpStreams() {
-        System.setOut(defaultOutStream);
-    }
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulCheckOut() {

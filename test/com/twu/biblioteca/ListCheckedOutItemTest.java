@@ -5,9 +5,9 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.operation.ListCheckedOutItem;
 import com.twu.biblioteca.view.View;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -15,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.verify;
 
 public class ListCheckedOutItemTest {
 
@@ -51,6 +50,11 @@ public class ListCheckedOutItemTest {
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
         movies.add(movieDetails);
         library = new Library(books, movies);
+    }
+
+    @After
+    public void cleanUpStreams() {
+        System.setOut(defaultOutStream);
     }
 
     @Test

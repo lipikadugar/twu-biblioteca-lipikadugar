@@ -10,16 +10,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 import static org.mockito.Mockito.verify;
 
 public class ListBookTest {
 
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    PrintStream defaultOutStream = System.out;
     ArrayList<Book> books;
     ArrayList<Movie> movies;
     Book bookDetails;
@@ -27,7 +23,6 @@ public class ListBookTest {
 
     @Before
     public void setUp() throws Exception {
-        System.setOut(new PrintStream(outContent));
         books = new ArrayList<>();
         bookDetails = new Book("Java", "Oreilly", 1998, true);
         books.add(bookDetails);
@@ -49,11 +44,6 @@ public class ListBookTest {
         movies.add(movieDetails);
 
         library = new Library(books, movies);
-    }
-
-    @After
-    public void cleanUpStreams() {
-        System.setOut(defaultOutStream);
     }
 
     @Test
