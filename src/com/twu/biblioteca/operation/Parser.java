@@ -17,7 +17,8 @@ public class Parser {
         input.put("2", new CheckOut(library, view));
         input.put("3", new CheckIn(library, view));
         input.put("4", new ListCheckedOutBooks(library, view));
-        input.put("5", new QuitApp());
+        input.put("5", new View("5", library, in));
+        input.put("6", new QuitApp());
     }
 
     public Operations getClassObject(String key) {
