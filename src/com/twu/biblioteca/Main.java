@@ -18,11 +18,11 @@ public class Main {
         books.add(bookDetails);
 
         Scanner in = new Scanner(System.in);
-        BiblioticaApp app = new BiblioticaApp();
         Library library = new Library(books);
         View view = new View(library, in);
         Parser parser = new Parser(library, view);
-        app.start(view, in, parser);
+        BiblioticaApp app = new BiblioticaApp(view, in, parser);
+        app.start();
     }
 }
 
