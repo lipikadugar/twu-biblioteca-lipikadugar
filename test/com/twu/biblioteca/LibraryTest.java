@@ -16,7 +16,7 @@ public class LibraryTest {
     Library library;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         books = new ArrayList<>();
         bookDetails = new Book("Java", "Oreilly", 1998, true);
         books.add(bookDetails);
@@ -80,5 +80,12 @@ public class LibraryTest {
         library.checkout("The Da Vinci Code".toUpperCase());
 
         assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
+    }
+
+    @Test
+    public void shouldBeAbleListTheCheckedOutBookDetails() {
+        books.get(0).setStatus(false);
+
+        assertEquals("JAVA                             Oreilly                          1998            \n", library.checkedOutList());
     }
 }
