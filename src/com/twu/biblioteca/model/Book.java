@@ -1,9 +1,9 @@
 package com.twu.biblioteca.model;
 
 public class Book {
-    private final String bookName;
-    private final String author;
-    private final int yearPublished;
+    private String bookName;
+    private String author;
+    private int yearPublished;
     private boolean status;
 
     public Book(String bookName, String author, int yearPublished, boolean status) {
