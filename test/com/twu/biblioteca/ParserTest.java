@@ -56,7 +56,7 @@ public class ParserTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
-        ListCheckedOutBooks list = new ListCheckedOutBooks(library, view);
+        ListCheckedOutItem list = new ListCheckedOutItem(library, view);
         assertEquals(list.getClass(), parse.getClassObject("4").getClass());
     }
 
