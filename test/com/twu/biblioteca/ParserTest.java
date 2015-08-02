@@ -16,7 +16,7 @@ public class ParserTest {
     @Test
     public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
         Library library = Mockito.mock(Library.class);
-        View view = new View(library, in);
+        View view = new View("1", library, in);
 
         Parser parse = new Parser(library, view);
         assertEquals(view.getClass(), parse.getClassObject("1").getClass());
@@ -56,7 +56,7 @@ public class ParserTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
-        ListBook list = new ListBook(library, view);
+        ListCheckedOutBooks list = new ListCheckedOutBooks(library, view);
         assertEquals(list.getClass(), parse.getClassObject("4").getClass());
     }
 }

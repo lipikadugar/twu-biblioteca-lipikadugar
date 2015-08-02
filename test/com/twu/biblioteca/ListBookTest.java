@@ -3,7 +3,7 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
-import com.twu.biblioteca.operation.ListBook;
+import com.twu.biblioteca.operation.ListCheckedOutBooks;
 import com.twu.biblioteca.view.View;
 import org.junit.After;
 import org.junit.Before;
@@ -59,7 +59,7 @@ public class ListBookTest {
     @Test
     public void shouldListTheAllBooksInTheLibrary() {
         View view = Mockito.mock(View.class);
-        ListBook list = new ListBook(library, view);
+        ListCheckedOutBooks list = new ListCheckedOutBooks(library, view);
 
         list.execute();
 

@@ -34,7 +34,7 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         Library library = new Library(books, movies);
-        View view = new View(library, in);
+        View view = new View("1", library, in);
         Parser parser = new Parser(library, view);
         BibliotecaApp app = new BibliotecaApp(view, in, parser);
         app.start();

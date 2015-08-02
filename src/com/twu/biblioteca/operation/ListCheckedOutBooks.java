@@ -3,11 +3,11 @@ package com.twu.biblioteca.operation;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.view.View;
 
-public class ListBook implements Operations{
+public class ListCheckedOutBooks implements Operations{
     private Library library;
     private View view;
 
-    public ListBook(Library library, View view) {
+    public ListCheckedOutBooks(Library library, View view) {
 
         this.library = library;
         this.view = view;
