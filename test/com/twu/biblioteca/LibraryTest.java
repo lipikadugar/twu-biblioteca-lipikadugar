@@ -114,4 +114,9 @@ public class LibraryTest {
     public void shouldReturnTrueOnSuccessfulCheckoutMovie() {
         assertEquals(true, library.checkoutMovie("Men In Black".toUpperCase()));
     }
+
+    @Test
+    public void shouldReturnFalseOnUnSuccessfulCheckoutMovie() {
+        assertEquals(false, library.checkoutMovie("Spy".toUpperCase()));
+    }
 }
