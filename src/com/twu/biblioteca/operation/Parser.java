@@ -20,7 +20,8 @@ public class Parser {
         input.put("5", new View("5", library, in));
         input.put("6", new CheckOut("6", library, view));
         input.put("7", new ListCheckedOutItem("7", library, view));
-        input.put("8", new QuitApp());
+        input.put("8", new CheckIn("8", library, view));
+        input.put("9", new QuitApp());
     }
 
     public Operations getClassObject(String key) {
