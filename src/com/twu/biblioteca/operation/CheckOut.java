@@ -7,7 +7,7 @@ public class CheckOut implements Operations {
     private Library library;
     private View view;
 
-    public CheckOut(Library library, View view) {
+    public CheckOut(String option, Library library, View view) {
         this.library = library;
         this.view = view;
     }
