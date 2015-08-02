@@ -78,7 +78,8 @@ public class ViewTest {
                 "\t2. Checkout\n" +
                 "\t3. Return Book\n" +
                 "\t4. List Checked Out Books\n" +
-                "\t5. Quit\n" +
+                "\t5. List Movie Details\n" +
+                "\t6. Quit\n" +
                 "=========================================\n" +
                 "Choose a option: \n", outContent.toString());
     }
