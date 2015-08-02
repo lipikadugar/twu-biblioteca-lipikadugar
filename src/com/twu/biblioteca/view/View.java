@@ -44,7 +44,7 @@ public class View implements Operations {
         return bookName;
     }
 
-    public void printMessage(String message) {
+    public void print(String message) {
         System.out.println("\t" + message);
     }
 }

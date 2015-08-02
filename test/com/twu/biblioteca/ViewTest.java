@@ -47,7 +47,7 @@ public class ViewTest {
     public void shouldDisplayWelcomeMessage() {
         View view = new View(library, in);
 
-        view.printMessage("!!..Welcome to the Bibliotica..!!");
+        view.print("!!..Welcome to the Bibliotica..!!");
 
         assertEquals("\t!!..Welcome to the Bibliotica..!!\n", outContent.toString());
     }

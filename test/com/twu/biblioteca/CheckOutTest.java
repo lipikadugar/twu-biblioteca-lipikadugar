@@ -38,8 +38,8 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).printMessage("Enter the book name to checkout: ");
-        verify(view).printMessage("Thank you! Enjoy the book.");
+        verify(view).print("Enter the book name to checkout: ");
+        verify(view).print("Thank you! Enjoy the book.");
     }
 
     @Test
@@ -52,7 +52,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).printMessage("Enter the book name to checkout: ");
-        verify(view).printMessage("That book is not available.");
+        verify(view).print("Enter the book name to checkout: ");
+        verify(view).print("That book is not available.");
     }
 }

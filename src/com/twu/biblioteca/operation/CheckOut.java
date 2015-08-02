@@ -14,11 +14,11 @@ public class CheckOut implements Operations {
 
     @Override
     public void execute() {
-        view.printMessage("Enter the book name to checkout: ");
+        view.print("Enter the book name to checkout: ");
         String bookName = view.inputBook();
         if (library.checkout(bookName.toUpperCase())) {
-            view.printMessage("Thank you! Enjoy the book.");
+            view.print("Thank you! Enjoy the book.");
         } else
-            view.printMessage("That book is not available.");
+            view.print("That book is not available.");
     }
 }

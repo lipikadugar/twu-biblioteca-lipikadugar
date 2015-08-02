@@ -14,11 +14,11 @@ public class CheckIn implements Operations {
 
     @Override
     public void execute() {
-        view.printMessage("Enter the book name to return: ");
+        view.print("Enter the book name to return: ");
         String bookName = view.inputBook();
         if (library.returnBook(bookName.toUpperCase())) {
-            view.printMessage("Thank you for returning the book.");
+            view.print("Thank you for returning the book.");
         } else
-            view.printMessage("That is not a valid book to return.");
+            view.print("That is not a valid book to return.");
     }
 }

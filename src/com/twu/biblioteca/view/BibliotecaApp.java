@@ -19,7 +19,7 @@ public class BibliotecaApp {
     }
 
     public void start() {
-        view.printMessage("!!..Welcome to the Bibliotica..!!");
+        view.print("!!..Welcome to the Bibliotica..!!");
         while (true) {
             view.displayMenu();
             String option = in.nextLine();
@@ -27,7 +27,7 @@ public class BibliotecaApp {
                 Operations operate = parser.getClassObject(option);
                 operate.execute();
             } catch (NullPointerException e) {
-                view.printMessage("Select a valid option!");
+                view.print("Select a valid option!");
             }
         }
     }

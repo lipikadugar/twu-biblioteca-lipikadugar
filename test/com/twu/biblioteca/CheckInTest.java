@@ -38,8 +38,8 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).printMessage("Enter the book name to return: ");
-        verify(view).printMessage("Thank you for returning the book.");
+        verify(view).print("Enter the book name to return: ");
+        verify(view).print("Thank you for returning the book.");
     }
 
     @Test
@@ -52,7 +52,7 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).printMessage("Enter the book name to return: ");
-        verify(view).printMessage("That is not a valid book to return.");
+        verify(view).print("Enter the book name to return: ");
+        verify(view).print("That is not a valid book to return.");
     }
 }
