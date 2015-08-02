@@ -21,7 +21,8 @@ public class View implements Operations {
         System.out.println("\t1. List Book Details");
         System.out.println("\t2. Checkout");
         System.out.println("\t3. Return Book");
-        System.out.println("\t4. Quit");
+        System.out.println("\t4. List Checked Out Books");
+        System.out.println("\t5. Quit");
         System.out.println("=========================================");
         System.out.println("Choose a option: ");
     }

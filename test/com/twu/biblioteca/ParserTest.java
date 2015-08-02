@@ -1,10 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.operation.Parser;
-import com.twu.biblioteca.operation.QuitApp;
+import com.twu.biblioteca.operation.*;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -51,6 +48,15 @@ public class ParserTest {
         View view = Mockito.mock(View.class);
         Parser parse = new Parser(library, view);
         QuitApp quit = new QuitApp();
-        assertEquals(quit.getClass(), parse.getClassObject("4").getClass());
+        assertEquals(quit.getClass(), parse.getClassObject("5").getClass());
+    }
+
+    @Test
+    public void shouldGiveObjectForListBookClassIfOptionIsListCheckedOutBooks() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        Parser parse = new Parser(library, view);
+        ListBook list = new ListBook(library, view);
+        assertEquals(list.getClass(), parse.getClassObject("4").getClass());
     }
 }
