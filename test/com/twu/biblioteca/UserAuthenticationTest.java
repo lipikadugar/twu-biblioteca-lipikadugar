@@ -14,7 +14,7 @@ public class UserAuthenticationTest {
 
     @Before
     public void setup() {
-        ArrayList<User> users = new ArrayList<User>();
+        users = new ArrayList<>();
         User user1 = new User("123-4567", "!abcd1234");
         users.add(user1);
         User user2 = new User("xyz-abcd", "abcd");
@@ -27,5 +27,13 @@ public class UserAuthenticationTest {
         User newUser = new User("123-4567", "!abcd1234");
 
         assertEquals(true, user.authenticate(newUser));
+    }
+
+    @Test
+    public void shouldReturnFalseIfTheUserCredentialsAreNotMatched() {
+        UserAuthentication user = new UserAuthentication(users);
+        User newUser = new User("123-4567", "!abcd");
+
+        assertEquals(false, user.authenticate(newUser));
     }
 }
