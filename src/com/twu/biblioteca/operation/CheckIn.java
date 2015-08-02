@@ -18,8 +18,7 @@ public class CheckIn implements Operations {
         String bookName = view.inputBook();
         if (library.returnBook(bookName.toUpperCase())) {
             view.printMessage("Thank you for returning the book.");
-        }
-        else
+        } else
             view.printMessage("That is not a valid book to return.");
     }
 }

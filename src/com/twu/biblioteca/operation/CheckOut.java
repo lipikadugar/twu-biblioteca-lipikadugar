@@ -18,8 +18,7 @@ public class CheckOut implements Operations {
         String bookName = view.inputBook();
         if (library.checkout(bookName.toUpperCase())) {
             view.printMessage("Thank you! Enjoy the book.");
-        }
-        else
+        } else
             view.printMessage("That book is not available.");
     }
 }

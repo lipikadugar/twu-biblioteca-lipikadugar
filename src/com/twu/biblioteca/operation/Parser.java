@@ -1,10 +1,6 @@
 package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.operation.Operations;
-import com.twu.biblioteca.operation.QuitApp;
 import com.twu.biblioteca.view.View;
 
 import java.util.HashMap;

@@ -2,7 +2,6 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.operation.Operations;
 import com.twu.biblioteca.operation.Parser;
-import com.twu.biblioteca.view.View;
 
 import java.util.Scanner;
 
@@ -27,9 +26,7 @@ public class BibliotecaApp {
             try {
                 Operations operate = parser.getClassObject(option);
                 operate.execute();
-            }
-            catch (NullPointerException e)
-            {
+            } catch (NullPointerException e) {
                 view.printMessage("Select a valid option!");
             }
         }
