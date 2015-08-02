@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Library {
     private ArrayList<Book> books;
+    private ArrayList<Movie> movies;
 
-    public Library(ArrayList<Book> books) {
+    public Library(ArrayList<Book> books, ArrayList<Movie> movies) {
         this.books = books;
+        this.movies = movies;
     }
 
     public String list() {
@@ -53,5 +55,19 @@ public class Library {
             }
         }
         return bookDetails;
+    }
+
+    public String listMovies() {
+        String movieDetails = "";
+        for (Movie movie : movies) {
+            if (movie.getStatus()) {
+                String movieName = movie.getName();
+                String director = movie.getDirector();
+                Integer releasedYear = movie.getReleaseYear();
+                Integer rating = movie.getRating();
+                movieDetails += String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releasedYear, rating);
+            }
+        }
+        return movieDetails;
     }
 }

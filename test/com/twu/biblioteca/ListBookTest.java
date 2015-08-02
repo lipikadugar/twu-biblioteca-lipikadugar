@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.operation.ListBook;
 import com.twu.biblioteca.view.View;
 import org.junit.After;
@@ -20,6 +21,7 @@ public class ListBookTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
     ArrayList<Book> books;
+    ArrayList<Movie> movies;
     Book bookDetails;
     private Library library;
 
@@ -35,7 +37,18 @@ public class ListBookTest {
         books.add(bookDetails);
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, false);
         books.add(bookDetails);
-        library = new Library(books);
+
+        movies = new ArrayList<>();
+        Movie movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
+        movies.add(movieDetails);
+
+        library = new Library(books, movies);
     }
 
     @After

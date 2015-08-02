@@ -2,6 +2,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.Movie;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +13,9 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     ArrayList<Book> books;
+    ArrayList<Movie> movies;
     Book bookDetails;
+    Movie movieDetails;
     Library library;
 
     @Before
@@ -26,11 +29,22 @@ public class LibraryTest {
         books.add(bookDetails);
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
         books.add(bookDetails);
-        library = new Library(books);
+
+        movies = new ArrayList<>();
+        movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
+        movies.add(movieDetails);
+        library = new Library(books, movies);
     }
 
     @Test
     public void shouldListTheBookDetailsStoredInLibrary() {
+        System.out.println(movies.getClass());
         assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
@@ -87,5 +101,13 @@ public class LibraryTest {
         books.get(0).setStatus(false);
 
         assertEquals("JAVA                             Oreilly                          1998            \n", library.checkedOutList());
+    }
+
+    @Test
+    public void shouldListTheMovieDetailsStoredInLibrary() {
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n" +
+                "CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
+                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", library.listMovies());
     }
 }
