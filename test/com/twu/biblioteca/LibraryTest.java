@@ -144,4 +144,11 @@ public class LibraryTest {
 
         assertEquals(true, library.returnMovie("Chak De India".toUpperCase()));
     }
+
+    @Test
+    public void shouldReturnFalseOnFailingToReturnMovie() {
+        library.checkout("Check De India".toUpperCase());
+
+        assertEquals(false, library.returnMovie("Spy".toUpperCase()));
+    }
 }

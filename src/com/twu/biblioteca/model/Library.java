@@ -96,6 +96,12 @@ public class Library {
     }
 
     public boolean returnMovie(String movieName) {
-        return true;
+        for (Movie movie : movies) {
+            if (movieName.equals(movie.getName()) && !(movie.getStatus())) {
+                movie.setStatus(true);
+                return true;
+            }
+        }
+        return false;
     }
 }
