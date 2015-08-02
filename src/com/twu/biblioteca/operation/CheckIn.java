@@ -30,6 +30,8 @@ public class CheckIn implements Operations {
             String movieName = view.input();
             if (library.returnMovie(movieName.toUpperCase()))
                 view.print("Thank you for returning the movie.");
+            else
+                view.print("That is not a valid movie to return.");
         }
     }
 }

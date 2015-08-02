@@ -52,4 +52,18 @@ public class CheckInTest {
         verify(view).print("Enter the movie name to return: ");
         verify(view).print("Thank you for returning the movie.");
     }
+
+    @Test
+    public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturnOfMovie() {
+        View view = Mockito.mock(View.class);
+        Library library = Mockito.mock(Library.class);
+        when(view.input()).thenReturn("Spy");
+        when(library.returnBook("Spy".toUpperCase())).thenReturn(false);
+        CheckIn checkIn = new CheckIn("8", library, view);
+
+        checkIn.execute();
+
+        verify(view).print("Enter the movie name to return: ");
+        verify(view).print("That is not a valid movie to return.");
+    }
 }
