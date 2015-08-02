@@ -3,6 +3,8 @@ package com.twu.biblioteca.operation;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.view.View;
 
+import java.util.Objects;
+
 public class ListCheckedOutItem implements Operations{
     private String option;
     private Library library;
@@ -16,7 +18,13 @@ public class ListCheckedOutItem implements Operations{
 
     @Override
     public void execute() {
-        String book = library.checkedOutList();
-        view.print(book);
+        if (Objects.equals(option, "4")) {
+            String book = library.checkedOutList();
+            view.print(book);
+        }
+        else {
+            String movie = library.checkedOutMovieList();
+            view.print(movie);
+        }
     }
 }

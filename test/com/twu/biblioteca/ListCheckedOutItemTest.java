@@ -36,22 +36,33 @@ public class ListCheckedOutItemTest {
         books.add(bookDetails);
         bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, false);
         books.add(bookDetails);
-        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, true);
+        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, false);
         books.add(bookDetails);
-        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, false);
+        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
         books.add(bookDetails);
+
+        movies = new ArrayList<>();
+        movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, false);
+        movies.add(movieDetails);
+        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, false);
+        movies.add(movieDetails);
+        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
+        movies.add(movieDetails);
+        library = new Library(books, movies);
     }
 
     @Test
     public void shouldListCheckedOutBookList() {
         Library library = new Library(books, movies);
         View view = new View("4", library, in);
-        ListCheckedOutItem item = new ListCheckedOutItem("4", library, view);
+        ListCheckedOutItem item = new ListCheckedOutItem("7", library, view);
 
         item.execute();
 
-        assertEquals("\tTHE DA VINCI CODE                Dan Brown                        2005            \n" +
-                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n" +
+        assertEquals("\tCHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
                 "\n", outContent.toString());
     }
 }
