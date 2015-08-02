@@ -29,9 +29,7 @@ public class LibraryTest {
 
     @Test
     public void shouldListTheBookDetailsStoredInLibrary() {
-        assertEquals("Book Name                        Author                           Year Published  \n" +
-                "\n" +
-                "JAVA                             Oreilly                          1998            \n" +
+        assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
                 "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
@@ -41,8 +39,7 @@ public class LibraryTest {
     public void shouldBeAbleToCheckoutAnAvailableBook() {
         library.checkout("Java");
 
-        assertEquals("Book Name                        Author                           Year Published  \n" +
-                "\n" +
+        assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
                 "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
@@ -50,22 +47,20 @@ public class LibraryTest {
 
     @Test
     public void shouldDisplayMessageOnSuccessfulCheckout() {
-        assertEquals(true, library.checkout("Java"));
+        assertEquals(true, library.checkout("Java".toUpperCase()));
     }
 
     @Test
     public void shouldDisplayMessageWhenBookIsNotAvailable() {
-        assertEquals(false, library.checkout("Data Structures"));
+        assertEquals(false, library.checkout("Data Structures".toUpperCase()));
     }
 
     @Test
     public void shouldBeAbleToReturnTheBookToTheLibrary() {
-        library.checkout("The Da Vinci Code");
-        library.returnBook("The Da Vinci Code");
+        library.checkout("The Da Vinci Code".toUpperCase());
+        library.returnBook("The Da Vinci Code".toUpperCase());
 
-        assertEquals("Book Name                        Author                           Year Published  \n" +
-                "\n" +
-                "JAVA                             Oreilly                          1998            \n" +
+        assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
                 "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", library.list());
@@ -73,15 +68,15 @@ public class LibraryTest {
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
-        library.checkout("The Da Vinci Code");
+        library.checkout("The Da Vinci Code".toUpperCase());
 
-        assertEquals(true, library.returnBook("The Da Vinci Code"));
+        assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase()));
     }
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnFailingToReturn() {
-        library.checkout("The Da Vinci Code");
+        library.checkout("The Da Vinci Code".toUpperCase());
 
-        assertEquals(false, library.returnBook("The Famous Five"));
+        assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
     }
 }

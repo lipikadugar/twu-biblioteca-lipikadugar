@@ -30,7 +30,7 @@ public class CheckOutTest {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
         when(view.inputBook()).thenReturn("Java");
-        when(library.checkout("Java")).thenReturn(true);
+        when(library.checkout("Java".toUpperCase())).thenReturn(true);
         CheckOut checkOut = new CheckOut(library, view);
 
         checkOut.execute();
@@ -44,7 +44,7 @@ public class CheckOutTest {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
         when(view.inputBook()).thenReturn("The Shadow God");
-        when(library.checkout("The Shadow God")).thenReturn(false);
+        when(library.checkout("The Shadow God".toUpperCase())).thenReturn(false);
         CheckOut checkOut = new CheckOut(library, view);
 
         checkOut.execute();

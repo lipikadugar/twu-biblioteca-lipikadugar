@@ -13,7 +13,7 @@ public class CheckOut implements Operations {
     public void execute() {
         view.printMessage("Enter the book name to checkout: ");
         String bookName = view.inputBook();
-        if (library.checkout(bookName)) {
+        if (library.checkout(bookName.toUpperCase())) {
             view.printMessage("Thank you! Enjoy the book.");
         }
         else

@@ -21,7 +21,8 @@ public class Main {
         BiblioticaApp app = new BiblioticaApp();
         Library library = new Library(books);
         View view = new View(library, in);
-        app.start(view, library);
+        Parser parser = new Parser(library, view);
+        app.start(view, in, parser);
     }
 }
 

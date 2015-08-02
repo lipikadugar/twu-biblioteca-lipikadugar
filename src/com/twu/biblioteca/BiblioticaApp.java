@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class BiblioticaApp {
 
-    public void start(View view, Library library) {
-        view.welcomeMessage();
+    public void start(View view, Scanner in, Parser parse) {
+        view.printMessage("!!..Welcome to the Bibliotica..!!");
         while (true) {
             view.displayMenu();
-            Scanner in = new Scanner(System.in);
             String option = in.nextLine();
-            Parser parse = new Parser(library, view);
             try {
                 Operations operate = parse.getClassObject(option);
                 operate.execute();

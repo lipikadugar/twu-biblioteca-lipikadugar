@@ -13,7 +13,7 @@ public class CheckIn implements Operations {
     public void execute() {
         view.printMessage("Enter the book name to return: ");
         String bookName = view.inputBook();
-        if (library.returnBook(bookName)) {
+        if (library.returnBook(bookName.toUpperCase())) {
             view.printMessage("Thank you for returning the book.");
         }
         else

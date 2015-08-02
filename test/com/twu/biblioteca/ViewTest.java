@@ -44,7 +44,7 @@ public class ViewTest {
     public void shouldDisplayWelcomeMessage() {
         View view = new View(library, in);
 
-        view.welcomeMessage();
+        view.printMessage("!!..Welcome to the Bibliotica..!!");
 
         assertEquals("\t!!..Welcome to the Bibliotica..!!\n", outContent.toString());
     }
@@ -73,7 +73,8 @@ public class ViewTest {
 
         view.execute();
 
-        assertEquals("Book Name                        Author                           Year Published  \n\n" +
+        assertEquals("Book Name                        Author                           Year Published  \n" +
+                "---------                        ------                           --------------  \n\n" +
                 "JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +

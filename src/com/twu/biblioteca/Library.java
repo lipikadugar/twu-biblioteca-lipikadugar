@@ -10,7 +10,7 @@ public class Library {
     }
 
     public String list() {
-        String bookDetails = String.format("%-32s %-32s %-16s\n\n", "Book Name", "Author", "Year Published");
+        String bookDetails = "";
         for (Book book : books) {
             if (book.getStatus()) {
                 String bookName = book.getName();
@@ -24,8 +24,7 @@ public class Library {
 
     public boolean checkout(String bookName) {
         for (Book book : books) {
-            String name = book.getName();
-            if (name.equals(bookName.toUpperCase()) && (book.getStatus())) {
+            if (bookName.equals(book.getName()) && (book.getStatus())) {
                 book.setStatus(false);
                 return true;
             }
@@ -35,12 +34,11 @@ public class Library {
 
     public boolean returnBook(String bookName) {
         for (Book book : books) {
-            String name = book.getName();
-            if (name.equals(bookName.toUpperCase()) && !(book.getStatus())) {
+            if (bookName.equals(book.getName()) && !(book.getStatus())) {
                 book.setStatus(true);
                 return true;
             }
         }
-       return false;
+        return false;
     }
 }

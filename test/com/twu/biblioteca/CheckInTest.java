@@ -30,7 +30,7 @@ public class CheckInTest {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
         when(view.inputBook()).thenReturn("Java");
-        when(library.returnBook("Java")).thenReturn(true);
+        when(library.returnBook("Java".toUpperCase())).thenReturn(true);
         CheckIn checkIn = new CheckIn(library, view);
 
         checkIn.execute();
@@ -44,7 +44,7 @@ public class CheckInTest {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
         when(view.inputBook()).thenReturn("The Shadow God");
-        when(library.returnBook("The Shadow God")).thenReturn(false);
+        when(library.returnBook("The Shadow God".toUpperCase())).thenReturn(false);
         CheckIn checkIn = new CheckIn(library, view);
 
         checkIn.execute();

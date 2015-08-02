@@ -12,10 +12,6 @@ public class View implements Operations {
         this.in = in;
     }
 
-    public void welcomeMessage() {
-        System.out.print("\t!!..Welcome to the Bibliotica..!!\n");
-    }
-
     public void displayMenu() {
         System.out.println("=========================================");
         System.out.println("\t\tMenu");
@@ -29,8 +25,15 @@ public class View implements Operations {
 
     @Override
     public void execute() {
+        System.out.println(header());
         System.out.println(library.list());
         return;
+    }
+
+    private String header() {
+        String header = String.format("%-32s %-32s %-16s\n%-32s %-32s %-16s\n", "Book Name", "Author", "Year Published",
+                "---------", "------", "--------------");
+        return header;
     }
 
     public String inputBook() {
@@ -39,7 +42,7 @@ public class View implements Operations {
     }
 
     public void printMessage(String message) {
-        System.out.println(message);
+        System.out.println("\t" + message);
     }
 }
 
