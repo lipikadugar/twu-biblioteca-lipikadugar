@@ -1,8 +1,10 @@
 package com.twu.biblioteca.model;
 
+import java.util.Objects;
+
 public class User {
-    private final String userID;
-    private final String password;
+    private String userID;
+    private String password;
 
     public User(String userID, String password) {
 
@@ -11,6 +13,6 @@ public class User {
     }
 
     public boolean verify(String userID, String password) {
-        return true;
+        return Objects.equals(userID, this.userID) && Objects.equals(password, this.password);
     }
 }

@@ -12,6 +12,12 @@ public class UserTest {
         User user = new User("123-4567", "!abcd1234");
 
         assertEquals(true, user.verify("123-4567", "!abcd1234"));
+    }
 
+    @Test
+    public void shouldReturnFalseIfTheCredentialsDoesNotMatch() {
+        User user = new User("123-4567", "!abcd1234");
+
+        assertEquals(false, user.verify("122-4567", "!abcd1234"));
     }
 }
