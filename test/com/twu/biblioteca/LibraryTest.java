@@ -44,7 +44,6 @@ public class LibraryTest {
 
     @Test
     public void shouldListTheBookDetailsStoredInLibrary() {
-        System.out.println(movies.getClass());
         assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
@@ -62,12 +61,12 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldDisplayMessageOnSuccessfulCheckout() {
+    public void shouldReturnTrueOnSuccessfulCheckout() {
         assertEquals(true, library.checkout("Java".toUpperCase()));
     }
 
     @Test
-    public void shouldDisplayMessageWhenBookIsNotAvailable() {
+    public void shouldReturnFalseWhenBookIsNotAvailable() {
         assertEquals(false, library.checkout("Data Structures".toUpperCase()));
     }
 
@@ -83,14 +82,14 @@ public class LibraryTest {
     }
 
     @Test
-    public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
+    public void shouldReturnTrueOnSuccessfulReturn() {
         library.checkout("The Da Vinci Code".toUpperCase());
 
         assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase()));
     }
 
     @Test
-    public void shouldBeAbleToDisplayAMessageOnFailingToReturn() {
+    public void shouldReturnFalseOnFailingToReturnBook() {
         library.checkout("The Da Vinci Code".toUpperCase());
 
         assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
@@ -109,5 +108,10 @@ public class LibraryTest {
                 "CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
                 "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", library.listMovies());
+    }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulCheckoutMovie() {
+        assertEquals(true, library.checkoutMovie("Men In Black".toUpperCase()));
     }
 }

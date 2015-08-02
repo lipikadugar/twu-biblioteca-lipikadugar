@@ -70,4 +70,14 @@ public class Library {
         }
         return movieDetails;
     }
+
+    public boolean checkoutMovie(String movieName) {
+        for (Movie movie : movies) {
+            if (movieName.equals(movie.getName()) && (movie.getStatus())) {
+                movie.setStatus(false);
+                return true;
+            }
+        }
+        return false;
+    }
 }
