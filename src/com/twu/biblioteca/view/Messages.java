@@ -1,7 +1,6 @@
 package com.twu.biblioteca.view;
 
 public interface Messages {
-
     String MENU_FOR_LIBRARIAN = "=========================================\n\t\tMenu\n" +
             "\t1. List Book Details\n" +
             "\t2. Checkout\n" +
@@ -14,5 +13,15 @@ public interface Messages {
             "\t9. Quit\n" +
             "=========================================\n" +
             "Choose a option: ";
+
+    String MENU_FOR_USER = "=========================================\n\t\tMenu\n" +
+            "\t1. List Book Details\n" +
+            "\t2. Checkout Book\n" +
+            "\t3. Return Book\n" +
+            "\t5. List Movie Details\n" +
+            "\t6. Checkout Movie\n" +
+            "\t8. Return Movie\n" +
+            "\t9. Quit\n" +
+            "=========================================\n";
     String ERROR_MESSAGE = "Select a valid option!";
 }
