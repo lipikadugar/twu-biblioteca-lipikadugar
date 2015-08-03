@@ -21,7 +21,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).print("Enter the book name to checkout: ");
+        verify(view).print("Enter the book name: ");
         verify(view).print("Thank you! Enjoy the book.");
     }
 
@@ -35,7 +35,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).print("Enter the book name to checkout: ");
+        verify(view).print("Enter the book name: ");
         verify(view).print("That book is not available.");
     }
 
@@ -49,7 +49,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).print("Enter the movie name to checkout: ");
+        verify(view).print("Enter the movie name: ");
         verify(view).print("Thank you! Enjoy the movie.");
     }
 
@@ -63,7 +63,7 @@ public class CheckOutTest {
 
         checkOut.execute();
 
-        verify(view).print("Enter the movie name to checkout: ");
+        verify(view).print("Enter the movie name: ");
         verify(view).print("That movie is not available.");
     }
 }

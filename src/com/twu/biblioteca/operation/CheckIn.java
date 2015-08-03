@@ -5,6 +5,8 @@ import com.twu.biblioteca.view.View;
 
 import java.util.Objects;
 
+import static com.twu.biblioteca.view.Messages.*;
+
 public class CheckIn implements Operations {
     private final String option;
     private Library library;
@@ -19,19 +21,19 @@ public class CheckIn implements Operations {
     @Override
     public void execute() {
         if (Objects.equals(option, "3")) {
-            view.print("Enter the book name to return: ");
+            view.print(PROMPT_BOOK_NAME);
             String bookName = view.input();
             if (library.returnBook(bookName.toUpperCase()))
-                view.print("Thank you for returning the book.");
+                view.print(SUCCESSFUL_BOOK_CHECKIN);
             else
-                view.print("That is not a valid book to return.");
+                view.print(UNSUCCESSFUL_BOOK_CHECKIN);
         } else {
-            view.print("Enter the movie name to return: ");
+            view.print(PROMPT_MOVIE_NAME);
             String movieName = view.input();
             if (library.returnMovie(movieName.toUpperCase()))
-                view.print("Thank you for returning the movie.");
+                view.print(SUCCESSFUL_MOVIE_CHECKIN);
             else
-                view.print("That is not a valid movie to return.");
+                view.print(UNSUCCESSFUL_MOVIE_CHECKIN);
         }
     }
 }

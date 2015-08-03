@@ -5,6 +5,8 @@ import com.twu.biblioteca.view.View;
 
 import java.util.Objects;
 
+import static com.twu.biblioteca.view.Messages.*;
+
 public class CheckOut implements Operations {
     private String option;
     private Library library;
@@ -19,19 +21,19 @@ public class CheckOut implements Operations {
     @Override
     public void execute() {
         if (Objects.equals(option, "2")) {
-            view.print("Enter the book name to checkout: ");
+            view.print(PROMPT_BOOK_NAME);
             String bookName = view.input();
             if (library.checkout(bookName.toUpperCase())) {
-                view.print("Thank you! Enjoy the book.");
+                view.print(SUCCESSFUL_BOOK_CHECKOUT);
             } else
-                view.print("That book is not available.");
+                view.print(UNSUCCESSFUL_BOOK_CHECKOUT);
         } else {
-            view.print("Enter the movie name to checkout: ");
+            view.print(PROMPT_MOVIE_NAME);
             String movieName = view.input();
             if (library.checkoutMovie(movieName.toUpperCase())) {
-                view.print("Thank you! Enjoy the movie.");
+                view.print(SUCCESSFUL_MOVIE_CHECKOUT);
             } else
-                view.print("That movie is not available.");
+                view.print(UNSUCCESSFUL_MOVIE_CHECKOUT);
         }
     }
 }

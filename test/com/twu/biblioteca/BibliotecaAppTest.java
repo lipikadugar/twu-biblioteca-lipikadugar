@@ -1,9 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.view.BibliotecaApp;
-import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;

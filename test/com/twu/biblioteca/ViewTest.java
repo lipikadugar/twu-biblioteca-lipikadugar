@@ -66,28 +66,6 @@ public class ViewTest {
     }
 
     @Test
-    public void shouldDisplayMenuList() {
-
-        View view = new View("1", library, in);
-
-        view.displayMenu();
-
-        assertEquals("=========================================\n" +
-                "\t\tMenu\n" +
-                "\t1. List Book Details\n" +
-                "\t2. Checkout\n" +
-                "\t3. Return Book\n" +
-                "\t4. List Checked Out Books\n" +
-                "\t5. List Movie Details\n" +
-                "\t6. Checkout Movie\n" +
-                "\t7. List Checked Out Movies\n" +
-                "\t8. Return Movie\n" +
-                "\t9. Quit\n" +
-                "=========================================\n" +
-                "Choose a option: \n", outContent.toString());
-    }
-
-    @Test
     public void shouldDisplayDetailsOfAllTheBook() {
         Library library = new Library(books, movies);
         View view = new View("1", library, in);

@@ -5,7 +5,6 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.operation.ListCheckedOutItem;
 import com.twu.biblioteca.view.View;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

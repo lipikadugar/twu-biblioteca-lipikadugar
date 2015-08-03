@@ -21,7 +21,7 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).print("Enter the book name to return: ");
+        verify(view).print("Enter the book name: ");
         verify(view).print("Thank you for returning the book.");
     }
 
@@ -35,7 +35,7 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).print("Enter the book name to return: ");
+        verify(view).print("Enter the book name: ");
         verify(view).print("That is not a valid book to return.");
     }
 
@@ -49,7 +49,7 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).print("Enter the movie name to return: ");
+        verify(view).print("Enter the movie name: ");
         verify(view).print("Thank you for returning the movie.");
     }
 
@@ -63,7 +63,7 @@ public class CheckInTest {
 
         checkIn.execute();
 
-        verify(view).print("Enter the movie name to return: ");
+        verify(view).print("Enter the movie name: ");
         verify(view).print("That is not a valid movie to return.");
     }
 }
