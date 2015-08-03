@@ -59,8 +59,8 @@ public class View implements Operations {
     }
 
     public String input() {
-        String bookName = in.nextLine();
-        return bookName;
+        String name = in.nextLine();
+        return name;
     }
 
     public void print(String message) {

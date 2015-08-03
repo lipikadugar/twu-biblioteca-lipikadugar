@@ -14,4 +14,5 @@ public interface Messages {
             "\t9. Quit\n" +
             "=========================================\n" +
             "Choose a option: ";
+    String ERROR_MESSAGE = "Select a valid option!";
 }

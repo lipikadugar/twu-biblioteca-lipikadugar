@@ -37,6 +37,8 @@ public class Main {
         View view = new View("1", library, in);
         Parser parser = new Parser(library, view);
         BibliotecaApp app = new BibliotecaApp(view, in, parser);
+        LibrarianSession session = new LibrarianSession(view, library);
+        session.start(true);
         app.start();
     }
 }
