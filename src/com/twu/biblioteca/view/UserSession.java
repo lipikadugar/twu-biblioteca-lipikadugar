@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 import static com.twu.biblioteca.view.Messages.*;
 
-public class UserSession {
+public class UserSession implements Operations {
     private View view;
     private Library library;
     private HashMap<String, Operations> input;
@@ -51,5 +51,10 @@ public class UserSession {
         input.put("6", new CheckIn("6", library, view));
         input.put("7", new QuitApp());
         return input.get(key);
+    }
+
+    @Override
+    public void execute() {
+        start(true);
     }
 }

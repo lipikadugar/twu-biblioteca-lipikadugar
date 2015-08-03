@@ -9,7 +9,7 @@ import java.util.Scanner;
 import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
 import static com.twu.biblioteca.view.Messages.MENU_FOR_LIBRARIAN;
 
-public class LibrarianSession {
+public class LibrarianSession implements Operations {
     private View view;
     private Library library;
     private HashMap<String, Operations> input;
@@ -51,5 +51,10 @@ public class LibrarianSession {
         input.put("8", new CheckIn("8", library, view));
         input.put("9", new QuitApp());
         return input.get(key);
+    }
+
+    @Override
+    public void execute() {
+        start(true);
     }
 }

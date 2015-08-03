@@ -35,11 +35,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         Library library = new Library(books, movies);
         View view = new View("1", library, in);
-        Parser parser = new Parser(library, view);
-        BibliotecaApp app = new BibliotecaApp(view, in, parser);
-        LibrarianSession session = new LibrarianSession(view, library);
-        session.start(true);
-        app.start();
+        BibliotecaApp app = new BibliotecaApp(view, in, library);
+        app.start(true);
     }
 }
 

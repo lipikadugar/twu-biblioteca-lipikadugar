@@ -1,34 +1,52 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.operation.Operations;
-import com.twu.biblioteca.operation.Parser;
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.*;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
+import static com.twu.biblioteca.view.Messages.*;
+
 public class BibliotecaApp {
+    private View view;
+    private Library library;
+    private HashMap<String, Operations> input;
+    private Scanner in;
 
-    private final View view;
-    private final Scanner in;
-    private final Parser parser;
-
-    public BibliotecaApp(View view, Scanner in, Parser parser) {
+    public BibliotecaApp(View view, Scanner in, Library library) {
 
         this.view = view;
         this.in = in;
-        this.parser = parser;
+        this.library = library;
     }
 
-    public void start() {
-        view.print("!!..Welcome to the Bibliotica..!!");
-        while (true) {
-            view.displayMenu();
-            String option = in.nextLine();
+    public void start(boolean executeMenu) {
+        view.print(WELCOME_MESSAGE);
+        view.print(LOGIN_MENU);
+        executeCommands(executeMenu);
+    }
+
+    private void executeCommands(boolean execute) {
+        while (execute) {
+            String option = view.input();
             try {
-                Operations operate = parser.getClassObject(option);
+                Operations operate = getClassObject(option);
                 operate.execute();
             } catch (NullPointerException e) {
-                view.print("Select a valid option!");
+                view.print(ERROR_MESSAGE);
             }
+            start(execute);
         }
+    }
+
+    public Operations getClassObject(String key) {
+        input = new HashMap<>();
+        input.put("1", new View("1", library, in));
+        input.put("2", new View("2", library, in));
+        input.put("3", new LibrarianSession(view, library));
+        input.put("4", new UserSession(view, library));
+        input.put("5", new QuitApp());
+        return input.get(key);
     }
 }
