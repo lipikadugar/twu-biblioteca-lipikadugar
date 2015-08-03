@@ -1,18 +1,23 @@
 package com.twu.biblioteca;
 
+import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.CheckOut;
+import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.UserSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 
 public class UserSessionTest {
 
     @Test
     public void shouldDisplayMenuForUser() {
+        Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        UserSession session = new UserSession(view);
+        UserSession session = new UserSession(view, library);
 
         session.start();
 
@@ -25,5 +30,15 @@ public class UserSessionTest {
                 "\t8. Return Movie\n" +
                 "\t9. Quit\n" +
                 "=========================================\n");
+    }
+
+    @Test
+    public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        CheckOut checkout = new CheckOut("2", library, view);
+
+        UserSession session = new UserSession(view, library);
+        assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
 }
