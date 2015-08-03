@@ -35,7 +35,7 @@ public class LibrarianSession {
             } catch (NullPointerException e) {
                 view.print(ERROR_MESSAGE);
             }
-            start(true);
+            start(execute);
         }
     }
 

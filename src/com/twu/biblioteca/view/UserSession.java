@@ -1,12 +1,16 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.*;
+import com.twu.biblioteca.operation.CheckIn;
+import com.twu.biblioteca.operation.CheckOut;
+import com.twu.biblioteca.operation.Operations;
+import com.twu.biblioteca.operation.QuitApp;
 
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.*;
+import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
+import static com.twu.biblioteca.view.Messages.MENU_FOR_USER;
 
 public class UserSession {
     private View view;
@@ -20,8 +24,22 @@ public class UserSession {
         this.library = library;
     }
 
-    public void start() {
+    public void start(boolean executeMenu) {
         view.print(MENU_FOR_USER);
+        executeCommands(executeMenu);
+    }
+
+    private void executeCommands(boolean execute) {
+        while (execute) {
+            String option = view.input();
+            try {
+                Operations operate = getClassObject(option);
+                operate.execute();
+            } catch (NullPointerException e) {
+                view.print(ERROR_MESSAGE);
+            }
+            start(execute);
+        }
     }
 
     public Operations getClassObject(String key) {
