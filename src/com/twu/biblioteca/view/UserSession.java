@@ -9,8 +9,7 @@ import com.twu.biblioteca.operation.QuitApp;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
-import static com.twu.biblioteca.view.Messages.MENU_FOR_USER;
+import static com.twu.biblioteca.view.Messages.*;
 
 public class UserSession {
     private View view;
