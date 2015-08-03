@@ -116,4 +116,18 @@ public class ViewTest {
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
                 "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n\n", outContent.toString());
     }
+
+    @Test
+    public void shouldDisplayLoginScreen() {
+        View view = new View("1", library, in);
+
+        view.loginScreen();
+
+        assertEquals("=========================================\n" +
+                "\t\tLogin\n" +
+                "\t1. Librarian\n" +
+                "\t2. User\n" +
+                "=========================================\n" +
+                "Choose a option: \n", outContent.toString());
+    }
 }
