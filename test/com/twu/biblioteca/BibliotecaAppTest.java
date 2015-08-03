@@ -1,13 +1,16 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.view.BibliotecaApp;
+import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import java.util.Scanner;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.verify;
 
 public class BibliotecaAppTest {
@@ -32,5 +35,14 @@ public class BibliotecaAppTest {
                 "\t5. Quit\n" +
                 "=========================================\n" +
                 "Choose a option: \n");
+    }
+
+    @Test
+    public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
+        Library library = Mockito.mock(Library.class);
+        View view = new View("1", library, in);
+        BibliotecaApp app = new BibliotecaApp(view, in, library);
+
+        assertEquals(view.getClass(), app.getClassObject("1").getClass());
     }
 }
