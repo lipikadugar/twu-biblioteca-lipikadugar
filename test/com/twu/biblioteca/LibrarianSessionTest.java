@@ -1,10 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.operation.ListCheckedOutItem;
-import com.twu.biblioteca.operation.QuitApp;
+import com.twu.biblioteca.operation.*;
+import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
@@ -38,7 +36,7 @@ public class LibrarianSessionTest {
                         "\t6. Checkout Movie\n" +
                         "\t7. List Checked Out Movies\n" +
                         "\t8. Return Movie\n" +
-                        "\t9. Quit\n" +
+                        "\t9. Logout\n" +
                         "=========================================\n" +
                         "Choose a option: "
         );
@@ -77,10 +75,11 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForQuitClassIfOptionIsQuit() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         LibrarianSession session = new LibrarianSession(view, library);
-        QuitApp quit = new QuitApp();
+        Logout logout = new Logout(app);
 
-        assertEquals(quit.getClass(), session.getClassObject("9").getClass());
+        assertEquals(logout.getClass(), session.getClassObject("9").getClass());
     }
 
     @Test

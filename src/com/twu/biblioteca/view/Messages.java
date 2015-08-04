@@ -18,7 +18,7 @@ public interface Messages {
             "\t6. Checkout Movie\n" +
             "\t7. List Checked Out Movies\n" +
             "\t8. Return Movie\n" +
-            "\t9. Quit\n" +
+            "\t9. Logout\n" +
             "=========================================\n" +
             "Choose a option: ";
     String MENU_FOR_USER = "=========================================\n\t\tMenu\n" +
