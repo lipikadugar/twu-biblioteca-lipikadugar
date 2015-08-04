@@ -28,7 +28,7 @@ public interface Messages {
             "\t4. List Movie Details\n" +
             "\t5. Checkout Movie\n" +
             "\t6. Return Movie\n" +
-            "\t7. Quit\n" +
+            "\t7. Logout\n" +
             "=========================================\n";
     String ERROR_MESSAGE = "Select a valid option!";
     String WELCOME_MESSAGE = "!!..Welcome to the Bibliotica..!!";

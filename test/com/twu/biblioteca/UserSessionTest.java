@@ -2,6 +2,9 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.operation.CheckOut;
+import com.twu.biblioteca.operation.Logout;
+import com.twu.biblioteca.view.BibliotecaApp;
+import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.UserSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
@@ -27,7 +30,7 @@ public class UserSessionTest {
                 "\t4. List Movie Details\n" +
                 "\t5. Checkout Movie\n" +
                 "\t6. Return Movie\n" +
-                "\t7. Quit\n" +
+                "\t7. Logout\n" +
                 "=========================================\n");
     }
 
@@ -39,5 +42,16 @@ public class UserSessionTest {
 
         UserSession session = new UserSession(view, library);
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
+    }
+
+    @Test
+    public void shouldGiveObjectForLogoutClassIfOptionIsLogout() {
+        Library library = Mockito.mock(Library.class);
+        View view = Mockito.mock(View.class);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
+        UserSession session = new UserSession(view, library);
+        Logout logout = new Logout(app);
+
+        assertEquals(logout.getClass(), session.getClassObject("7").getClass());
     }
 }

@@ -3,11 +3,8 @@ package com.twu.biblioteca.view;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.operation.Operations;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.Scanner;
-
-import static com.twu.biblioteca.view.Messages.*;
 
 public class View implements Operations {
 
@@ -51,7 +48,7 @@ public class View implements Operations {
     }
 
     public void print(String message) {
-        System.out.println("\t" + message);
+        System.out.println(message);
     }
 
     public void loginScreen() {
