@@ -3,6 +3,7 @@ package com.twu.biblioteca.view;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
+import com.twu.biblioteca.model.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,6 +13,8 @@ public class Main {
     public static void main(String args[]) {
         ArrayList<Book> books = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
+        ArrayList<User> users = new ArrayList<>();
+        ArrayList<User> librarian = new ArrayList<>();
 
         Book bookDetails = new Book("Java", "Oreilly", 1998, true);
         books.add(bookDetails);
@@ -30,6 +33,16 @@ public class Main {
         movies.add(movieDetails);
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
         movies.add(movieDetails);
+
+        User userDetails = new User("000-0000", "!abcd0123");
+        users.add(userDetails);
+        userDetails = new User("000-0001", "!abcd1234");
+        users.add(userDetails);
+
+        User librarianDetails = new User("999-999", "biblioteca");
+        librarian.add(librarianDetails);
+        librarianDetails = new User("999-9998", "biblioteca");
+        librarian.add(librarianDetails);
 
         Scanner in = new Scanner(System.in);
         Library library = new Library(books, movies);
