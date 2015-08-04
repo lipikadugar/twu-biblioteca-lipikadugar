@@ -65,7 +65,7 @@ public class ListCheckedOutItemTest {
 
         item.execute();
 
-        assertEquals("\tCHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
+        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
                 "\n", outContent.toString());
     }

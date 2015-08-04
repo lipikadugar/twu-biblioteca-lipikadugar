@@ -32,7 +32,7 @@ public interface Messages {
             "=========================================\n" +
             "Choose a option: \n";
     String ERROR_MESSAGE = "Select a valid option!";
-    String WELCOME_MESSAGE = "!!..Welcome to the Bibliotica..!!";
+    String WELCOME_MESSAGE = "\t!!..Welcome to the Bibliotica..!!";
     String USER_ID = "Enter user ID : ";
     String PASSWORD = "Enter Password: ";
     String PROMPT_BOOK_NAME = "Enter the book name: ";

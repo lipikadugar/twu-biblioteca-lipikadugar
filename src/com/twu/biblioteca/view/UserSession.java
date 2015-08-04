@@ -1,6 +1,7 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
@@ -11,6 +12,7 @@ import static com.twu.biblioteca.view.Messages.*;
 public class UserSession implements Operations {
     private View view;
     private Library library;
+    private UserAuthentication librarian;
     private HashMap<String, Operations> input;
     Scanner in;
 
@@ -46,7 +48,7 @@ public class UserSession implements Operations {
         input.put("4", new View("4", library, in));
         input.put("5", new CheckOut("5", library, view));
         input.put("6", new CheckIn("6", library, view));
-        input.put("7", new Logout(new BibliotecaApp(view, in, library)));
+        input.put("7", new Logout(new BibliotecaApp(view, in, library, librarian)));
         return input.get(key);
     }
 

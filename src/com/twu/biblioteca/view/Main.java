@@ -1,9 +1,6 @@
 package com.twu.biblioteca.view;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.Movie;
-import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -14,7 +11,7 @@ public class Main {
         ArrayList<Book> books = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
         ArrayList<User> users = new ArrayList<>();
-        ArrayList<User> librarian = new ArrayList<>();
+        ArrayList<User> librarians = new ArrayList<>();
 
         Book bookDetails = new Book("Java", "Oreilly", 1998, true);
         books.add(bookDetails);
@@ -40,14 +37,15 @@ public class Main {
         users.add(userDetails);
 
         User librarianDetails = new User("999-9999", "biblioteca");
-        librarian.add(librarianDetails);
+        librarians.add(librarianDetails);
         librarianDetails = new User("999-9998", "biblioteca");
-        librarian.add(librarianDetails);
+        librarians.add(librarianDetails);
 
         Scanner in = new Scanner(System.in);
+        UserAuthentication librarian = new UserAuthentication(librarians);
         Library library = new Library(books, movies);
         View view = new View("1", library, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, library);
+        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian);
         app.start(true);
     }
 }

@@ -31,7 +31,8 @@ public class UserSessionTest {
                 "\t5. Checkout Movie\n" +
                 "\t6. Return Movie\n" +
                 "\t7. Logout\n" +
-                "=========================================\n");
+                "=========================================\n" +
+                "Choose a option: \n");
     }
 
     @Test
