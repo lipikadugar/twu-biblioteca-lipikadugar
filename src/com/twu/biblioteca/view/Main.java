@@ -43,9 +43,10 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         UserAuthentication librarian = new UserAuthentication(librarians);
+        UserAuthentication user = new UserAuthentication(users);
         Library library = new Library(books, movies);
         View view = new View("1", library, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian);
+        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
         app.start(true);
     }
 }

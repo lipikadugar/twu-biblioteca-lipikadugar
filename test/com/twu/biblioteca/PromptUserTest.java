@@ -40,4 +40,6 @@ public class PromptUserTest {
         verify(view, times(2)).input();
         verify(view).print("The userID and password does not match. Try again.");
     }
+
+
 }

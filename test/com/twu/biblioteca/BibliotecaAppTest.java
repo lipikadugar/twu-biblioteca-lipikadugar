@@ -16,13 +16,14 @@ public class BibliotecaAppTest {
 
     Scanner in;
     private UserAuthentication librarian;
+    private UserAuthentication user;
 
     @Test
     public void shouldDisplayWelcomeMessageAndLoginMenu() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
 
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian);
+        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
 
         app.start(false);
 
@@ -33,7 +34,7 @@ public class BibliotecaAppTest {
     public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
         Library library = Mockito.mock(Library.class);
         View view = new View("1", library, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian);
+        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
 
         assertEquals(view.getClass(), app.getClassObject("1").getClass());
     }

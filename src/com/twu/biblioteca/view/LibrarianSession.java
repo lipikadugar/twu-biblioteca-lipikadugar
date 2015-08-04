@@ -14,6 +14,7 @@ public class LibrarianSession implements Operations {
     private View view;
     private Library library;
     private UserAuthentication librarian;
+    private UserAuthentication user;
     private HashMap<String, Operations> input;
     Scanner in;
 
@@ -51,7 +52,7 @@ public class LibrarianSession implements Operations {
         input.put("6", new CheckOut("6", library, view));
         input.put("7", new ListCheckedOutItem("7", library, view));
         input.put("8", new CheckIn("8", library, view));
-        input.put("9", new Logout(new BibliotecaApp(view, in, library, librarian)));
+        input.put("9", new Logout(new BibliotecaApp(view, in, library, librarian, user)));
         return input.get(key);
     }
 

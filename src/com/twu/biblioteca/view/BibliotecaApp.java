@@ -13,15 +13,17 @@ public class BibliotecaApp {
     private View view;
     private Library library;
     private UserAuthentication librarian;
+    private UserAuthentication user;
     private HashMap<String, Operations> input;
     private Scanner in;
 
-    public BibliotecaApp(View view, Scanner in, Library library, UserAuthentication librarian) {
+    public BibliotecaApp(View view, Scanner in, Library library, UserAuthentication librarian, UserAuthentication user) {
 
         this.view = view;
         this.in = in;
         this.library = library;
         this.librarian = librarian;
+        this.user = user;
     }
 
     public void start(boolean executeMenu) {
