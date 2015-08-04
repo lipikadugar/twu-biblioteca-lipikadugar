@@ -21,4 +21,12 @@ public class User {
     public boolean verify(String userID, String password) {
         return Objects.equals(userID, this.userID) && Objects.equals(password, this.password);
     }
+
+    @Override
+    public String toString() {
+        return  "UserID: " + userID +
+                "\nName: " + name +
+                "\nEmail: " + email +
+                "\nPhone: " + phone ;
+    }
 }

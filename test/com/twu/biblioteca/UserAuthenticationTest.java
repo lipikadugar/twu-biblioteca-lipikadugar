@@ -24,14 +24,18 @@ public class UserAuthenticationTest {
     @Test
     public void shouldAuthenticateAUserWhenCredentialsAreMatched() {
         UserAuthentication user = new UserAuthentication(users);
+        User user1 = user.authenticate("123-4567", "!abcd1234");
 
-        assertEquals(true, user.authenticate("123-4567", "!abcd1234"));
+        assertEquals("UserID: 123-4567\n" +
+                "Name: Lisa\n" +
+                "Email: lisa@gmail.com\n" +
+                "Phone: 7890678341", user1.toString());
     }
 
     @Test
-    public void shouldReturnFalseIfTheUserCredentialsAreNotMatched() {
+    public void shouldReturnNullIfTheUserCredentialsAreNotMatched() {
         UserAuthentication user = new UserAuthentication(users);
 
-        assertEquals(false, user.authenticate("123-4567", "!abcd"));
+        assertEquals(null, user.authenticate("123-4567", "!abcd"));
     }
 }

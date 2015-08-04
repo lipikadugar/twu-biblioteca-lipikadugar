@@ -9,11 +9,11 @@ public class UserAuthentication {
         this.users = users;
     }
 
-    public boolean authenticate(String userID, String password) {
+    public User authenticate(String userID, String password) {
         for (User user : users) {
             if (user.verify(userID, password))
-                return true;
+                return user;
         }
-        return false;
+        return null;
     }
 }

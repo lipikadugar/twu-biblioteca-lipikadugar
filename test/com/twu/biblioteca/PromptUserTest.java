@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.PromptUser;
 import com.twu.biblioteca.view.BibliotecaApp;
@@ -33,8 +34,9 @@ public class PromptUserTest {
         UserAuthentication user = Mockito.mock(UserAuthentication.class);
         Library library = Mockito.mock(Library.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
+        User users = Mockito.mock(User.class);
         PromptUser promptUser = new PromptUser("3", view, user, library, app);
-        when(user.authenticate("999-1234", "password")).thenReturn(false);
+        when(user.authenticate("999-1234", "password")).thenReturn(users);
 
         promptUser.execute();
 

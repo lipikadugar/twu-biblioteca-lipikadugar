@@ -1,10 +1,9 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.operation.Logout;
-import com.twu.biblioteca.operation.Operations;
+import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.UserAuthentication;
+import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
 import java.util.Scanner;
@@ -16,14 +15,16 @@ public class CustomerSession implements Operations {
     private View view;
     private Library library;
     private BibliotecaApp app;
+    private User user;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public CustomerSession(View view, Library library, BibliotecaApp app) {
+    public CustomerSession(View view, Library library, BibliotecaApp app, User user) {
 
         this.view = view;
         this.library = library;
         this.app = app;
+        this.user = user;
     }
 
     private void executeCommands(boolean execute) {
@@ -47,7 +48,8 @@ public class CustomerSession implements Operations {
         input.put("4", new View("4", library, in));
         input.put("5", new CheckOut("5", library, view));
         input.put("6", new CheckIn("6", library, view));
-        input.put("7", new Logout(app));
+        input.put("7", new UserInformation(user, view));
+        input.put("8", new Logout(app));
         return input.get(key);
     }
 

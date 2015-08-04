@@ -1,6 +1,8 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
@@ -13,14 +15,16 @@ public class LibrarianSession implements Operations {
     private View view;
     private Library library;
     private BibliotecaApp app;
+    private User user;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public LibrarianSession(View view, Library library, BibliotecaApp app) {
+    public LibrarianSession(View view, Library library, BibliotecaApp app, User user) {
 
         this.view = view;
         this.library = library;
         this.app = app;
+        this.user = user;
     }
 
     private void executeCommands(boolean execute) {

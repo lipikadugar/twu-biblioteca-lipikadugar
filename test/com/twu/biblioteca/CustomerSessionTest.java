@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.operation.Logout;
 import com.twu.biblioteca.view.BibliotecaApp;
@@ -19,8 +21,8 @@ public class CustomerSessionTest {
         View view = Mockito.mock(View.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         CheckOut checkout = new CheckOut("2", library, view);
-
-        CustomerSession session = new CustomerSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        CustomerSession session = new CustomerSession(view, library, app, user);
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
 
@@ -29,9 +31,10 @@ public class CustomerSessionTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        CustomerSession session = new CustomerSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        CustomerSession session = new CustomerSession(view, library, app, user);
         Logout logout = new Logout(app);
 
-        assertEquals(logout.getClass(), session.getClassObject("7").getClass());
+        assertEquals(logout.getClass(), session.getClassObject("8").getClass());
     }
 }

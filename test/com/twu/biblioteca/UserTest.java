@@ -11,7 +11,7 @@ public class UserTest {
     public void shouldReturnTrueForTheCredentialsGiven() {
         User user = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
 
-        assertEquals(true, user.verify("000-0000", "!abcd0234"));
+        assertEquals(true, user.verify("000-0000", "!abcd0123"));
     }
 
     @Test

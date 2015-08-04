@@ -28,7 +28,8 @@ public interface Messages {
             "\t4. List Movie Details\n" +
             "\t5. Checkout Movie\n" +
             "\t6. Return Movie\n" +
-            "\t7. Logout\n" +
+            "\t7. My Profile\n" +
+            "\t8. Logout\n" +
             "=========================================\n" +
             "Choose a option: \n";
     String ERROR_MESSAGE = "Select a valid option!";

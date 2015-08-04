@@ -1,6 +1,8 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.CheckIn;
 import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.operation.ListCheckedOutItem;
@@ -25,7 +27,8 @@ public class LibrarianSessionTest {
         View view = Mockito.mock(View.class);
         CheckOut checkout = new CheckOut("2", library, view);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
 
@@ -34,7 +37,8 @@ public class LibrarianSessionTest {
         Library library = Mockito.mock(Library.class);
         View view = new View("1", library, in);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         assertEquals(view.getClass(), session.getClassObject("1").getClass());
     }
 
@@ -44,7 +48,8 @@ public class LibrarianSessionTest {
         View view = Mockito.mock(View.class);
         CheckIn checkIn = new CheckIn("3", library, view);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         assertEquals(checkIn.getClass(), session.getClassObject("3").getClass());
     }
 
@@ -53,7 +58,8 @@ public class LibrarianSessionTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         Logout logout = new Logout(app);
 
         assertEquals(logout.getClass(), session.getClassObject("9").getClass());
@@ -64,7 +70,8 @@ public class LibrarianSessionTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         ListCheckedOutItem list = new ListCheckedOutItem("4", library, view);
 
         assertEquals(list.getClass(), session.getClassObject("4").getClass());
@@ -75,7 +82,8 @@ public class LibrarianSessionTest {
         Library library = Mockito.mock(Library.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         View view = new View("5", library, in);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(view.getClass(), session.getClassObject("5").getClass());
     }
@@ -86,7 +94,8 @@ public class LibrarianSessionTest {
         View view = Mockito.mock(View.class);
         CheckOut checkout = new CheckOut("6", library, view);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(checkout.getClass(), session.getClassObject("6").getClass());
     }
@@ -96,7 +105,8 @@ public class LibrarianSessionTest {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
         ListCheckedOutItem list = new ListCheckedOutItem("7", library, view);
 
         assertEquals(list.getClass(), session.getClassObject("7").getClass());
@@ -108,7 +118,8 @@ public class LibrarianSessionTest {
         View view = Mockito.mock(View.class);
         CheckIn checkIn = new CheckIn("8", library, view);
         BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        LibrarianSession session = new LibrarianSession(view, library, app);
+        User user = Mockito.mock(User.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(checkIn.getClass(), session.getClassObject("8").getClass());
     }
