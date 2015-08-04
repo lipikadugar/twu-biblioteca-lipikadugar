@@ -31,4 +31,11 @@ public class BookTest {
 
         assertEquals(true, book1.equals(book2));
     }
+
+    @Test
+    public void shouldDisplayBookDetails() {
+        Book book = new Book("Java", "Oreilly", 1992, true);
+
+        assertEquals("JAVA                             Oreilly                          1992            \n", book.toString());
+    }
 }

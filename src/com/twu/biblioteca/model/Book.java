@@ -18,6 +18,11 @@ public class Book {
         return bookName.equals(thatBook.toUpperCase());
     }
 
+    @Override
+    public String toString() {
+        return String.format("%-32s %-32s %-16s\n", bookName, author, yearPublished);
+    }
+
     public boolean getStatus() {
         return status;
     }
