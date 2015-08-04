@@ -2,8 +2,9 @@ package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.UserAuthentication;
-import com.twu.biblioteca.operation.Operations;
 import com.twu.biblioteca.view.View;
+
+import static com.twu.biblioteca.view.Messages.*;
 
 public class PromptUser implements Operations {
     private final View view;
@@ -18,6 +19,9 @@ public class PromptUser implements Operations {
 
     @Override
     public void execute() {
-
+        view.print(USER_ID);
+        String userID = view.input();
+        view.print(PASSWORD);
+        String password = view.input();
     }
 }
