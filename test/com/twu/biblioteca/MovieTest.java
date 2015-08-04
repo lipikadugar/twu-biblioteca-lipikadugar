@@ -31,4 +31,11 @@ public class MovieTest {
 
         assertEquals(true, movie1.equals(movie2));
     }
+
+    @Test
+    public void shouldDisplayMovieDetails() {
+        Movie movie = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n", movie.toString());
+    }
 }

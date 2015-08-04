@@ -31,14 +31,6 @@ public class Book {
         return bookName.toUpperCase();
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public int getYearPublished() {
-        return yearPublished;
-    }
-
     public void setStatus(boolean status) {
         this.status = status;
     }

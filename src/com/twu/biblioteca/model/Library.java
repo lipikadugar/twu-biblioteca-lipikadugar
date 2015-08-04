@@ -15,10 +15,7 @@ public class Library {
         String bookDetails = "";
         for (Book book : books) {
             if (book.getStatus()) {
-                String bookName = book.getName();
-                String author = book.getAuthor();
-                Integer yearPublished = book.getYearPublished();
-                bookDetails += String.format("%-32s %-32s %-16s\n", bookName, author, yearPublished);
+                bookDetails += book.toString();
             }
         }
         return bookDetails;

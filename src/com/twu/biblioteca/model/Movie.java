@@ -42,4 +42,9 @@ public class Movie {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releaseYear, rating);
+    }
 }
