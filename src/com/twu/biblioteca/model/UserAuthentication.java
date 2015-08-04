@@ -9,9 +9,9 @@ public class UserAuthentication {
         this.users = users;
     }
 
-    public boolean authenticate(User newUser) {
+    public boolean authenticate(String userID, String password) {
         for (User user : users) {
-            if (user.verify(newUser.getUserID(), newUser.getPassword()))
+            if (user.verify(userID, password))
                 return true;
         }
         return false;
