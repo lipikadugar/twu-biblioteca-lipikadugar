@@ -3,6 +3,7 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.PromptUser;
+import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -16,7 +17,8 @@ public class PromptUserTest {
         View view = Mockito.mock(View.class);
         UserAuthentication librarian = Mockito.mock(UserAuthentication.class);
         Library library = Mockito.mock(Library.class);
-        PromptUser promptUser = new PromptUser(view, librarian, library);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
+        PromptUser promptUser = new PromptUser("3", view, librarian, library, app);
 
         promptUser.execute();
 
@@ -30,7 +32,8 @@ public class PromptUserTest {
         View view = Mockito.mock(View.class);
         UserAuthentication user = Mockito.mock(UserAuthentication.class);
         Library library = Mockito.mock(Library.class);
-        PromptUser promptUser = new PromptUser(view, user, library);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
+        PromptUser promptUser = new PromptUser("3", view, user, library, app);
         when(user.authenticate("999-1234", "password")).thenReturn(false);
 
         promptUser.execute();
@@ -40,6 +43,4 @@ public class PromptUserTest {
         verify(view, times(2)).input();
         verify(view).print("The userID and password does not match. Try again.");
     }
-
-
 }

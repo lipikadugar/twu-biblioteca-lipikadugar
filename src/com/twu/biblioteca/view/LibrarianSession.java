@@ -1,7 +1,6 @@
 package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.*;
 
 import java.util.HashMap;
@@ -13,24 +12,20 @@ import static com.twu.biblioteca.view.Messages.MENU_FOR_LIBRARIAN;
 public class LibrarianSession implements Operations {
     private View view;
     private Library library;
-    private UserAuthentication librarian;
-    private UserAuthentication user;
+    private BibliotecaApp app;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public LibrarianSession(View view, Library library) {
+    public LibrarianSession(View view, Library library, BibliotecaApp app) {
 
         this.view = view;
         this.library = library;
-    }
-
-    public void start(boolean executeMenu) {
-        view.print(MENU_FOR_LIBRARIAN);
-        executeCommands(executeMenu);
+        this.app = app;
     }
 
     private void executeCommands(boolean execute) {
         while (execute) {
+            view.print(MENU_FOR_LIBRARIAN);
             String option = view.input();
             try {
                 Operations operate = getClassObject(option);
@@ -38,7 +33,6 @@ public class LibrarianSession implements Operations {
             } catch (NullPointerException e) {
                 view.print(ERROR_MESSAGE);
             }
-            start(execute);
         }
     }
 
@@ -52,12 +46,12 @@ public class LibrarianSession implements Operations {
         input.put("6", new CheckOut("6", library, view));
         input.put("7", new ListCheckedOutItem("7", library, view));
         input.put("8", new CheckIn("8", library, view));
-        input.put("9", new Logout(new BibliotecaApp(view, in, library, librarian, user)));
+        input.put("9", new Logout(app));
         return input.get(key);
     }
 
     @Override
     public void execute() {
-        start(true);
+        executeCommands(true);
     }
 }

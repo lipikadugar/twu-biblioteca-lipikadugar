@@ -50,14 +50,5 @@ public class View implements Operations {
     public void print(String message) {
         System.out.println(message);
     }
-
-    public void loginScreen() {
-        System.out.println("=========================================");
-        System.out.println("\t\tLogin");
-        System.out.println("\t1. Librarian");
-        System.out.println("\t2. User");
-        System.out.println("=========================================");
-        System.out.println("Choose a option: ");
-    }
 }
 

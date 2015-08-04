@@ -27,18 +27,6 @@ public class Movie {
         return movieName.toUpperCase();
     }
 
-    public String getDirector() {
-        return director;
-    }
-
-    public int getReleaseYear() {
-        return releaseYear;
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
     public void setStatus(boolean status) {
         this.status = status;
     }

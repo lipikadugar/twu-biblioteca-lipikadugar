@@ -10,7 +10,7 @@ public class Main {
     public static void main(String args[]) {
         ArrayList<Book> books = new ArrayList<>();
         ArrayList<Movie> movies = new ArrayList<>();
-        ArrayList<User> users = new ArrayList<>();
+        ArrayList<User> customers = new ArrayList<>();
         ArrayList<User> librarians = new ArrayList<>();
 
         Book bookDetails = new Book("Java", "Oreilly", 1998, true);
@@ -32,9 +32,9 @@ public class Main {
         movies.add(movieDetails);
 
         User userDetails = new User("000-0000", "!abcd0123");
-        users.add(userDetails);
+        customers.add(userDetails);
         userDetails = new User("000-0001", "!abcd1234");
-        users.add(userDetails);
+        customers.add(userDetails);
 
         User librarianDetails = new User("999-9999", "biblioteca");
         librarians.add(librarianDetails);
@@ -43,10 +43,10 @@ public class Main {
 
         Scanner in = new Scanner(System.in);
         UserAuthentication librarian = new UserAuthentication(librarians);
-        UserAuthentication user = new UserAuthentication(users);
+        UserAuthentication customer = new UserAuthentication(customers);
         Library library = new Library(books, movies);
         View view = new View("1", library, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
+        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, customer);
         app.start(true);
     }
 }

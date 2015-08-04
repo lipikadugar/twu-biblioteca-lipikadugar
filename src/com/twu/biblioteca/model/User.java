@@ -15,12 +15,4 @@ public class User {
     public boolean verify(String userID, String password) {
         return Objects.equals(userID, this.userID) && Objects.equals(password, this.password);
     }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public String getPassword() {
-        return password;
-    }
 }

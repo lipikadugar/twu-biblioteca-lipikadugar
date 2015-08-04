@@ -13,17 +13,17 @@ public class BibliotecaApp {
     private View view;
     private Library library;
     private UserAuthentication librarian;
-    private UserAuthentication user;
+    private UserAuthentication customer;
     private HashMap<String, Operations> input;
     private Scanner in;
 
-    public BibliotecaApp(View view, Scanner in, Library library, UserAuthentication librarian, UserAuthentication user) {
+    public BibliotecaApp(View view, Scanner in, Library library, UserAuthentication librarian, UserAuthentication customer) {
 
         this.view = view;
         this.in = in;
         this.library = library;
         this.librarian = librarian;
-        this.user = user;
+        this.customer = customer;
     }
 
     public void start(boolean executeMenu) {
@@ -33,7 +33,7 @@ public class BibliotecaApp {
 
     private void executeCommands(boolean execute) {
         while (execute) {
-        view.print(LOGIN_MENU);
+            view.print(LOGIN_MENU);
             String option = view.input();
             try {
                 Operations operate = getClassObject(option);
@@ -48,8 +48,8 @@ public class BibliotecaApp {
         input = new HashMap<>();
         input.put("1", new View("1", library, in));
         input.put("2", new View("2", library, in));
-        input.put("3", new PromptUser(view, librarian, library));
-        input.put("4", new UserSession(view, library));
+        input.put("3", new PromptUser("3", view, librarian, library, this));
+        input.put("4", new PromptUser("4", view, customer, library, this));
         input.put("5", new QuitApp());
         return input.get(key);
     }

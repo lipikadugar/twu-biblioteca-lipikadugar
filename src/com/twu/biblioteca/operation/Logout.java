@@ -3,14 +3,14 @@ package com.twu.biblioteca.operation;
 import com.twu.biblioteca.view.BibliotecaApp;
 
 public class Logout implements Operations {
-    private BibliotecaApp bibliotecaApp;
+    private BibliotecaApp app;
 
-    public Logout(BibliotecaApp bibliotecaApp) {
-        this.bibliotecaApp = bibliotecaApp;
+    public Logout(BibliotecaApp app) {
+        this.app = app;
+
     }
-
     @Override
     public void execute() {
-        bibliotecaApp.start(true);
+        app.start(true);
     }
 }
