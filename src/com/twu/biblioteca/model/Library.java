@@ -55,11 +55,7 @@ public class Library {
         String movieDetails = "";
         for (Movie movie : movies) {
             if (movie.getStatus()) {
-                String movieName = movie.getName();
-                String director = movie.getDirector();
-                Integer releasedYear = movie.getReleaseYear();
-                Integer rating = movie.getRating();
-                movieDetails += String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releasedYear, rating);
+                movieDetails += movie.toString();
             }
         }
         return movieDetails;
@@ -79,11 +75,7 @@ public class Library {
         String movieDetails = "";
         for (Movie movie : movies) {
             if (!movie.getStatus()) {
-                String movieName = movie.getName();
-                String director = movie.getDirector();
-                Integer releasedYear = movie.getReleaseYear();
-                Integer rating = movie.getRating();
-                movieDetails += String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releasedYear, rating);
+                movieDetails += movie.toString();
             }
         }
         return movieDetails;
