@@ -39,7 +39,7 @@ public class Main {
         userDetails = new User("000-0001", "!abcd1234");
         users.add(userDetails);
 
-        User librarianDetails = new User("999-999", "biblioteca");
+        User librarianDetails = new User("999-9999", "biblioteca");
         librarian.add(librarianDetails);
         librarianDetails = new User("999-9998", "biblioteca");
         librarian.add(librarianDetails);

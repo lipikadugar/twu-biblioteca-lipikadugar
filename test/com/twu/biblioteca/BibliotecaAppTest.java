@@ -25,14 +25,6 @@ public class BibliotecaAppTest {
         app.start(false);
 
         verify(view).print("!!..Welcome to the Bibliotica..!!");
-        verify(view).print("=========================================\n" +
-                "\t1. List Books\n" +
-                "\t2. List Movies\n" +
-                "\t3. Login as Librarian\n" +
-                "\t4. Login as User\n" +
-                "\t5. Quit\n" +
-                "=========================================\n" +
-                "Choose a option: \n");
     }
 
     @Test

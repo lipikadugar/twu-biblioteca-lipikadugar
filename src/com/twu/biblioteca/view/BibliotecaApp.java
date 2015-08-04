@@ -23,12 +23,12 @@ public class BibliotecaApp {
 
     public void start(boolean executeMenu) {
         view.print(WELCOME_MESSAGE);
-        view.print(LOGIN_MENU);
         executeCommands(executeMenu);
     }
 
     private void executeCommands(boolean execute) {
         while (execute) {
+        view.print(LOGIN_MENU);
             String option = view.input();
             try {
                 Operations operate = getClassObject(option);
@@ -36,7 +36,6 @@ public class BibliotecaApp {
             } catch (NullPointerException e) {
                 view.print(ERROR_MESSAGE);
             }
-            start(execute);
         }
     }
 

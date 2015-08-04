@@ -32,17 +32,17 @@ public interface Messages {
             "=========================================\n";
     String ERROR_MESSAGE = "Select a valid option!";
     String WELCOME_MESSAGE = "!!..Welcome to the Bibliotica..!!";
-        String USER_ID = "Enter user ID : ";
-        String PASSWORD = "Enter Password: ";
-        String PROMPT_BOOK_NAME = "Enter the book name: ";
-        String SUCCESSFUL_BOOK_CHECKIN = "Thank you for returning the book.";
-        String UNSUCCESSFUL_BOOK_CHECKIN = "That is not a valid book to return.";
-        String PROMPT_MOVIE_NAME = "Enter the movie name: ";
-        String SUCCESSFUL_MOVIE_CHECKIN = "Thank you for returning the movie.";
-        String UNSUCCESSFUL_MOVIE_CHECKIN = "That is not a valid movie to return.";
-        String SUCCESSFUL_BOOK_CHECKOUT = "Thank you! Enjoy the book.";
-        String UNSUCCESSFUL_BOOK_CHECKOUT = "That book is not available.";
-        String SUCCESSFUL_MOVIE_CHECKOUT = "Thank you! Enjoy the movie.";
-        String UNSUCCESSFUL_MOVIE_CHECKOUT = "That movie is not available.";
-
+    String USER_ID = "Enter user ID : ";
+    String PASSWORD = "Enter Password: ";
+    String PROMPT_BOOK_NAME = "Enter the book name: ";
+    String SUCCESSFUL_BOOK_CHECKIN = "Thank you for returning the book.";
+    String UNSUCCESSFUL_BOOK_CHECKIN = "That is not a valid book to return.";
+    String PROMPT_MOVIE_NAME = "Enter the movie name: ";
+    String SUCCESSFUL_MOVIE_CHECKIN = "Thank you for returning the movie.";
+    String UNSUCCESSFUL_MOVIE_CHECKIN = "That is not a valid movie to return.";
+    String SUCCESSFUL_BOOK_CHECKOUT = "Thank you! Enjoy the book.";
+    String UNSUCCESSFUL_BOOK_CHECKOUT = "That book is not available.";
+    String SUCCESSFUL_MOVIE_CHECKOUT = "Thank you! Enjoy the movie.";
+    String UNSUCCESSFUL_MOVIE_CHECKOUT = "That movie is not available.";
+    String INVALID_USER = "The userID and password does not match. Try again.";
 }
