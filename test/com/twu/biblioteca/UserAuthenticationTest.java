@@ -15,9 +15,9 @@ public class UserAuthenticationTest {
     @Before
     public void setup() {
         users = new ArrayList<>();
-        User user1 = new User("123-4567", "!abcd1234");
+        User user1 = new User("123-4567", "!abcd1234", "Lisa", "lisa@gmail.com", "7890678341");
         users.add(user1);
-        User user2 = new User("xyz-abcd", "abcd");
+        User user2 = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
         users.add(user2);
     }
 

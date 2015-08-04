@@ -18,7 +18,7 @@ import static org.junit.Assert.assertEquals;
 public class LibrarianSessionTest {
 
     Scanner in;
-    
+
     @Test
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
         Library library = Mockito.mock(Library.class);

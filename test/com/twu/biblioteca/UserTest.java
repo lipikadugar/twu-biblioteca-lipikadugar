@@ -9,15 +9,15 @@ public class UserTest {
 
     @Test
     public void shouldReturnTrueForTheCredentialsGiven() {
-        User user = new User("123-4567", "!abcd1234");
+        User user = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
 
-        assertEquals(true, user.verify("123-4567", "!abcd1234"));
+        assertEquals(true, user.verify("000-0000", "!abcd0234"));
     }
 
     @Test
     public void shouldReturnFalseIfTheCredentialsDoesNotMatch() {
-        User user = new User("123-4567", "!abcd1234");
+        User user = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
 
-        assertEquals(false, user.verify("122-4567", "!abcd1234"));
+        assertEquals(false, user.verify("000-00000", "!abcd0234"));
     }
 }

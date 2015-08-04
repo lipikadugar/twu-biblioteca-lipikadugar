@@ -31,14 +31,14 @@ public class Main {
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
         movies.add(movieDetails);
 
-        User userDetails = new User("000-0000", "!abcd0123");
+        User userDetails = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
         customers.add(userDetails);
-        userDetails = new User("000-0001", "!abcd1234");
+        userDetails = new User("000-0001", "!abcd1234", "Maxell", "mxell@yahoo.com", "9834509291");
         customers.add(userDetails);
 
-        User librarianDetails = new User("999-9999", "biblioteca");
+        User librarianDetails = new User("999-9999", "biblioteca", "Lipika", "lipikadugar@gmail.com", "9492376517");
         librarians.add(librarianDetails);
-        librarianDetails = new User("999-9998", "biblioteca");
+        librarianDetails = new User("999-9998", "biblioteca", "Yasmin", "yasmin@gmail.com", "7431348475");
         librarians.add(librarianDetails);
 
         Scanner in = new Scanner(System.in);
