@@ -50,7 +50,8 @@ public class LibrarianSession implements Operations {
         input.put("6", new CheckOut("6", library, view));
         input.put("7", new ListCheckedOutItem("7", library, view));
         input.put("8", new CheckIn("8", library, view));
-        input.put("9", new Logout(app));
+        input.put("9", new UserInformation(user, view));
+        input.put("10", new Logout(app));
         return input.get(key);
     }
 

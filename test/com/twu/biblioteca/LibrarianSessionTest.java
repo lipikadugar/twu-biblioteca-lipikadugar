@@ -3,10 +3,7 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.model.UserAuthentication;
-import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.operation.ListCheckedOutItem;
-import com.twu.biblioteca.operation.Logout;
+import com.twu.biblioteca.operation.*;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;
@@ -62,7 +59,7 @@ public class LibrarianSessionTest {
         LibrarianSession session = new LibrarianSession(view, library, app, user);
         Logout logout = new Logout(app);
 
-        assertEquals(logout.getClass(), session.getClassObject("9").getClass());
+        assertEquals(logout.getClass(), session.getClassObject("10").getClass());
     }
 
     @Test
@@ -122,5 +119,17 @@ public class LibrarianSessionTest {
         LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(checkIn.getClass(), session.getClassObject("8").getClass());
+    }
+
+    @Test
+    public void shouldGiveObjectForUserInformationClassIfOptionIsMyProfile() {
+        Library library = Mockito.mock(Library.class);
+        User user = Mockito.mock(User.class);
+        View view = Mockito.mock(View.class);
+        UserInformation userInfo = new UserInformation(user, view);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
+        LibrarianSession session = new LibrarianSession(view, library, app, user);
+
+        assertEquals(userInfo.getClass(), session.getClassObject("9").getClass());
     }
 }
