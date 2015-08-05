@@ -41,13 +41,13 @@ public class ListCheckedOutItemTest {
         books.add(bookDetails);
 
         movies = new ArrayList<>();
-        movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+        movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, false);
+        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, false, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, false);
+        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, false, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
+        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true, "");
         movies.add(movieDetails);
         library = new Library(books, movies);
     }

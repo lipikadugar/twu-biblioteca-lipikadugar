@@ -40,13 +40,13 @@ public class ViewTest {
         books.add(bookDetails);
 
         movies = new ArrayList<>();
-        Movie movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true);
+        Movie movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, true);
+        movieDetails = new Movie("Chak De India", "Shimit Amin", 2007, 8, true, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, true);
+        movieDetails = new Movie("3 Idiots", "RajKumar Hirani", 2009, 9, true, "");
         movies.add(movieDetails);
-        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true);
+        movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true, "");
         movies.add(movieDetails);
 
         library = new Library(books, movies);

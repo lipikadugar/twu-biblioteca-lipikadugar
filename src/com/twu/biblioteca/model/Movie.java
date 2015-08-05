@@ -1,13 +1,16 @@
 package com.twu.biblioteca.model;
 
 public class Movie {
+    private final String issuedBy;
     private String movieName;
     private String director;
     private int releaseYear;
     private int rating;
     private boolean status;
+    private String detailsOfTheMovieIncludingIssuedBy;
 
-    public Movie(String bookName, String author, int yearPublished, int rating, boolean status) {
+    public Movie(String bookName, String author, int yearPublished, int rating, boolean status, String issuedBy) {
+        this.issuedBy = issuedBy;
         this.movieName = bookName.toUpperCase();
         this.director = author;
         this.releaseYear = yearPublished;
@@ -34,5 +37,9 @@ public class Movie {
     @Override
     public String toString() {
         return String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releaseYear, rating);
+    }
+
+    public String getDetailsOfTheMovieIncludingIssuedBy() {
+        return String.format("%-32s %-32s %-16s %-16s %16s\n", movieName, director, releaseYear, rating, issuedBy);
     }
 }
