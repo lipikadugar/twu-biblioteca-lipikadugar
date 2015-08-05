@@ -7,7 +7,6 @@ public class Movie {
     private int releaseYear;
     private int rating;
     private boolean status;
-    private String detailsOfTheMovieIncludingIssuedBy;
 
     public Movie(String bookName, String author, int yearPublished, int rating, boolean status, String issuedBy) {
         this.issuedBy = issuedBy;

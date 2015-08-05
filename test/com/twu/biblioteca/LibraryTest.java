@@ -138,9 +138,11 @@ public class LibraryTest {
     public void shouldBeAbleListTheCheckedOutMovieDetails() {
         movies.get(1).setStatus(false);
         movies.get(2).setStatus(false);
+        movies.get(1).setIssuedBy("Lisa");
+        movies.get(2).setIssuedBy("Nancy");
 
-        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
-                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n", library.checkedOutMovieList());
+        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8                            Lisa\n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n", library.checkedOutMovieList());
     }
 
     @Test

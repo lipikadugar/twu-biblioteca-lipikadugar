@@ -77,7 +77,7 @@ public class Library {
         String movieDetails = "";
         for (Movie movie : movies) {
             if (!movie.getStatus()) {
-                movieDetails += movie.toString();
+                movieDetails += movie.getDetailsOfTheMovieIncludingIssuedBy();
             }
         }
         return movieDetails;
