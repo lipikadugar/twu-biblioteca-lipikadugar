@@ -45,4 +45,8 @@ public class Movie {
     public void setIssuedBy(String issuedBy) {
         this.issuedBy = issuedBy;
     }
+
+    public String getIssuedId() {
+        return issuedBy;
+    }
 }

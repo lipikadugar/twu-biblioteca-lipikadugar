@@ -149,7 +149,7 @@ public class LibraryTest {
     public void shouldReturnTrueOnSuccessfulReturnOfMovie() {
         library.checkoutMovie("Chak De India".toUpperCase(), user);
 
-        assertEquals(true, library.returnMovie("Chak De India".toUpperCase()));
+        assertEquals(true, library.returnMovie("Chak De India".toUpperCase(), user));
     }
 
     @Test
@@ -157,6 +157,6 @@ public class LibraryTest {
         User user = Mockito.mock(User.class);
         library.checkout("Check De India".toUpperCase(), user);
 
-        assertEquals(false, library.returnMovie("Spy".toUpperCase()));
+        assertEquals(false, library.returnMovie("Spy".toUpperCase(), user));
     }
 }

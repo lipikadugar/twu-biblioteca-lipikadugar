@@ -48,7 +48,7 @@ public class CheckInTest {
         User user = Mockito.mock(User.class);
         Library library = Mockito.mock(Library.class);
         when(view.input()).thenReturn("Men In Black");
-        when(library.returnMovie("Men In Black".toUpperCase())).thenReturn(true);
+        when(library.returnMovie("Men In Black".toUpperCase(), user)).thenReturn(true);
         CheckIn checkIn = new CheckIn("8", library, view, user);
 
         checkIn.execute();

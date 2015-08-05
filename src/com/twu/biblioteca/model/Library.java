@@ -84,9 +84,9 @@ public class Library {
         return movieDetails;
     }
 
-    public boolean returnMovie(String movieName) {
+    public boolean returnMovie(String movieName, User user) {
         for (Movie movie : movies) {
-            if (movieName.equals(movie.getName()) && !(movie.getStatus())) {
+            if (movieName.equals(movie.getName()) && !(movie.getStatus()) && Objects.equals(user.getUserId(), movie.getIssuedId())) {
                 movie.setStatus(true);
                 return true;
             }

@@ -33,7 +33,7 @@ public class CheckIn implements Operations {
         } else {
             view.print(PROMPT_MOVIE_NAME);
             String movieName = view.input();
-            if (library.returnMovie(movieName.toUpperCase()))
+            if (library.returnMovie(movieName.toUpperCase(), user))
                 view.print(SUCCESSFUL_MOVIE_CHECKIN);
             else
                 view.print(UNSUCCESSFUL_MOVIE_CHECKIN);
