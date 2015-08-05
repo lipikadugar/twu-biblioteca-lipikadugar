@@ -5,9 +5,10 @@ import com.twu.biblioteca.view.View;
 
 import java.util.Objects;
 
-import static com.twu.biblioteca.view.Messages.*;
+import static com.twu.biblioteca.view.Messages.BOOK_HEADER;
+import static com.twu.biblioteca.view.Messages.MOVIE_HEADER;
 
-public class ListCheckedOutItem implements Operations{
+public class ListCheckedOutItem implements Operations {
     private String option;
     private Library library;
     private View view;
@@ -24,8 +25,7 @@ public class ListCheckedOutItem implements Operations{
             String book = library.checkedOutList();
             view.print(BOOK_HEADER);
             view.print(book);
-        }
-        else {
+        } else {
             String movie = library.checkedOutMovieList();
             view.print(MOVIE_HEADER);
             view.print(movie);

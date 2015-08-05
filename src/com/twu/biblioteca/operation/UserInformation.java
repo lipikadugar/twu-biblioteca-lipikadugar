@@ -1,7 +1,6 @@
 package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.view.View;
 
 public class UserInformation implements Operations {

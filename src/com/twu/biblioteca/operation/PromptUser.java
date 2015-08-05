@@ -39,8 +39,7 @@ public class PromptUser implements Operations {
                 new LibrarianSession(view, library, app, user).execute();
             else
                 new CustomerSession(view, library, app, user).execute();
-        }
-        else
+        } else
             view.print(INVALID_USER);
     }
 }

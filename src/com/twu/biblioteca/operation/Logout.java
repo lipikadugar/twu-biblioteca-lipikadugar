@@ -9,6 +9,7 @@ public class Logout implements Operations {
         this.app = app;
 
     }
+
     @Override
     public void execute() {
         app.start(true);

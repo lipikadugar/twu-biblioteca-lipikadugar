@@ -6,7 +6,8 @@ import com.twu.biblioteca.operation.Operations;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.*;
+import static com.twu.biblioteca.view.Messages.BOOK_HEADER;
+import static com.twu.biblioteca.view.Messages.MOVIE_HEADER;
 
 public class View implements Operations {
 
@@ -22,31 +23,17 @@ public class View implements Operations {
 
     @Override
     public void execute() {
-        if(Objects.equals(option, "1")) {
+        if (Objects.equals(option, "1")) {
             print(BOOK_HEADER);
             System.out.println(library.list());
         } else {
             print(MOVIE_HEADER);
             System.out.println(library.listMovies());
         }
-        return;
-    }
-
-    private String movieHeader() {
-        String header = String.format("%-32s %-32s %-16s %-16s\n%-32s %-32s %-16s %-16s\n", "Movie Name", "Director", "Release Year", "Rating",
-                "----------", "--------", "------------", "-------");
-        return header;
-    }
-
-    private String header() {
-        String header = String.format("%-32s %-32s %-16s\n%-32s %-32s %-16s\n", "Book Name", "Author", "Year Published",
-                "---------", "------", "--------------");
-        return header;
     }
 
     public String input() {
-        String name = in.nextLine();
-        return name;
+        return in.nextLine();
     }
 
     public void print(String message) {

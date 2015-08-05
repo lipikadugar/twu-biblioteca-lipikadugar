@@ -130,8 +130,8 @@ public class LibraryTest {
         library.checkoutMovie("Men In Black".toUpperCase(), user);
 
         assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
-                    "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
-                    "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", library.listMovies());
+                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
+                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", library.listMovies());
     }
 
     @Test

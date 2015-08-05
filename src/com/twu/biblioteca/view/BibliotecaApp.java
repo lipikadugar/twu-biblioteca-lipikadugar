@@ -2,7 +2,9 @@ package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.UserAuthentication;
-import com.twu.biblioteca.operation.*;
+import com.twu.biblioteca.operation.Operations;
+import com.twu.biblioteca.operation.PromptUser;
+import com.twu.biblioteca.operation.QuitApp;
 
 import java.util.HashMap;
 import java.util.Scanner;

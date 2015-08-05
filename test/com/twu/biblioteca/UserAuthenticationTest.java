@@ -26,10 +26,10 @@ public class UserAuthenticationTest {
         UserAuthentication user = new UserAuthentication(users);
         User user1 = user.authenticate("123-4567", "!abcd1234");
 
-        assertEquals("UserID: 123-4567\n" +
-                "Name: Lisa\n" +
-                "Email: lisa@gmail.com\n" +
-                "Phone: 7890678341", user1.toString());
+        assertEquals("UserID : 123-4567\n" +
+                "Name   : Lisa\n" +
+                "Email  : lisa@gmail.com\n" +
+                "Phone  : 7890678341", user1.toString());
     }
 
     @Test

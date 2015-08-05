@@ -13,8 +13,8 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import static com.twu.biblioteca.view.Messages.WELCOME_MESSAGE;
 import static org.junit.Assert.assertEquals;
-import static com.twu.biblioteca.view.Messages.*;
 
 public class ViewTest {
 
