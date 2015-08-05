@@ -65,7 +65,10 @@ public class ListCheckedOutItemTest {
 
         item.execute();
 
-        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8                           Nancy\n" +
+        assertEquals("Movie Name                       Director                         Release Year     Rating                  Issued By\n" +
+                "----------                       --------                         ------------     -------                 ---------\n" +
+                "\n" +
+                "CHAK DE INDIA                    Shimit Amin                      2007             8                           Nancy\n" +
                 "3 IDIOTS                         RajKumar Hirani                  2009             9                          Yasmin\n" +
                 "\n", outContent.toString());
     }

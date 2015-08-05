@@ -6,6 +6,8 @@ import com.twu.biblioteca.operation.Operations;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static com.twu.biblioteca.view.Messages.*;
+
 public class View implements Operations {
 
     private String option;
@@ -21,10 +23,10 @@ public class View implements Operations {
     @Override
     public void execute() {
         if(Objects.equals(option, "1")) {
-            System.out.println(header());
+            print(BOOK_HEADER);
             System.out.println(library.list());
         } else {
-            System.out.println(movieHeader());
+            print(MOVIE_HEADER);
             System.out.println(library.listMovies());
         }
         return;

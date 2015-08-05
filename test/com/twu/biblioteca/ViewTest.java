@@ -73,12 +73,14 @@ public class ViewTest {
 
         view.execute();
 
-        assertEquals("Book Name                        Author                           Year Published  \n" +
-                "---------                        ------                           --------------  \n\n" +
+        assertEquals("Book Name                        Author                           Year Published          Issued By\n" +
+                "---------                        ------                           --------------          ---------\n" +
+                "\n" +
                 "JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
-                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n\n", outContent.toString());
+                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n" +
+                "\n", outContent.toString());
     }
 
     @Test
@@ -88,11 +90,13 @@ public class ViewTest {
 
         view.execute();
 
-        assertEquals("Movie Name                       Director                         Release Year     Rating          \n" +
-                "----------                       --------                         ------------     -------         \n\n" +
+        assertEquals("Movie Name                       Director                         Release Year     Rating                  Issued By\n" +
+                "----------                       --------                         ------------     -------                 ---------\n" +
+                "\n" +
                 "MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n" +
                 "CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
-                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n\n", outContent.toString());
+                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n" +
+                "\n", outContent.toString());
     }
 }
