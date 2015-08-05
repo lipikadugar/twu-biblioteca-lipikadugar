@@ -66,6 +66,7 @@ public class Library {
         for (Movie movie : movies) {
             if (movieName.equals(movie.getName()) && (movie.getStatus())) {
                 movie.setStatus(false);
+                movie.setIssuedBy(user.getUserId());
                 return true;
             }
         }

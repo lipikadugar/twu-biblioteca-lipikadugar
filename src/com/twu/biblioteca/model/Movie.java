@@ -1,7 +1,7 @@
 package com.twu.biblioteca.model;
 
 public class Movie {
-    private final String issuedBy;
+    private String issuedBy;
     private String movieName;
     private String director;
     private int releaseYear;
@@ -41,5 +41,9 @@ public class Movie {
 
     public String getDetailsOfTheMovieIncludingIssuedBy() {
         return String.format("%-32s %-32s %-16s %-16s %16s\n", movieName, director, releaseYear, rating, issuedBy);
+    }
+
+    public void setIssuedBy(String issuedBy) {
+        this.issuedBy = issuedBy;
     }
 }
