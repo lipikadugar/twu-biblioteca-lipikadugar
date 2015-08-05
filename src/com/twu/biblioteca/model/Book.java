@@ -6,6 +6,7 @@ public class Book {
     private String author;
     private int yearPublished;
     private boolean status;
+    private String issuedId;
 
     public Book(String bookName, String author, int yearPublished, boolean status, String issuedBy) {
         this.issuedBy = issuedBy;
@@ -42,5 +43,9 @@ public class Book {
 
     public String getBookDetailsAlongWithIssuedBy() {
         return String.format("%-32s %-32s %-16s %16s\n", bookName, author, yearPublished, issuedBy);
+    }
+
+    public String getIssuedId() {
+        return issuedId;
     }
 }

@@ -43,12 +43,12 @@ public class LibrarianSession implements Operations {
         input = new HashMap<>();
         input.put("1", new View("1", library, in));
         input.put("2", new CheckOut("2", library, view, user));
-        input.put("3", new CheckIn("3", library, view));
+        input.put("3", new CheckIn("3", library, view, user));
         input.put("4", new ListCheckedOutItem("4", library, view));
         input.put("5", new View("5", library, in));
         input.put("6", new CheckOut("6", library, view, user));
         input.put("7", new ListCheckedOutItem("7", library, view));
-        input.put("8", new CheckIn("8", library, view));
+        input.put("8", new CheckIn("8", library, view, user));
         input.put("9", new UserInformation(user, view));
         input.put("10", new Logout(app));
         return input.get(key);

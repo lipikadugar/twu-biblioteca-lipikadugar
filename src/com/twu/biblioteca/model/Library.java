@@ -1,6 +1,7 @@
 package com.twu.biblioteca.model;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Library {
     private ArrayList<Book> books;
@@ -32,9 +33,9 @@ public class Library {
         return false;
     }
 
-    public boolean returnBook(String bookName) {
+    public boolean returnBook(String bookName, User user) {
         for (Book book : books) {
-            if (bookName.equals(book.getName()) && !(book.getStatus())) {
+            if (bookName.equals(book.getName()) && !(book.getStatus()) && Objects.equals(user.getUserId(), book.getIssuedId())) {
                 book.setStatus(true);
                 return true;
             }

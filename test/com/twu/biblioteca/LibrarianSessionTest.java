@@ -42,9 +42,9 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckInClassIfOptionIsCheckIn() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        CheckIn checkIn = new CheckIn("3", library, view);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         User user = Mockito.mock(User.class);
+        CheckIn checkIn = new CheckIn("3", library, view, user);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         LibrarianSession session = new LibrarianSession(view, library, app, user);
         assertEquals(checkIn.getClass(), session.getClassObject("3").getClass());
     }
@@ -112,9 +112,9 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckInClassIfOptionIsCheckInMovie() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        CheckIn checkIn = new CheckIn("8", library, view);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         User user = Mockito.mock(User.class);
+        CheckIn checkIn = new CheckIn("8", library, view, user);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(checkIn.getClass(), session.getClassObject("8").getClass());

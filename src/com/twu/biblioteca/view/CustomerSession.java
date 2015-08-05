@@ -43,10 +43,10 @@ public class CustomerSession implements Operations {
         input = new HashMap<>();
         input.put("1", new View("1", library, in));
         input.put("2", new CheckOut("2", library, view, user));
-        input.put("3", new CheckIn("3", library, view));
+        input.put("3", new CheckIn("3", library, view, user));
         input.put("4", new View("4", library, in));
         input.put("5", new CheckOut("5", library, view, user));
-        input.put("6", new CheckIn("6", library, view));
+        input.put("6", new CheckIn("6", library, view, user));
         input.put("7", new UserInformation(user, view));
         input.put("8", new Logout(app));
         return input.get(key);

@@ -77,7 +77,7 @@ public class LibraryTest {
     @Test
     public void shouldBeAbleToReturnTheBookToTheLibrary() {
         library.checkout("The Da Vinci Code".toUpperCase(), user);
-        library.returnBook("The Da Vinci Code".toUpperCase());
+        library.returnBook("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
@@ -89,14 +89,14 @@ public class LibraryTest {
     public void shouldReturnTrueOnSuccessfulReturn() {
         library.checkout("The Da Vinci Code".toUpperCase(), user);
 
-        assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase()));
+        assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase(), user));
     }
 
     @Test
     public void shouldReturnFalseOnFailingToReturnBook() {
         library.checkout("The Da Vinci Code".toUpperCase(), user);
 
-        assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
+        assertEquals(false, library.returnBook("The Famous Five".toUpperCase(), user));
     }
 
     @Test
