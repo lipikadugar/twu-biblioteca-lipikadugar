@@ -31,13 +31,13 @@ public class ListCheckedOutItemTest {
     public void setUp() {
         System.setOut(new PrintStream(outContent));
         books = new ArrayList<>();
-        bookDetails = new Book("Java", "Oreilly", 1998, true);
+        bookDetails = new Book("Java", "Oreilly", 1998, true, "");
         books.add(bookDetails);
-        bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, false);
+        bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, false, "");
         books.add(bookDetails);
-        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, false);
+        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, false, "");
         books.add(bookDetails);
-        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
+        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true, "");
         books.add(bookDetails);
 
         movies = new ArrayList<>();

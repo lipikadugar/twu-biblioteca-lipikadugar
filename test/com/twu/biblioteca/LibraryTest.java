@@ -21,13 +21,13 @@ public class LibraryTest {
     @Before
     public void setUp() {
         books = new ArrayList<>();
-        bookDetails = new Book("Java", "Oreilly", 1998, true);
+        bookDetails = new Book("Java", "Oreilly", 1998, true, "");
         books.add(bookDetails);
-        bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, true);
+        bookDetails = new Book("The Da Vinci Code", "Dan Brown", 2005, true, "");
         books.add(bookDetails);
-        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, true);
+        bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, true, "");
         books.add(bookDetails);
-        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true);
+        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true, "");
         books.add(bookDetails);
 
         movies = new ArrayList<>();
