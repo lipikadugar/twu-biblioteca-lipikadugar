@@ -19,9 +19,11 @@ public class LibraryTest {
     Book bookDetails;
     Movie movieDetails;
     Library library;
+    User user;
 
     @Before
     public void setUp() {
+        user = Mockito.mock(User.class);
         books = new ArrayList<>();
         bookDetails = new Book("Java", "Oreilly", 1998, true, "");
         books.add(bookDetails);
@@ -54,7 +56,6 @@ public class LibraryTest {
 
     @Test
     public void shouldBeAbleToCheckoutAnAvailableBook() {
-        User user = Mockito.mock(User.class);
         library.checkout("Java", user);
 
         assertEquals("JAVA                             Oreilly                          1998            \n" +
@@ -65,19 +66,16 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulCheckout() {
-        User user = Mockito.mock(User.class);
         assertEquals(true, library.checkout("Java".toUpperCase(), user));
     }
 
     @Test
     public void shouldReturnFalseWhenBookIsNotAvailable() {
-        User user = Mockito.mock(User.class);
         assertEquals(false, library.checkout("Data Structures".toUpperCase(), user));
     }
 
     @Test
     public void shouldBeAbleToReturnTheBookToTheLibrary() {
-        User user = Mockito.mock(User.class);
         library.checkout("The Da Vinci Code".toUpperCase(), user);
         library.returnBook("The Da Vinci Code".toUpperCase());
 
@@ -89,7 +87,6 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulReturn() {
-        User user = Mockito.mock(User.class);
         library.checkout("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase()));
@@ -97,7 +94,6 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnFalseOnFailingToReturnBook() {
-        User user = Mockito.mock(User.class);
         library.checkout("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
@@ -121,17 +117,17 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulCheckoutMovie() {
-        assertEquals(true, library.checkoutMovie("Men In Black".toUpperCase()));
+        assertEquals(true, library.checkoutMovie("Men In Black".toUpperCase(), user));
     }
 
     @Test
     public void shouldReturnFalseOnUnSuccessfulCheckoutMovie() {
-        assertEquals(false, library.checkoutMovie("Spy".toUpperCase()));
+        assertEquals(false, library.checkoutMovie("Spy".toUpperCase(), user));
     }
 
     @Test
     public void shouldBeAbleToCheckoutAnAvailableMovie() {
-        library.checkoutMovie("Men In Black".toUpperCase());
+        library.checkoutMovie("Men In Black".toUpperCase(), user);
 
         assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
                     "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
@@ -149,7 +145,7 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulReturnOfMovie() {
-        library.checkoutMovie("Chak De India".toUpperCase());
+        library.checkoutMovie("Chak De India".toUpperCase(), user);
 
         assertEquals(true, library.returnMovie("Chak De India".toUpperCase()));
     }

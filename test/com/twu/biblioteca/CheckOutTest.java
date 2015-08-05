@@ -48,7 +48,7 @@ public class CheckOutTest {
         Library library = Mockito.mock(Library.class);
         User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("Men In Black");
-        when(library.checkoutMovie("Men In Black".toUpperCase())).thenReturn(true);
+        when(library.checkoutMovie("Men In Black".toUpperCase(), user)).thenReturn(true);
         CheckOut checkOut = new CheckOut("6", library, view, user);
 
         checkOut.execute();

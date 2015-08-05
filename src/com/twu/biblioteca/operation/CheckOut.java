@@ -33,7 +33,7 @@ public class CheckOut implements Operations {
         } else {
             view.print(PROMPT_MOVIE_NAME);
             String movieName = view.input();
-            if (library.checkoutMovie(movieName.toUpperCase())) {
+            if (library.checkoutMovie(movieName.toUpperCase(), user)) {
                 view.print(SUCCESSFUL_MOVIE_CHECKOUT);
             } else
                 view.print(UNSUCCESSFUL_MOVIE_CHECKOUT);

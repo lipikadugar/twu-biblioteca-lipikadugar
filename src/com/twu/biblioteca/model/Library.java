@@ -62,7 +62,7 @@ public class Library {
         return movieDetails;
     }
 
-    public boolean checkoutMovie(String movieName) {
+    public boolean checkoutMovie(String movieName, User user) {
         for (Movie movie : movies) {
             if (movieName.equals(movie.getName()) && (movie.getStatus())) {
                 movie.setStatus(false);
