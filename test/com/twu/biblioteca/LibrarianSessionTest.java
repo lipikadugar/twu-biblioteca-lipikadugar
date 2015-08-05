@@ -2,7 +2,6 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.*;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.LibrarianSession;
@@ -22,9 +21,9 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        CheckOut checkout = new CheckOut("2", library, view);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         User user = Mockito.mock(User.class);
+        CheckOut checkout = new CheckOut("2", library, view, user);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         LibrarianSession session = new LibrarianSession(view, library, app, user);
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
@@ -89,9 +88,9 @@ public class LibrarianSessionTest {
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOutMovies() {
         Library library = Mockito.mock(Library.class);
         View view = Mockito.mock(View.class);
-        CheckOut checkout = new CheckOut("6", library, view);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         User user = Mockito.mock(User.class);
+        CheckOut checkout = new CheckOut("6", library, view, user);
+        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
         LibrarianSession session = new LibrarianSession(view, library, app, user);
 
         assertEquals(checkout.getClass(), session.getClassObject("6").getClass());

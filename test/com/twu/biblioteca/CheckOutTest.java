@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
+import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operation.CheckOut;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
@@ -15,9 +16,10 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnSuccessfulCheckOut() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
+        User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("Java");
-        when(library.checkout("Java".toUpperCase())).thenReturn(true);
-        CheckOut checkOut = new CheckOut("2", library, view);
+        when(library.checkout("Java".toUpperCase(), user)).thenReturn(true);
+        CheckOut checkOut = new CheckOut("2", library, view, user);
 
         checkOut.execute();
 
@@ -29,9 +31,10 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulCheckOut() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
+        User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("The Shadow God");
-        when(library.checkout("The Shadow God".toUpperCase())).thenReturn(false);
-        CheckOut checkOut = new CheckOut("2", library, view);
+        when(library.checkout("The Shadow God".toUpperCase(), user)).thenReturn(false);
+        CheckOut checkOut = new CheckOut("2", library, view, user);
 
         checkOut.execute();
 
@@ -43,9 +46,10 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnSuccessfulCheckOutOfMovie() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
+        User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("Men In Black");
         when(library.checkoutMovie("Men In Black".toUpperCase())).thenReturn(true);
-        CheckOut checkOut = new CheckOut("6", library, view);
+        CheckOut checkOut = new CheckOut("6", library, view, user);
 
         checkOut.execute();
 
@@ -57,9 +61,10 @@ public class CheckOutTest {
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulCheckOutOfMovie() {
         View view = Mockito.mock(View.class);
         Library library = Mockito.mock(Library.class);
+        User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("Spy");
-        when(library.checkout("Spy".toUpperCase())).thenReturn(false);
-        CheckOut checkOut = new CheckOut("6", library, view);
+        when(library.checkout("Spy".toUpperCase(), user)).thenReturn(false);
+        CheckOut checkOut = new CheckOut("6", library, view, user);
 
         checkOut.execute();
 

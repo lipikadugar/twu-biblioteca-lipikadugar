@@ -21,10 +21,11 @@ public class Library {
         return bookDetails;
     }
 
-    public boolean checkout(String bookName) {
+    public boolean checkout(String bookName, User user) {
         for (Book book : books) {
             if (bookName.equals(book.getName()) && (book.getStatus())) {
                 book.setStatus(false);
+                book.setIssuedBy(user.getUserId());
                 return true;
             }
         }

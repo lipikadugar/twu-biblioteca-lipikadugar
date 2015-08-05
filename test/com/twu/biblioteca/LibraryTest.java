@@ -3,8 +3,10 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
+import com.twu.biblioteca.model.User;
 import org.junit.Before;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 import java.util.ArrayList;
 
@@ -52,7 +54,8 @@ public class LibraryTest {
 
     @Test
     public void shouldBeAbleToCheckoutAnAvailableBook() {
-        library.checkout("Java");
+        User user = Mockito.mock(User.class);
+        library.checkout("Java", user);
 
         assertEquals("JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
@@ -62,17 +65,20 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulCheckout() {
-        assertEquals(true, library.checkout("Java".toUpperCase()));
+        User user = Mockito.mock(User.class);
+        assertEquals(true, library.checkout("Java".toUpperCase(), user));
     }
 
     @Test
     public void shouldReturnFalseWhenBookIsNotAvailable() {
-        assertEquals(false, library.checkout("Data Structures".toUpperCase()));
+        User user = Mockito.mock(User.class);
+        assertEquals(false, library.checkout("Data Structures".toUpperCase(), user));
     }
 
     @Test
     public void shouldBeAbleToReturnTheBookToTheLibrary() {
-        library.checkout("The Da Vinci Code".toUpperCase());
+        User user = Mockito.mock(User.class);
+        library.checkout("The Da Vinci Code".toUpperCase(), user);
         library.returnBook("The Da Vinci Code".toUpperCase());
 
         assertEquals("JAVA                             Oreilly                          1998            \n" +
@@ -83,14 +89,16 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnTrueOnSuccessfulReturn() {
-        library.checkout("The Da Vinci Code".toUpperCase());
+        User user = Mockito.mock(User.class);
+        library.checkout("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals(true, library.returnBook("The Da Vinci Code".toUpperCase()));
     }
 
     @Test
     public void shouldReturnFalseOnFailingToReturnBook() {
-        library.checkout("The Da Vinci Code".toUpperCase());
+        User user = Mockito.mock(User.class);
+        library.checkout("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals(false, library.returnBook("The Famous Five".toUpperCase()));
     }
@@ -147,7 +155,8 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnFalseOnFailingToReturnMovie() {
-        library.checkout("Check De India".toUpperCase());
+        User user = Mockito.mock(User.class);
+        library.checkout("Check De India".toUpperCase(), user);
 
         assertEquals(false, library.returnMovie("Spy".toUpperCase()));
     }

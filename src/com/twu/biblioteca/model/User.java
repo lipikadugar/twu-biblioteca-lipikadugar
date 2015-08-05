@@ -8,6 +8,7 @@ public class User {
     private final String name;
     private final String email;
     private final String phone;
+    private String userId;
 
     public User(String userID, String password, String name, String email, String phone) {
 
@@ -28,5 +29,9 @@ public class User {
                 "\nName: " + name +
                 "\nEmail: " + email +
                 "\nPhone: " + phone ;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 }
