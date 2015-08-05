@@ -46,7 +46,7 @@ public class Library {
         String bookDetails = "";
         for (Book book : books) {
             if (!book.getStatus()) {
-                bookDetails += book.toString();
+                bookDetails += book.getBookDetailsAlongWithIssuedBy();
             }
         }
         return bookDetails;

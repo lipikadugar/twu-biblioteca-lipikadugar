@@ -106,8 +106,9 @@ public class LibraryTest {
     @Test
     public void shouldBeAbleListTheCheckedOutBookDetails() {
         books.get(0).setStatus(false);
+        books.get(0).setIssuedBy("Lisa");
 
-        assertEquals("JAVA                             Oreilly                          1998            \n", library.checkedOutList());
+        assertEquals("JAVA                             Oreilly                          1998                         Lisa\n", library.checkedOutList());
     }
 
     @Test

@@ -29,7 +29,7 @@ public class ListBookTest {
         books.add(bookDetails);
         bookDetails = new Book("The Famous Five", "Enid Blyton", 1993, true, "");
         books.add(bookDetails);
-        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, false, "");
+        bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, false, "Lisa");
         books.add(bookDetails);
 
         movies = new ArrayList<>();
@@ -52,6 +52,6 @@ public class ListBookTest {
 
         list.execute();
 
-        verify(view).print("FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n");
+        verify(view).print("FIVE POINT SOMEONE               Chetan Bhagat                    2010                         Lisa\n");
     }
 }
