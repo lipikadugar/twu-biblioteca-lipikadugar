@@ -1,9 +1,6 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.model.Book;
-import com.twu.biblioteca.model.Library;
-import com.twu.biblioteca.model.Movie;
-import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -14,8 +11,8 @@ import static org.junit.Assert.assertEquals;
 
 public class LibraryTest {
 
-    ArrayList<Book> books;
-    ArrayList<Movie> movies;
+    ArrayList<Item> books;
+    ArrayList<Item> movies;
     Book bookDetails;
     Movie movieDetails;
     Library library;

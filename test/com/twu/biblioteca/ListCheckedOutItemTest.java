@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.operation.ListCheckedOutItem;
@@ -20,8 +21,8 @@ public class ListCheckedOutItemTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
-    ArrayList<Book> books;
-    ArrayList<Movie> movies;
+    ArrayList<Item> books;
+    ArrayList<Item> movies;
     Book bookDetails;
     Movie movieDetails;
     Library library;

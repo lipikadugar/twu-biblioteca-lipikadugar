@@ -8,10 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String args[]) {
-        ArrayList<Book> books = new ArrayList<>();
-        ArrayList<Movie> movies = new ArrayList<>();
         ArrayList<User> customers = new ArrayList<>();
         ArrayList<User> librarians = new ArrayList<>();
+
+        ArrayList<Item> books = new ArrayList<>();
+        ArrayList<Item> movies = new ArrayList<>();
 
         Book bookDetails = new Book("Java", "Oreilly", 1998, true, "");
         books.add(bookDetails);

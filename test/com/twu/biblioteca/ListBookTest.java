@@ -1,6 +1,7 @@
 package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Book;
+import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
 import com.twu.biblioteca.operation.ListCheckedOutItem;
@@ -15,8 +16,8 @@ import static org.mockito.Mockito.verify;
 
 public class ListBookTest {
 
-    ArrayList<Book> books;
-    ArrayList<Movie> movies;
+    ArrayList<Item> books;
+    ArrayList<Item> movies;
     Book bookDetails;
     private Library library;
 
