@@ -108,4 +108,15 @@ public class Library {
         }
         return itemDetails;
     }
+
+    public boolean checkoutItem(String itemName, User user) {
+        for (Item item : items) {
+            if (itemName.equals(item.getName()) && (item.getStatus())) {
+                item.setStatus(false);
+                item.setIssuedBy(user.getUserId());
+                return true;
+            }
+        }
+        return false;
+    }
 }

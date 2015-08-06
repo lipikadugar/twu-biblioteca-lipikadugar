@@ -177,4 +177,14 @@ public class LibraryTest {
                 "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
                 "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", movieSection.listItemDetails());
     }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulCheckoutOfBook() {
+        assertEquals(true, bookSection.checkoutItem("Java".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenBookIsNotAvailableInTheLibrary() {
+        assertEquals(false, bookSection.checkoutItem("Data Structures".toUpperCase(), user));
+    }
 }
