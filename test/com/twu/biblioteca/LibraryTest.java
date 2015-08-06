@@ -156,7 +156,6 @@ public class LibraryTest {
 
     @Test
     public void shouldReturnFalseOnFailingToReturnMovie() {
-        User user = Mockito.mock(User.class);
         library.checkout("Check De India".toUpperCase(), user);
 
         assertEquals(false, library.returnMovie("Spy".toUpperCase(), user));
@@ -210,5 +209,19 @@ public class LibraryTest {
         library.checkout("The Da Vinci Code".toUpperCase(), user);
 
         assertEquals(false, bookSection.returnItem("The Famous Five".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulReturnOfAMovie() {
+        library.checkoutMovie("Chak De India".toUpperCase(), user);
+
+        assertEquals(true, movieSection.returnItem("Chak De India".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldReturnFalseOnFailingToReturnAMovie() {
+        library.checkout("Check De India".toUpperCase(), user);
+
+        assertEquals(false, movieSection.returnItem("Spy".toUpperCase(), user));
     }
 }
