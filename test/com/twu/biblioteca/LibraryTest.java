@@ -236,4 +236,13 @@ public class LibraryTest {
                 "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n",
                 movieSection.checkedOutItemList());
     }
+
+    @Test
+    public void shouldBeAbleListTheDetailsOfCheckedOutBooks() {
+        books.get(0).setStatus(false);
+        books.get(0).setIssuedBy("Lisa");
+
+        assertEquals("JAVA                             Oreilly                          1998                         Lisa\n",
+                bookSection.checkedOutItemList());
+    }
 }
