@@ -129,4 +129,14 @@ public class Library {
         }
         return false;
     }
+
+    public String checkedOutItemList() {
+        String itemDetails = "";
+        for (Item item : items) {
+            if (!item.getStatus()) {
+                itemDetails += item.getDetailsAlongWithIssuedBy();
+            }
+        }
+        return itemDetails;
+    }
 }

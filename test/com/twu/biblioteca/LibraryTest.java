@@ -224,4 +224,16 @@ public class LibraryTest {
 
         assertEquals(false, movieSection.returnItem("Spy".toUpperCase(), user));
     }
+
+    @Test
+    public void shouldBeAbleListTheDetailsOfCheckedOutMovies() {
+        movies.get(1).setStatus(false);
+        movies.get(2).setStatus(false);
+        movies.get(1).setIssuedBy("Lisa");
+        movies.get(2).setIssuedBy("Nancy");
+
+        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8                            Lisa\n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n",
+                movieSection.checkedOutItemList());
+    }
 }
