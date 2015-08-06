@@ -187,4 +187,14 @@ public class LibraryTest {
     public void shouldReturnFalseWhenBookIsNotAvailableInTheLibrary() {
         assertEquals(false, bookSection.checkoutItem("Data Structures".toUpperCase(), user));
     }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulCheckoutOfMovie() {
+        assertEquals(true, movieSection.checkoutItem("Men In Black".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldReturnFalseOnUnSuccessfulCheckoutOfMovie() {
+        assertEquals(false, movieSection.checkoutItem("Spy".toUpperCase(), user));
+    }
 }
