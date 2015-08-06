@@ -22,6 +22,7 @@ public class Main {
         books.add(bookDetails);
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true, "");
         books.add(bookDetails);
+        Library bookSection = new Library(books);
 
         Movie movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
         movies.add(movieDetails);
@@ -31,6 +32,7 @@ public class Main {
         movies.add(movieDetails);
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true, "");
         movies.add(movieDetails);
+        Library movieSection = new Library(movies);
 
         User userDetails = new User("000-0000", "!abcd0123", "Lisa", "lisa@gmail.com", "7890678341");
         customers.add(userDetails);
@@ -45,9 +47,8 @@ public class Main {
         Scanner in = new Scanner(System.in);
         UserAuthentication librarian = new UserAuthentication(librarians);
         UserAuthentication customer = new UserAuthentication(customers);
-        Library library = new Library(books, movies);
-        View view = new View("1", library, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, customer);
+        View view = new View("1", bookSection, movieSection, in);
+        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, customer);
         app.start(true);
     }
 }

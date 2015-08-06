@@ -10,23 +10,25 @@ import static com.twu.biblioteca.view.Messages.MOVIE_HEADER;
 
 public class ListCheckedOutItem implements Operations {
     private String option;
-    private Library library;
+    private Library bookSection;
+    private Library movieSection;
     private View view;
 
-    public ListCheckedOutItem(String option, Library library, View view) {
+    public ListCheckedOutItem(String option, Library bookSection, Library movieSection, View view) {
         this.option = option;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.view = view;
     }
 
     @Override
     public void execute() {
         if (Objects.equals(option, "4")) {
-            String book = library.checkedOutList();
+            String book = bookSection.checkedOutItemList();
             view.print(BOOK_HEADER);
             view.print(book);
         } else {
-            String movie = library.checkedOutMovieList();
+            String movie = movieSection.checkedOutItemList();
             view.print(MOVIE_HEADER);
             view.print(movie);
         }

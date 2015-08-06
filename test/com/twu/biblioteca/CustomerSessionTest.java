@@ -7,6 +7,7 @@ import com.twu.biblioteca.operation.Logout;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.CustomerSession;
 import com.twu.biblioteca.view.View;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -14,24 +15,31 @@ import static org.junit.Assert.assertEquals;
 
 public class CustomerSessionTest {
 
+    Library bookSection;
+    Library movieSection;
+    View view;
+    BibliotecaApp app;
+    User user;
+
+    @Before
+    public void setUp() {
+        bookSection = Mockito.mock(Library.class);
+        view = Mockito.mock(View.class);
+        app = Mockito.mock(BibliotecaApp.class);
+        user = Mockito.mock(User.class);
+    }
+
     @Test
     public void shouldGiveObjectForCheckOutClassIfOptionIsCheckOut() {
-        Library library = Mockito.mock(Library.class);
-        View view = Mockito.mock(View.class);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        User user = Mockito.mock(User.class);
-        CheckOut checkout = new CheckOut("2", library, view, user);
-        CustomerSession session = new CustomerSession(view, library, app, user);
+        CheckOut checkout = new CheckOut("2", bookSection, movieSection, view, user);
+        CustomerSession session = new CustomerSession(view, bookSection, movieSection, app, user);
+
         assertEquals(checkout.getClass(), session.getClassObject("2").getClass());
     }
 
     @Test
     public void shouldGiveObjectForLogoutClassIfOptionIsLogout() {
-        Library library = Mockito.mock(Library.class);
-        View view = Mockito.mock(View.class);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        User user = Mockito.mock(User.class);
-        CustomerSession session = new CustomerSession(view, library, app, user);
+        CustomerSession session = new CustomerSession(view, bookSection, movieSection, app, user);
         Logout logout = new Logout(app);
 
         assertEquals(logout.getClass(), session.getClassObject("8").getClass());

@@ -12,16 +12,17 @@ import static com.twu.biblioteca.view.Messages.MENU_FOR_LIBRARIAN;
 
 public class LibrarianSession implements Operations {
     private View view;
-    private Library library;
+    private Library bookSection;
+    private Library movieSection;
     private BibliotecaApp app;
     private User user;
     private HashMap<String, Operations> input;
     Scanner in;
 
-    public LibrarianSession(View view, Library library, BibliotecaApp app, User user) {
-
+    public LibrarianSession(View view, Library bookSection, Library movieSection, BibliotecaApp app, User user) {
         this.view = view;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.app = app;
         this.user = user;
     }
@@ -41,14 +42,14 @@ public class LibrarianSession implements Operations {
 
     public Operations getClassObject(String key) {
         input = new HashMap<>();
-        input.put("1", new View("1", library, in));
-        input.put("2", new CheckOut("2", library, view, user));
-        input.put("3", new CheckIn("3", library, view, user));
-        input.put("4", new ListCheckedOutItem("4", library, view));
-        input.put("5", new View("5", library, in));
-        input.put("6", new CheckOut("6", library, view, user));
-        input.put("7", new ListCheckedOutItem("7", library, view));
-        input.put("8", new CheckIn("8", library, view, user));
+        input.put("1", new View("1", bookSection, movieSection, in));
+        input.put("2", new CheckOut("2", bookSection, movieSection, view, user));
+        input.put("3", new CheckIn("3", bookSection, movieSection, view, user));
+        input.put("4", new ListCheckedOutItem("4", bookSection, movieSection, view));
+        input.put("5", new View("5", bookSection, movieSection, in));
+        input.put("6", new CheckOut("6", bookSection, movieSection, view, user));
+        input.put("7", new ListCheckedOutItem("7", bookSection, movieSection, view));
+        input.put("8", new CheckIn("8", bookSection, movieSection, view, user));
         input.put("9", new UserInformation(user, view));
         input.put("10", new Logout(app));
         return input.get(key);

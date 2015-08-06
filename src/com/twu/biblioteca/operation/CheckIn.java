@@ -10,13 +10,15 @@ import static com.twu.biblioteca.view.Messages.*;
 
 public class CheckIn implements Operations {
     private final String option;
-    private Library library;
+    private Library bookSection;
+    private Library movieSection;
     private View view;
     private User user;
 
-    public CheckIn(String option, Library library, View view, User user) {
+    public CheckIn(String option, Library bookSection, Library movieSection, View view, User user) {
         this.option = option;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.view = view;
         this.user = user;
     }
@@ -26,14 +28,14 @@ public class CheckIn implements Operations {
         if (Objects.equals(option, "3")) {
             view.print(PROMPT_BOOK_NAME);
             String bookName = view.input();
-            if (library.returnBook(bookName.toUpperCase(), user))
+            if (bookSection.returnItem(bookName.toUpperCase(), user))
                 view.print(SUCCESSFUL_BOOK_CHECKIN);
             else
                 view.print(UNSUCCESSFUL_BOOK_CHECKIN);
         } else {
             view.print(PROMPT_MOVIE_NAME);
             String movieName = view.input();
-            if (library.returnMovie(movieName.toUpperCase(), user))
+            if (movieSection.returnItem(movieName.toUpperCase(), user))
                 view.print(SUCCESSFUL_MOVIE_CHECKIN);
             else
                 view.print(UNSUCCESSFUL_MOVIE_CHECKIN);

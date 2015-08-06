@@ -12,12 +12,14 @@ import static com.twu.biblioteca.view.Messages.MOVIE_HEADER;
 public class View implements Operations {
 
     private String option;
-    private Library library;
+    private Library bookSection;
+    private Library movieSection;
     private Scanner in;
 
-    public View(String option, Library library, Scanner in) {
+    public View(String option, Library bookSection, Library movieSection, Scanner in) {
         this.option = option;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.in = in;
     }
 
@@ -25,10 +27,10 @@ public class View implements Operations {
     public void execute() {
         if (Objects.equals(option, "1")) {
             print(BOOK_HEADER);
-            System.out.println(library.list());
+            System.out.println(bookSection.listItemDetails());
         } else {
             print(MOVIE_HEADER);
-            System.out.println(library.listMovies());
+            System.out.println(movieSection.listItemDetails());
         }
     }
 

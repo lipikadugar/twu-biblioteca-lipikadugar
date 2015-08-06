@@ -13,17 +13,19 @@ import static com.twu.biblioteca.view.Messages.*;
 
 public class BibliotecaApp {
     private View view;
-    private Library library;
+    private Library bookSection;
+    private Library movieSection;
     private UserAuthentication librarian;
     private UserAuthentication customer;
     private HashMap<String, Operations> input;
     private Scanner in;
 
-    public BibliotecaApp(View view, Scanner in, Library library, UserAuthentication librarian, UserAuthentication customer) {
+    public BibliotecaApp(View view, Scanner in, Library bookSection, Library movieSection, UserAuthentication librarian, UserAuthentication customer) {
 
         this.view = view;
         this.in = in;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.librarian = librarian;
         this.customer = customer;
     }
@@ -48,10 +50,10 @@ public class BibliotecaApp {
 
     public Operations getClassObject(String key) {
         input = new HashMap<>();
-        input.put("1", new View("1", library, in));
-        input.put("2", new View("2", library, in));
-        input.put("3", new PromptUser("3", view, librarian, library, this));
-        input.put("4", new PromptUser("4", view, customer, library, this));
+        input.put("1", new View("1", bookSection, movieSection, in));
+        input.put("2", new View("2", bookSection, movieSection, in));
+        input.put("3", new PromptUser("3", view, librarian, bookSection, movieSection, this));
+        input.put("4", new PromptUser("4", view, customer, bookSection, movieSection, this));
         input.put("5", new QuitApp());
         return input.get(key);
     }

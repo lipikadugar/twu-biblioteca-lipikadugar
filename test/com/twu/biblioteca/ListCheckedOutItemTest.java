@@ -25,7 +25,8 @@ public class ListCheckedOutItemTest {
     ArrayList<Item> movies;
     Book bookDetails;
     Movie movieDetails;
-    Library library;
+    Library bookSection;
+    Library movieSection;
     Scanner in;
 
     @Before
@@ -40,6 +41,7 @@ public class ListCheckedOutItemTest {
         books.add(bookDetails);
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true, "");
         books.add(bookDetails);
+        bookSection = new Library(books);
 
         movies = new ArrayList<>();
         movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
@@ -50,7 +52,7 @@ public class ListCheckedOutItemTest {
         movies.add(movieDetails);
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true, "");
         movies.add(movieDetails);
-        library = new Library(books, movies);
+        movieSection = new Library(movies);
     }
 
     @After
@@ -61,8 +63,8 @@ public class ListCheckedOutItemTest {
     @Test
     public void shouldListCheckedOutBookList() {
         Library library = new Library(books, movies);
-        View view = new View("4", library, in);
-        ListCheckedOutItem item = new ListCheckedOutItem("7", library, view);
+        View view = new View("4", library, movieSection, in);
+        ListCheckedOutItem item = new ListCheckedOutItem("7", library, movieSection, view);
 
         item.execute();
 

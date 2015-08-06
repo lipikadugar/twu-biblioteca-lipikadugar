@@ -14,16 +14,18 @@ import static com.twu.biblioteca.view.Messages.*;
 
 public class PromptUser implements Operations {
     private String choice;
-    private final View view;
-    private final UserAuthentication newUser;
-    private final Library library;
+    private View view;
+    private UserAuthentication newUser;
+    private Library bookSection;
+    private Library movieSection;
     private BibliotecaApp app;
 
-    public PromptUser(String choice, View view, UserAuthentication user, Library library, BibliotecaApp bibliotecaApp) {
+    public PromptUser(String choice, View view, UserAuthentication user, Library bookSection, Library movieSection, BibliotecaApp bibliotecaApp) {
         this.choice = choice;
         this.view = view;
         this.newUser = user;
-        this.library = library;
+        this.bookSection = bookSection;
+        this.movieSection = movieSection;
         this.app = bibliotecaApp;
     }
 
@@ -36,9 +38,9 @@ public class PromptUser implements Operations {
         User user = newUser.authenticate(userID, password);
         if (user != null) {
             if (Objects.equals(choice, "3"))
-                new LibrarianSession(view, library, app, user).execute();
+                new LibrarianSession(view, bookSection, movieSection, app, user).execute();
             else
-                new CustomerSession(view, library, app, user).execute();
+                new CustomerSession(view, bookSection, movieSection, app, user).execute();
         } else
             view.print(INVALID_USER);
     }

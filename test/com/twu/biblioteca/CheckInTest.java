@@ -2,24 +2,38 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
+import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.CheckIn;
+import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.View;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
+
+import java.util.Scanner;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class CheckInTest {
 
+    Library bookSection;
+    Library movieSection;
+    View view;
+    User user;
+
+    @Before
+    public void setUp() {
+        bookSection = Mockito.mock(Library.class);
+        movieSection = Mockito.mock(Library.class);
+        view = Mockito.mock(View.class);
+    }
+
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturn() {
-        View view = Mockito.mock(View.class);
-        Library library = Mockito.mock(Library.class);
-        User user = Mockito.mock(User.class);
         when(view.input()).thenReturn("Java");
-        when(library.returnBook("Java".toUpperCase(), user)).thenReturn(true);
-        CheckIn checkIn = new CheckIn("3", library, view, user);
+        when(bookSection.returnItem("Java".toUpperCase(), user)).thenReturn(true);
+        CheckIn checkIn = new CheckIn("3", bookSection, movieSection, view, user);
 
         checkIn.execute();
 
@@ -29,12 +43,9 @@ public class CheckInTest {
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturn() {
-        View view = Mockito.mock(View.class);
-        User user = Mockito.mock(User.class);
-        Library library = Mockito.mock(Library.class);
         when(view.input()).thenReturn("The Shadow God");
-        when(library.returnBook("The Shadow God".toUpperCase(), user)).thenReturn(false);
-        CheckIn checkIn = new CheckIn("3", library, view, user);
+        when(bookSection.returnItem("The Shadow God".toUpperCase(), user)).thenReturn(false);
+        CheckIn checkIn = new CheckIn("3", bookSection, movieSection, view, user);
 
         checkIn.execute();
 
@@ -44,12 +55,9 @@ public class CheckInTest {
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnSuccessfulReturnMovie() {
-        View view = Mockito.mock(View.class);
-        User user = Mockito.mock(User.class);
-        Library library = Mockito.mock(Library.class);
         when(view.input()).thenReturn("Men In Black");
-        when(library.returnMovie("Men In Black".toUpperCase(), user)).thenReturn(true);
-        CheckIn checkIn = new CheckIn("8", library, view, user);
+        when(movieSection.returnItem("Men In Black".toUpperCase(), user)).thenReturn(true);
+        CheckIn checkIn = new CheckIn("8", bookSection, movieSection, view, user);
 
         checkIn.execute();
 
@@ -59,12 +67,9 @@ public class CheckInTest {
 
     @Test
     public void shouldBeAbleToDisplayAMessageOnUnSuccessfulReturnOfMovie() {
-        View view = Mockito.mock(View.class);
-        User user = Mockito.mock(User.class);
-        Library library = Mockito.mock(Library.class);
         when(view.input()).thenReturn("Spy");
-        when(library.returnBook("Spy".toUpperCase(), user)).thenReturn(false);
-        CheckIn checkIn = new CheckIn("8", library, view, user);
+        when(movieSection.returnItem("Spy".toUpperCase(), user)).thenReturn(false);
+        CheckIn checkIn = new CheckIn("8", bookSection, movieSection, view, user);
 
         checkIn.execute();
 

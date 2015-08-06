@@ -4,6 +4,7 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.View;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -15,16 +16,26 @@ import static org.mockito.Mockito.verify;
 public class BibliotecaAppTest {
 
     Scanner in;
+    Library bookSection;
+    Library movieSection;
+    View view;
+    UserAuthentication librarian;
+    UserAuthentication user;
+    BibliotecaApp app;
+
+    @Before
+    public void setUp() {
+        bookSection = Mockito.mock(Library.class);
+        movieSection = Mockito.mock(Library.class);
+        librarian = Mockito.mock(UserAuthentication.class);
+        user = Mockito.mock(UserAuthentication.class);
+
+    }
 
     @Test
     public void shouldDisplayWelcomeMessageAndLoginMenu() {
-        Library library = Mockito.mock(Library.class);
-        View view = Mockito.mock(View.class);
-        UserAuthentication librarian = Mockito.mock(UserAuthentication.class);
-        UserAuthentication user = Mockito.mock(UserAuthentication.class);
-
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
-
+        view = Mockito.mock(View.class);
+        app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, user);
         app.start(false);
 
         verify(view).print("\t!!..Welcome to the Bibliotica..!!");
@@ -32,12 +43,8 @@ public class BibliotecaAppTest {
 
     @Test
     public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
-        Library library = Mockito.mock(Library.class);
-        View view = new View("1", library, in);
-        UserAuthentication librarian = Mockito.mock(UserAuthentication.class);
-        UserAuthentication user = Mockito.mock(UserAuthentication.class);
-
-        BibliotecaApp app = new BibliotecaApp(view, in, library, librarian, user);
+        View view = new View("1", bookSection, movieSection, in);
+        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, user);
 
         assertEquals(view.getClass(), app.getClassObject("1").getClass());
     }

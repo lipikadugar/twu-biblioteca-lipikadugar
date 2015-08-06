@@ -6,6 +6,7 @@ import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.PromptUser;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.View;
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
@@ -13,13 +14,28 @@ import static org.mockito.Mockito.*;
 
 public class PromptUserTest {
 
+    View view;
+    UserAuthentication user;
+    UserAuthentication librarian;
+    Library bookSection;
+    Library movieSection;
+    BibliotecaApp app;
+    User users;
+
+    @Before
+    public void setUp() {
+        view = Mockito.mock(View.class);
+        user = Mockito.mock(UserAuthentication.class);
+        librarian = Mockito.mock(UserAuthentication.class);
+        bookSection = Mockito.mock(Library.class);
+        movieSection = Mockito.mock(Library.class);
+        users = Mockito.mock(User.class);
+        app = Mockito.mock(BibliotecaApp.class);
+    }
+
     @Test
     public void shouldBeAblePromptTheUserToLogin() {
-        View view = Mockito.mock(View.class);
-        UserAuthentication librarian = Mockito.mock(UserAuthentication.class);
-        Library library = Mockito.mock(Library.class);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        PromptUser promptUser = new PromptUser("3", view, librarian, library, app);
+        PromptUser promptUser = new PromptUser("3", view, librarian, bookSection, movieSection, app);
 
         promptUser.execute();
 
@@ -30,12 +46,7 @@ public class PromptUserTest {
 
     @Test
     public void shouldBeAbleToDisplayInvalidUserMessageIfUserIsFailedToAuthenticated() {
-        View view = Mockito.mock(View.class);
-        UserAuthentication user = Mockito.mock(UserAuthentication.class);
-        Library library = Mockito.mock(Library.class);
-        BibliotecaApp app = Mockito.mock(BibliotecaApp.class);
-        User users = Mockito.mock(User.class);
-        PromptUser promptUser = new PromptUser("3", view, user, library, app);
+        PromptUser promptUser = new PromptUser("3", view, user, bookSection, movieSection, app);
         when(user.authenticate("999-1234", "password")).thenReturn(users);
 
         promptUser.execute();
