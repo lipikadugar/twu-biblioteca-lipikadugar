@@ -169,4 +169,12 @@ public class LibraryTest {
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
                 "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", bookSection.listItemDetails());
     }
+
+    @Test
+    public void shouldListTheMovieDetails() {
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n" +
+                "CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
+                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", movieSection.listItemDetails());
+    }
 }
