@@ -17,6 +17,8 @@ public class LibraryTest {
     Movie movieDetails;
     Library library;
     User user;
+    Library bookSection;
+    Library movieSection;
 
     @Before
     public void setUp() {
@@ -30,6 +32,7 @@ public class LibraryTest {
         books.add(bookDetails);
         bookDetails = new Book("Five Point Someone", "Chetan Bhagat", 2010, true, "");
         books.add(bookDetails);
+        bookSection = new Library(books);
 
         movies = new ArrayList<>();
         movieDetails = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
@@ -40,6 +43,8 @@ public class LibraryTest {
         movies.add(movieDetails);
         movieDetails = new Movie("Bhaag Milkha Bhaag", "Rakesh omprakash Mehra", 2013, 7, true, "");
         movies.add(movieDetails);
+        movieSection = new Library(movies);
+
         library = new Library(books, movies);
     }
 
@@ -155,5 +160,13 @@ public class LibraryTest {
         library.checkout("Check De India".toUpperCase(), user);
 
         assertEquals(false, library.returnMovie("Spy".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldListTheBookDetails() {
+        assertEquals("JAVA                             Oreilly                          1998            \n" +
+                "THE DA VINCI CODE                Dan Brown                        2005            \n" +
+                "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +
+                "FIVE POINT SOMEONE               Chetan Bhagat                    2010            \n", bookSection.listItemDetails());
     }
 }

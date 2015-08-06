@@ -6,10 +6,15 @@ import java.util.Objects;
 public class Library {
     private ArrayList<Item> books;
     private ArrayList<Item> movies;
+    private ArrayList<Item> items;
 
     public Library(ArrayList<Item> books, ArrayList<Item> movies) {
         this.books = books;
         this.movies = movies;
+    }
+
+    public Library(ArrayList<Item> items) {
+        this.items = items;
     }
 
     public String list() {
@@ -92,5 +97,15 @@ public class Library {
             }
         }
         return false;
+    }
+
+    public String listItemDetails() {
+        String itemDetails = "";
+        for (Item item : items) {
+            if (item.getStatus()) {
+                itemDetails += item.toString();
+            }
+        }
+        return itemDetails;
     }
 }
