@@ -119,4 +119,14 @@ public class Library {
         }
         return false;
     }
+
+    public boolean returnItem(String itemName, User user) {
+        for (Item item : items) {
+            if (itemName.equals(item.getName()) && !(item.getStatus()) && Objects.equals(user.getUserId(), item.getIssuedId())) {
+                item.setStatus(true);
+                return true;
+            }
+        }
+        return false;
+    }
 }

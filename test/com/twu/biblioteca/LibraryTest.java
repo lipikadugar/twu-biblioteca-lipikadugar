@@ -197,4 +197,18 @@ public class LibraryTest {
     public void shouldReturnFalseOnUnSuccessfulCheckoutOfMovie() {
         assertEquals(false, movieSection.checkoutItem("Spy".toUpperCase(), user));
     }
+
+    @Test
+    public void shouldReturnTrueOnSuccessfulReturnABook() {
+        library.checkout("The Da Vinci Code".toUpperCase(), user);
+
+        assertEquals(true, bookSection.returnItem("The Da Vinci Code".toUpperCase(), user));
+    }
+
+    @Test
+    public void shouldReturnFalseOnFailingToReturnABook() {
+        library.checkout("The Da Vinci Code".toUpperCase(), user);
+
+        assertEquals(false, bookSection.returnItem("The Famous Five".toUpperCase(), user));
+    }
 }
