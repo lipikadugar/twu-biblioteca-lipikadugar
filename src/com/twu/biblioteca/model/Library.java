@@ -47,7 +47,7 @@ public class Library {
         String bookDetails = "";
         for (Book book : books) {
             if (!book.getStatus()) {
-                bookDetails += book.getBookDetailsAlongWithIssuedBy();
+                bookDetails += book.getDetailsAlongWithIssuedBy();
             }
         }
         return bookDetails;
@@ -78,7 +78,7 @@ public class Library {
         String movieDetails = "";
         for (Movie movie : movies) {
             if (!movie.getStatus()) {
-                movieDetails += movie.getDetailsOfTheMovieIncludingIssuedBy();
+                movieDetails += movie.getDetailsAlongWithIssuedBy();
             }
         }
         return movieDetails;

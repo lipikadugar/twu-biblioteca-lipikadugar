@@ -43,6 +43,7 @@ public class MovieTest {
     public void shouldDisplayMovieDetailsIncludingIssuedBy() {
         Movie movie = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "Nancy");
 
-        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7                           Nancy\n", movie.getDetailsOfTheMovieIncludingIssuedBy());
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7                           Nancy\n",
+                movie.getDetailsAlongWithIssuedBy());
     }
 }

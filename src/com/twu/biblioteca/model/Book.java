@@ -1,6 +1,6 @@
 package com.twu.biblioteca.model;
 
-public class Book {
+public class Book implements Item {
     private String bookName;
     private String issuedBy;
     private String author;
@@ -15,36 +15,43 @@ public class Book {
         this.status = status;
     }
 
+    @Override
     public boolean equals(String thatBook) {
         return bookName.equals(thatBook.toUpperCase());
     }
 
     @Override
-    public String toString() {
-        return String.format("%-32s %-32s %-16s\n", bookName, author, yearPublished);
-    }
-
     public boolean getStatus() {
         return status;
     }
 
+    @Override
     public String getName() {
         return bookName.toUpperCase();
     }
 
+    @Override
     public void setStatus(boolean status) {
         this.status = status;
     }
 
+    @Override
     public void setIssuedBy(String issuedBy) {
         this.issuedBy = issuedBy;
     }
 
-    public String getBookDetailsAlongWithIssuedBy() {
+    @Override
+    public String getDetailsAlongWithIssuedBy() {
         return String.format("%-32s %-32s %-16s %16s\n", bookName, author, yearPublished, issuedBy);
     }
 
+    @Override
     public String getIssuedId() {
         return issuedBy;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%-32s %-32s %-16s\n", bookName, author, yearPublished);
     }
 }

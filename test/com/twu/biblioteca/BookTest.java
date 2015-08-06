@@ -45,6 +45,6 @@ public class BookTest {
 
         book.setIssuedBy("Lisa");
 
-        assertEquals("JAVA                             Oreilly                          1992                         Lisa\n", book.getBookDetailsAlongWithIssuedBy());
+        assertEquals("JAVA                             Oreilly                          1992                         Lisa\n", book.getDetailsAlongWithIssuedBy());
     }
 }
