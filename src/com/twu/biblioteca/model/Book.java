@@ -9,7 +9,7 @@ public class Book implements Item {
 
     public Book(String bookName, String author, int yearPublished, boolean status, String issuedBy) {
         this.issuedBy = issuedBy;
-        this.bookName = bookName.toUpperCase();
+        this.bookName = getUpperCase(bookName);
         this.author = author;
         this.yearPublished = yearPublished;
         this.status = status;
@@ -17,17 +17,16 @@ public class Book implements Item {
 
     @Override
     public boolean equals(String thatBook) {
-        return bookName.equals(thatBook.toUpperCase());
+        return bookName.equals(getUpperCase(thatBook));
+    }
+
+    public String getUpperCase(String thatBook) {
+        return thatBook.toUpperCase();
     }
 
     @Override
     public boolean getStatus() {
         return status;
-    }
-
-    @Override
-    public String getName() {
-        return bookName.toUpperCase();
     }
 
     @Override

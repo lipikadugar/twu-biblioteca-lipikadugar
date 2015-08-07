@@ -6,7 +6,6 @@ public interface Item {
     void setStatus(boolean status);
     void setIssuedBy(String issuedBy);
     String toString();
-    String getName();
     String getDetailsAlongWithIssuedBy();
     String getIssuedId();
 }

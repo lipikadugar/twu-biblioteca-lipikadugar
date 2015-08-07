@@ -22,7 +22,7 @@ public class Library {
 
     public boolean checkoutItem(String itemName, User user) {
         for (Item item : items) {
-            if (itemName.equals(item.getName()) && (item.getStatus())) {
+            if (item.equals(itemName) && (item.getStatus())) {
                 item.setStatus(false);
                 item.setIssuedBy(user.getUserId());
                 return true;
@@ -33,12 +33,16 @@ public class Library {
 
     public boolean returnItem(String itemName, User user) {
         for (Item item : items) {
-            if (itemName.equals(item.getName()) && !(item.getStatus()) && Objects.equals(user.getUserId(), item.getIssuedId())) {
+            if (isLiableToReturn(itemName, user, item)) {
                 item.setStatus(true);
                 return true;
             }
         }
         return false;
+    }
+
+    private boolean isLiableToReturn(String itemName, User user, Item item) {
+        return item.equals(itemName) && !(item.getStatus()) && Objects.equals(user.getUserId(), item.getIssuedId());
     }
 
     public String checkedOutItemList() {

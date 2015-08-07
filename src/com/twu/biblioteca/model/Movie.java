@@ -8,9 +8,9 @@ public class Movie implements Item{
     private int rating;
     private boolean status;
 
-    public Movie(String bookName, String author, int yearPublished, int rating, boolean status, String issuedBy) {
+    public Movie(String movieName, String author, int yearPublished, int rating, boolean status, String issuedBy) {
         this.issuedBy = issuedBy;
-        this.movieName = bookName.toUpperCase();
+        this.movieName = getUpperCase(movieName);
         this.director = author;
         this.releaseYear = yearPublished;
         this.rating = rating;
@@ -19,17 +19,16 @@ public class Movie implements Item{
 
     @Override
     public boolean equals(String thatMovie) {
-        return movieName.equals(thatMovie.toUpperCase());
+        return movieName.equals(getUpperCase(thatMovie));
+    }
+
+    public String getUpperCase(String thatMovie) {
+        return thatMovie.toUpperCase();
     }
 
     @Override
     public boolean getStatus() {
         return status;
-    }
-
-    @Override
-    public String getName() {
-        return movieName.toUpperCase();
     }
 
     @Override
