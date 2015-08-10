@@ -48,7 +48,8 @@ public class Main {
         UserAuthentication librarian = new UserAuthentication(librarians);
         UserAuthentication customer = new UserAuthentication(customers);
         View view = new View("1", bookSection, movieSection, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, customer);
+        WelcomeView welcome = new WelcomeView(view);
+        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, customer, welcome);
         app.start(true);
     }
 }

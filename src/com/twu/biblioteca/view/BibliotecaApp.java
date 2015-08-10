@@ -17,10 +17,11 @@ public class BibliotecaApp {
     private Library movieSection;
     private UserAuthentication librarian;
     private UserAuthentication customer;
+    private WelcomeView welcome;
     private HashMap<String, Operations> input;
     private Scanner in;
 
-    public BibliotecaApp(View view, Scanner in, Library bookSection, Library movieSection, UserAuthentication librarian, UserAuthentication customer) {
+    public BibliotecaApp(View view, Scanner in, Library bookSection, Library movieSection, UserAuthentication librarian, UserAuthentication customer, WelcomeView welcome) {
 
         this.view = view;
         this.in = in;
@@ -28,16 +29,12 @@ public class BibliotecaApp {
         this.movieSection = movieSection;
         this.librarian = librarian;
         this.customer = customer;
+        this.welcome = welcome;
     }
 
     public void start(boolean executeMenu) {
-        view.print(WELCOME_MESSAGE);
-        executeCommands(executeMenu);
-    }
-
-    private void executeCommands(boolean execute) {
-        while (execute) {
-            view.print(LOGIN_MENU);
+        while (executeMenu) {
+            welcome.execute();
             String option = view.input();
             try {
                 Operations operate = getClassObject(option);

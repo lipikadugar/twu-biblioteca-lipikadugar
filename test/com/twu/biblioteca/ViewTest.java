@@ -14,7 +14,6 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.WELCOME_MESSAGE;
 import static org.junit.Assert.assertEquals;
 
 public class ViewTest {
@@ -63,7 +62,7 @@ public class ViewTest {
     public void shouldDisplayWelcomeMessage() {
         View view = new View("1", bookSection, movieSection, in);
 
-        view.print(WELCOME_MESSAGE);
+        view.print("\t!!..Welcome to the Bibliotica..!!");
 
         assertEquals("\t!!..Welcome to the Bibliotica..!!\n", outContent.toString());
     }

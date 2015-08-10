@@ -1,14 +1,6 @@
 package com.twu.biblioteca.view;
 
 public interface Messages {
-    String LOGIN_MENU = "=========================================\n" +
-            "\t1. List Books\n" +
-            "\t2. List Movies\n" +
-            "\t3. Login as Librarian\n" +
-            "\t4. Login as User\n" +
-            "\t5. Quit\n" +
-            "=========================================\n" +
-            "Choose a option: \n";
     String MENU_FOR_LIBRARIAN = "=========================================\n\t\tMenu\n" +
             "\t1. List Book Details\n" +
             "\t2. Checkout\n" +
@@ -34,7 +26,6 @@ public interface Messages {
             "=========================================\n" +
             "Choose a option: \n";
     String ERROR_MESSAGE = "Select a valid option!";
-    String WELCOME_MESSAGE = "\t!!..Welcome to the Bibliotica..!!";
     String USER_ID = "Enter user ID : ";
     String PASSWORD = "Enter Password: ";
     String PROMPT_BOOK_NAME = "Enter the book name: ";
