@@ -8,7 +8,7 @@ import static org.junit.Assert.assertNotEquals;
 
 public class BookTest {
 
-   @Test
+    @Test
     public void shouldCompareTheEqualityOfTwoBooksBasedOnTheirNames() {
         Book book1 = new Book("Java", "Oreilly", 1992, true, "");
         Book book2 = new Book("C++", "Oreilly", 1992, true, "");

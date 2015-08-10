@@ -1,6 +1,6 @@
 package com.twu.biblioteca.view;
 
-public class LoginMenuView implements IView{
+public class LoginMenuView implements IView {
 
     private View view;
 

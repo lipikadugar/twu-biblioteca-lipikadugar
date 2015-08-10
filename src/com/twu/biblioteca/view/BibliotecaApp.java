@@ -9,7 +9,7 @@ import com.twu.biblioteca.operation.QuitApp;
 import java.util.HashMap;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.*;
+import static com.twu.biblioteca.view.Messages.ERROR_MESSAGE;
 
 public class BibliotecaApp {
     private View view;

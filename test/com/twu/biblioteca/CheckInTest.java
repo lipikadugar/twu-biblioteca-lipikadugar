@@ -2,15 +2,11 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.CheckIn;
-import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.View;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
-
-import java.util.Scanner;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;

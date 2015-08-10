@@ -10,7 +10,8 @@ public class WelcomeViewTest {
     @Test
     public void shouldDisplayWelcomeMessage() {
         View view = Mockito.mock(View.class);
-        WelcomeView welcome = new WelcomeView(view);
+        LoginMenuView loginMenuView = Mockito.mock(LoginMenuView.class);
+        WelcomeView welcome = new WelcomeView(view, loginMenuView);
 
         welcome.execute();
 

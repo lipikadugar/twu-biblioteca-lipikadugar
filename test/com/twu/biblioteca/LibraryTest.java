@@ -117,7 +117,7 @@ public class LibraryTest {
         movies.get(2).setIssuedBy("Nancy");
 
         assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8                            Lisa\n" +
-                "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n",
+                        "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n",
                 movieSection.checkedOutItemList());
     }
 

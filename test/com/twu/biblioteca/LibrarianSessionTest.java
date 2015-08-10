@@ -2,7 +2,10 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.operation.*;
+import com.twu.biblioteca.operation.CheckIn;
+import com.twu.biblioteca.operation.CheckOut;
+import com.twu.biblioteca.operation.ListCheckedOutItem;
+import com.twu.biblioteca.operation.UserInformation;
 import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;

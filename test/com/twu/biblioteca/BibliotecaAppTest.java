@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.atLeast;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class BibliotecaAppTest {
