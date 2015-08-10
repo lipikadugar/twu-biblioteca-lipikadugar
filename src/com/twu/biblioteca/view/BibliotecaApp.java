@@ -35,13 +35,17 @@ public class BibliotecaApp {
     public void start(boolean executeMenu) {
         while (executeMenu) {
             welcome.execute();
-            String option = view.input();
-            try {
-                Operations operate = getClassObject(option);
-                operate.execute();
-            } catch (NullPointerException e) {
-                view.print(ERROR_MESSAGE);
-            }
+            performOperation();
+        }
+    }
+
+    public void performOperation() {
+        String option = view.input();
+        try {
+            Operations operate = getClassObject(option);
+            operate.execute();
+        } catch (NullPointerException e) {
+            view.print(ERROR_MESSAGE);
         }
     }
 
