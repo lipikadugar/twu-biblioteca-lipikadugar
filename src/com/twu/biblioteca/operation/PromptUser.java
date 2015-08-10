@@ -3,7 +3,7 @@ package com.twu.biblioteca.operation;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.model.UserAuthentication;
-import com.twu.biblioteca.view.BibliotecaApp;
+import com.twu.biblioteca.Initiator.BibliotecaApp;
 import com.twu.biblioteca.view.CustomerSession;
 import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;
@@ -20,13 +20,12 @@ public class PromptUser implements Operations {
     private Library movieSection;
     private BibliotecaApp app;
 
-    public PromptUser(String choice, View view, UserAuthentication user, Library bookSection, Library movieSection, BibliotecaApp bibliotecaApp) {
+    public PromptUser(String choice, View view, UserAuthentication user, Library bookSection, Library movieSection) {
         this.choice = choice;
         this.view = view;
         this.newUser = user;
         this.bookSection = bookSection;
         this.movieSection = movieSection;
-        this.app = bibliotecaApp;
     }
 
     @Override

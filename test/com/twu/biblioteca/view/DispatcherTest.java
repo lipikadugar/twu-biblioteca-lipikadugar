@@ -1,10 +1,7 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.view;
 
 import com.twu.biblioteca.model.*;
 import com.twu.biblioteca.operation.Operations;
-import com.twu.biblioteca.view.BibliotecaApp;
-import com.twu.biblioteca.view.View;
-import com.twu.biblioteca.view.WelcomeView;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +15,7 @@ import java.util.Scanner;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-public class BibliotecaAppTest {
+public class DispatcherTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     PrintStream defaultOutStream = System.out;
@@ -26,12 +23,11 @@ public class BibliotecaAppTest {
     ArrayList<Item> movies;
     Book bookDetails;
     Movie movieDetails;
-    UserAuthentication user;
+    UserAuthentication customer;
     Library bookSection;
     Library movieSection;
     Scanner in;
     UserAuthentication librarian;
-    WelcomeView welcome;
 
     @Before
     public void setUp() {
@@ -67,18 +63,18 @@ public class BibliotecaAppTest {
     @Test
     public void shouldGiveObjectForViewClassIfOptionIsListBooks() {
         View view = new View("1", bookSection, movieSection, in);
-        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, user, welcome);
+        Dispatcher dispatch = new Dispatcher(view, in, bookSection, movieSection, librarian, customer);
 
-        assertEquals(view.getClass(), app.getClassObject("1").getClass());
+        assertEquals(view.getClass(), dispatch.getClassObject("1").getClass());
     }
 
     @Test
     public void shouldListTheBookDetailsIfTheOptionIs1() {
         View view = Mockito.mock(View.class);
-        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, user, welcome);
+        Dispatcher dispatch = new Dispatcher(view, in, bookSection, movieSection, librarian, customer);
         when(view.input()).thenReturn("1");
 
-        Operations operate = app.getClassObject("1");
+        Operations operate = dispatch.getClassObject("1");
         operate.execute();
 
         assertEquals("Book Name                        Author                           Year Published          Issued By\n" +

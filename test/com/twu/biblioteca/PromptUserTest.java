@@ -4,7 +4,7 @@ import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.model.UserAuthentication;
 import com.twu.biblioteca.operation.PromptUser;
-import com.twu.biblioteca.view.BibliotecaApp;
+import com.twu.biblioteca.Initiator.BibliotecaApp;
 import com.twu.biblioteca.view.View;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,7 +35,7 @@ public class PromptUserTest {
 
     @Test
     public void shouldBeAblePromptTheUserToLogin() {
-        PromptUser promptUser = new PromptUser("3", view, librarian, bookSection, movieSection, app);
+        PromptUser promptUser = new PromptUser("3", view, librarian, bookSection, movieSection);
 
         promptUser.execute();
 
@@ -46,7 +46,7 @@ public class PromptUserTest {
 
     @Test
     public void shouldBeAbleToDisplayInvalidUserMessageIfUserIsFailedToAuthenticated() {
-        PromptUser promptUser = new PromptUser("3", view, user, bookSection, movieSection, app);
+        PromptUser promptUser = new PromptUser("3", view, user, bookSection, movieSection);
         when(user.authenticate("999-1234", "password")).thenReturn(users);
 
         promptUser.execute();

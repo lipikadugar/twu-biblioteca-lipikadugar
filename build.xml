@@ -39,7 +39,7 @@
         <mkdir dir="antBuild/jar"/>
         <jar destfile="antBuild/jar/BibliotecaApp.jar" basedir="antBuild/src/classes">
             <manifest>
-                <attribute name="Main-Class" value="com.twu.biblioteca.view.Main"/>
+                <attribute name="Main-Class" value="com.twu.biblioteca.Initiator.Main"/>
             </manifest>
         </jar>
     </target>

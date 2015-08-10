@@ -3,7 +3,6 @@ package com.twu.biblioteca;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.operation.CheckOut;
-import com.twu.biblioteca.view.BibliotecaApp;
 import com.twu.biblioteca.view.CustomerSession;
 import com.twu.biblioteca.view.View;
 import org.junit.Before;
@@ -17,14 +16,12 @@ public class CustomerSessionTest {
     Library bookSection;
     Library movieSection;
     View view;
-    BibliotecaApp app;
     User user;
 
     @Before
     public void setUp() {
         bookSection = Mockito.mock(Library.class);
         view = Mockito.mock(View.class);
-        app = Mockito.mock(BibliotecaApp.class);
         user = Mockito.mock(User.class);
     }
 

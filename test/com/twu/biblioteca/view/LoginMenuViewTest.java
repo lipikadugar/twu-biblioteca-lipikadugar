@@ -9,7 +9,8 @@ public class LoginMenuViewTest {
     @Test
     public void shouldDisplayLoginView() {
         View view = Mockito.mock(View.class);
-        LoginMenuView login = new LoginMenuView(view);
+        Dispatcher dispatch = Mockito.mock(Dispatcher.class);
+        LoginMenuView login = new LoginMenuView(view, dispatch);
 
         login.execute();
 

@@ -1,6 +1,10 @@
-package com.twu.biblioteca.view;
+package com.twu.biblioteca.Initiator;
 
 import com.twu.biblioteca.model.*;
+import com.twu.biblioteca.view.Dispatcher;
+import com.twu.biblioteca.view.LoginMenuView;
+import com.twu.biblioteca.view.View;
+import com.twu.biblioteca.view.WelcomeView;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -48,9 +52,10 @@ public class Main {
         UserAuthentication librarian = new UserAuthentication(librarians);
         UserAuthentication customer = new UserAuthentication(customers);
         View view = new View("1", bookSection, movieSection, in);
-        LoginMenuView loginMenuView = new LoginMenuView(view);
+        Dispatcher dispatch = new Dispatcher(view, in, bookSection, movieSection, librarian, customer);
+        LoginMenuView loginMenuView = new LoginMenuView(view, dispatch);
         WelcomeView welcome = new WelcomeView(view, loginMenuView);
-        BibliotecaApp app = new BibliotecaApp(view, in, bookSection, movieSection, librarian, customer, welcome);
+        BibliotecaApp app = new BibliotecaApp(welcome);
         app.start(true);
     }
 }

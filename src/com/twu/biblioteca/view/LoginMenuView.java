@@ -3,9 +3,11 @@ package com.twu.biblioteca.view;
 public class LoginMenuView implements IView {
 
     private View view;
+    private Dispatcher dispatch;
 
-    public LoginMenuView(View view) {
+    public LoginMenuView(View view, Dispatcher dispatch) {
         this.view = view;
+        this.dispatch = dispatch;
     }
 
     @Override
@@ -19,6 +21,6 @@ public class LoginMenuView implements IView {
                 "=========================================\n" +
                 "Choose a option: \n";
         view.print(LOGIN_MENU);
-        return this;
+        return dispatch.execute();
     }
 }
