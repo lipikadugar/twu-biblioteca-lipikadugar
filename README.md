@@ -1,4 +1,4 @@
-Bibliotica
+BIBLIOTECA
 ===================================
 Biblioteca is a Library Management System for Bangalore Public Library. This application is designed to perform the following functions:
 
@@ -71,13 +71,15 @@ Password : !abcd0123
 User ID  : 000-0001
 Password : !abcd1234
 
-To access teh librarian account in order to list the checked out list details, use any one of the following two credentials:
+To access the librarian account in order to list the checked out list details, use any one of the following two credentials:
 
 User ID  : 999-9999
 Password : biblioteca
 
 User ID  : 999-9998
 Password : biblioteca
+
+*** Enjoy!!! ***
 
 
 
