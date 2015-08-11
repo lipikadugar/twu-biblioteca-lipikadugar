@@ -1,9 +1,9 @@
 package com.twu.biblioteca.operation;
 
+import com.twu.biblioteca.Initiator.BibliotecaApp;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.User;
 import com.twu.biblioteca.model.UserAuthentication;
-import com.twu.biblioteca.Initiator.BibliotecaApp;
 import com.twu.biblioteca.view.CustomerSession;
 import com.twu.biblioteca.view.LibrarianSession;
 import com.twu.biblioteca.view.View;

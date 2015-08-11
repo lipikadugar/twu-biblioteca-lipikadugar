@@ -1,7 +1,6 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.operation.UserInformation;
 import com.twu.biblioteca.view.View;
 import org.junit.Test;
 import org.mockito.Mockito;

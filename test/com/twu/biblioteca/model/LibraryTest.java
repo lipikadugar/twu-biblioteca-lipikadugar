@@ -1,6 +1,5 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.model.*;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

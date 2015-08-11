@@ -1,10 +1,9 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.operation;
 
 import com.twu.biblioteca.model.Book;
 import com.twu.biblioteca.model.Item;
 import com.twu.biblioteca.model.Library;
 import com.twu.biblioteca.model.Movie;
-import com.twu.biblioteca.operation.ListCheckedOutItem;
 import com.twu.biblioteca.view.View;
 import org.junit.After;
 import org.junit.Before;

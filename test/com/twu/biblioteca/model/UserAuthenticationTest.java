@@ -1,7 +1,5 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.model;
 
-import com.twu.biblioteca.model.User;
-import com.twu.biblioteca.model.UserAuthentication;
 import org.junit.Before;
 import org.junit.Test;
 
