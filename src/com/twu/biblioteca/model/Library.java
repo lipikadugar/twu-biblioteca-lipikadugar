@@ -24,7 +24,7 @@ public class Library {
         for (Item item : items) {
             if (item.equals(itemName) && (item.getStatus())) {
                 item.setStatus(false);
-                item.setIssuedBy(user.getUserId());
+                item.setIssuedBy(user.details());
                 return true;
             }
         }

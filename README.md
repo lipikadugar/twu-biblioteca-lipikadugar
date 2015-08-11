@@ -1,6 +1,6 @@
 Bibliotica
 ===================================
-This application is a Library Management System.
+This application is a Library Management System. It allows a customer and a librarian to login and
 
 
 Requirements

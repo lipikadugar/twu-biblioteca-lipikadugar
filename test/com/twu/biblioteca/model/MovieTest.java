@@ -27,14 +27,14 @@ public class MovieTest {
     public void shouldDisplayMovieDetails() {
         Movie movie = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "");
 
-        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n", movie.toString());
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997                            7\n", movie.toString());
     }
 
     @Test
     public void shouldDisplayMovieDetailsIncludingIssuedBy() {
         Movie movie = new Movie("Men In Black", "Barry Sonnenfeld", 1997, 7, true, "Nancy");
 
-        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7                           Nancy\n",
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997                            7            Nancy\n",
                 movie.getDetailsAlongWithIssuedBy());
     }
 }

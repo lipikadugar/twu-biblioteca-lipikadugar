@@ -41,7 +41,7 @@ public class Book implements Item {
 
     @Override
     public String getDetailsAlongWithIssuedBy() {
-        return String.format("%-32s %-32s %-16s %16s\n", bookName, author, yearPublished, issuedBy);
+        return String.format("%-32s %-32s %-16s %-16s %-16s\n", bookName, author, yearPublished, "", issuedBy);
     }
 
     @Override

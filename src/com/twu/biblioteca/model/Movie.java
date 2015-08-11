@@ -43,7 +43,7 @@ public class Movie implements Item {
 
     @Override
     public String getDetailsAlongWithIssuedBy() {
-        return String.format("%-32s %-32s %-16s %-16s %16s\n",
+        return String.format("%-32s %-32s %-16s %16s %16s\n",
                 movieName, director, releaseYear, rating, issuedBy);
     }
 
@@ -54,6 +54,6 @@ public class Movie implements Item {
 
     @Override
     public String toString() {
-        return String.format("%-32s %-32s %-16s %-16s\n", movieName, director, releaseYear, rating);
+        return String.format("%-32s %-32s %-16s %16s\n", movieName, director, releaseYear, rating);
     }
 }

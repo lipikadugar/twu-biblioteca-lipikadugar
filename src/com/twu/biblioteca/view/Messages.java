@@ -39,10 +39,16 @@ public interface Messages {
     String SUCCESSFUL_MOVIE_CHECKOUT = "Thank you! Enjoy the movie.";
     String UNSUCCESSFUL_MOVIE_CHECKOUT = "That movie is not available.";
     String INVALID_USER = "The userID and password does not match. Try again.";
-    String MOVIE_HEADER = String.format("%-32s %-32s %-16s %-16s %16s\n%-32s %-32s %-16s %-16s %16s\n",
+    String MOVIE_HEADER = String.format("%-32s %-32s %-16s %16s %16s\n%-32s %-32s %-16s %16s %16s\n",
             "Movie Name", "Director", "Release Year", "Rating", "Issued By",
             "----------", "--------", "------------", "-------", "---------");
-    String BOOK_HEADER = String.format("%-32s %-32s %-16s %16s\n%-32s %-32s %-16s %16s\n",
+    String BOOK_HEADER = String.format("%-32s %-32s %-16s %32s\n%-32s %-32s %-16s %32s\n",
             "Book Name", "Author", "Year Published", "Issued By",
             "---------", "------", "--------------", "---------");
+    String BOOK_DETAILS_HEADER = String.format("%-32s %-32s %-16s\n%-32s %-32s %-16s\n",
+            "Book Name", "Author", "Year Published",
+            "---------", "------", "--------------");
+    String MOVIE_DETAILS_HEADER = String.format("%-32s %-32s %-16s %16s\n%-32s %-32s %-16s %16s\n",
+            "Movie Name", "Director", "Release Year", "Rating",
+            "----------", "--------", "------------", "-------");
 }

@@ -6,8 +6,7 @@ import com.twu.biblioteca.operation.Operations;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static com.twu.biblioteca.view.Messages.BOOK_HEADER;
-import static com.twu.biblioteca.view.Messages.MOVIE_HEADER;
+import static com.twu.biblioteca.view.Messages.*;
 
 public class View implements Operations {
 
@@ -26,10 +25,10 @@ public class View implements Operations {
     @Override
     public void execute() {
         if (Objects.equals(option, "1")) {
-            print(BOOK_HEADER);
+            print(BOOK_DETAILS_HEADER);
             System.out.println(bookSection.listItemDetails());
         } else {
-            print(MOVIE_HEADER);
+            print(MOVIE_DETAILS_HEADER);
             System.out.println(movieSection.listItemDetails());
         }
     }

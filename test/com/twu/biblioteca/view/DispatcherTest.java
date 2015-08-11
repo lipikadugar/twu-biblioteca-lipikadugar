@@ -77,9 +77,8 @@ public class DispatcherTest {
         Operations operate = dispatch.getClassObject("1");
         operate.execute();
 
-        assertEquals("Book Name                        Author                           Year Published          Issued By\n" +
-                "---------                        ------                           --------------          ---------\n" +
-                "\n" +
+        assertEquals("Book Name                        Author                           Year Published  \n" +
+                "---------                        ------                           --------------  \n\n" +
                 "JAVA                             Oreilly                          1998            \n" +
                 "THE DA VINCI CODE                Dan Brown                        2005            \n" +
                 "THE FAMOUS FIVE                  Enid Blyton                      1993            \n" +

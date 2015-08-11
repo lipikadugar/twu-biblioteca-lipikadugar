@@ -54,10 +54,10 @@ public class LibraryTest {
 
     @Test
     public void shouldListTheMovieDetails() {
-        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997             7               \n" +
-                "CHAK DE INDIA                    Shimit Amin                      2007             8               \n" +
-                "3 IDIOTS                         RajKumar Hirani                  2009             9               \n" +
-                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013             7               \n", movieSection.listItemDetails());
+        assertEquals("MEN IN BLACK                     Barry Sonnenfeld                 1997                            7\n" +
+                "CHAK DE INDIA                    Shimit Amin                      2007                            8\n" +
+                "3 IDIOTS                         RajKumar Hirani                  2009                            9\n" +
+                "BHAAG MILKHA BHAAG               Rakesh omprakash Mehra           2013                            7\n", movieSection.listItemDetails());
     }
 
     @Test
@@ -115,8 +115,8 @@ public class LibraryTest {
         movies.get(1).setIssuedBy("Lisa");
         movies.get(2).setIssuedBy("Nancy");
 
-        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007             8                            Lisa\n" +
-                        "3 IDIOTS                         RajKumar Hirani                  2009             9                           Nancy\n",
+        assertEquals("CHAK DE INDIA                    Shimit Amin                      2007                            8             Lisa\n" +
+                        "3 IDIOTS                         RajKumar Hirani                  2009                            9            Nancy\n",
                 movieSection.checkedOutItemList());
     }
 
@@ -125,7 +125,7 @@ public class LibraryTest {
         books.get(0).setStatus(false);
         books.get(0).setIssuedBy("Lisa");
 
-        assertEquals("JAVA                             Oreilly                          1998                         Lisa\n",
+        assertEquals("JAVA                             Oreilly                          1998                              Lisa            \n",
                 bookSection.checkedOutItemList());
     }
 }

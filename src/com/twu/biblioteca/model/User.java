@@ -33,4 +33,9 @@ public class User {
     public String getUserId() {
         return userID;
     }
+
+    public String details() {
+        return String.format("%16s %1s \n %115s %1s \n %115s %1s\n %115s %1s\n",
+                "UserID : ", userID, "Name   : ", name, "Email  : ", email, "Phone  : ", phone);
+    }
 }
